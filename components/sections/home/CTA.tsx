@@ -16,8 +16,8 @@ export default function CTA() {
             </h2>
             <p className="text-lg md:text-xl mb-10 leading-relaxed opacity-95">
               Get in touch with our expert team today for a free consultation
-              and quote. We're here to help bring your construction and plumbing
-              projects to life.
+              and quote. We&lsquo;re here to help bring your construction and
+              plumbing projects to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button

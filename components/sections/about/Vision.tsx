@@ -32,7 +32,7 @@ export default function Vision() {
               <p className="mt-2 text-base text-gray-500">
                 To provide clients with professional fast and reliable solutions
                 that best suits their needs and their pocket. pressing issues
-                facing humanity and improve people's lives.
+                facing humanity and improve people&lsquo;s lives.
               </p>
             </div>
           </div>

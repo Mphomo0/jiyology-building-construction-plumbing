@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 export default function AboutCompany() {
   return (
@@ -77,9 +78,11 @@ export default function AboutCompany() {
           </div>
           <div className="w-full lg:justify-start justify-center items-start flex">
             <div className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
-              <img
+              <Image
                 className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                src="https://pagedone.io/asset/uploads/1717742431.png"
+                src="/images/demo.png"
+                width={800}
+                height={900}
                 alt="about Us image"
               />
             </div>
