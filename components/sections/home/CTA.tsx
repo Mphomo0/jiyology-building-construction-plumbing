@@ -19,24 +19,24 @@ export default function CTA() {
               and quote. We're here to help bring your construction and plumbing
               projects to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-black hover:bg-white text-white hover:text-black text-lg px-10 py-6"
-                >
-                  Contact Us Now
-                </Button>
-              </Link>
-              <a href="tel:5551234567">
-                <Button
-                  size="lg"
-                  className="bg-white text-black hover:bg-black hover:text-white text-lg px-10 py-6"
-                >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                size="lg"
+                className="bg-black hover:bg-white text-white hover:text-black text-lg px-10 py-6 w-full sm:w-auto"
+                asChild
+              >
+                <Link href="/contact">Contact Us Now</Link>
+              </Button>
+              <Button
+                size="lg"
+                className="bg-white text-black hover:bg-black hover:text-white text-lg px-10 py-6 w-full sm:w-auto"
+                asChild
+              >
+                <a href="tel:5551234567">
                   <Phone className="mr-2 w-5 h-5" />
                   Call Us
-                </Button>
-              </a>
+                </a>
+              </Button>
             </div>
           </div>
         </div>

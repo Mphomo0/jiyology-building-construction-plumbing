@@ -94,7 +94,7 @@ export default function MainServices() {
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20 animate-fade-in">
+        {/* <div className="text-center mb-20 animate-fade-in">
           <div className="inline-block p-2 bg-primary/10 rounded-full mb-4">
             <div className="w-12 h-12 bg-primary rounded-full"></div>
           </div>
@@ -106,7 +106,7 @@ export default function MainServices() {
             Professional construction and plumbing services delivered with
             expertise and dedication
           </p>
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (

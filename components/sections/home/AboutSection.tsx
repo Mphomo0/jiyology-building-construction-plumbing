@@ -33,7 +33,7 @@ export default function AboutSection() {
               <Link href="/about">
                 <Button
                   size="lg"
-                  className="bg-black text-white hover:bg-[#33b6db] hover:text-white transition-all duration-300 hover:scale-105 p-6"
+                  className="bg-black text-white hover:bg-[#33b6db] hover:text-white transition-all duration-300 hover:scale-105 p-6 w-full sm:w-auto"
                 >
                   Learn More About Us
                   <ArrowRight className="ml-2 w-5 h-5" />

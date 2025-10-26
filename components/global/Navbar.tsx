@@ -5,9 +5,12 @@ import { Button } from '@/components/ui/button'
 import { Menu, X, Phone } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+
+  const router = useRouter()
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border">
@@ -69,6 +72,7 @@ export default function Navbar() {
             <Button
               size="sm"
               className="shadow-md hover:shadow-lg transition-shadow duration-200"
+              onClick={() => router.push('/contact')}
             >
               Get Quote
             </Button>
@@ -129,7 +133,11 @@ export default function Navbar() {
                     <a href="tel:+27119310157">(011) 931 0157</a>
                   </span>
                 </div>
-                <Button size="sm" className="w-full">
+                <Button
+                  size="sm"
+                  className="shadow-md hover:shadow-lg transition-shadow duration-200 w-full"
+                  onClick={() => router.push('/contact')}
+                >
                   Get Quote
                 </Button>
               </div>

@@ -33,13 +33,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button
               size="lg"
-              className="text-lg px-10 py-6 bg-neutral-950 text-white hover:bg-[#33b6db] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="text-lg px-10 py-6 bg-neutral-950 text-white hover:bg-[#33b6db] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             >
               Get Free Quote
             </Button>
             <Button
               size="lg"
-              className="text-lg px-10 py-6 bg-white text-black hover:bg-text-black hover:text-white hover:bg-neutral-950  transition-all duration-300 hover:scale-105"
+              className="text-lg px-10 py-6 bg-white text-black hover:bg-text-black hover:text-white hover:bg-neutral-950  transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             >
               Our Services
             </Button>

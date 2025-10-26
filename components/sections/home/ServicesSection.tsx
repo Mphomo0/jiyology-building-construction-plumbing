@@ -68,7 +68,7 @@ export default function ServicesSection() {
             <Link href="/services">
               <Button
                 size="lg"
-                className="bg-neutral-950 hover:bg-[#33b6db] p-6"
+                className="bg-neutral-950 hover:bg-[#33b6db] p-6 w-full sm:w-auto"
               >
                 View All Services
                 <ArrowRight className="ml-2 w-5 h-5" />
