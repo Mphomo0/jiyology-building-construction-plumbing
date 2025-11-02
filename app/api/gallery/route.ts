@@ -1,5 +1,11 @@
 import { NextResponse } from 'next/server'
 
+interface ImageKitFile {
+  fileId: string
+  name: string
+  url: string
+}
+
 export async function GET() {
   try {
     const folderPath = '/Gallery' // your ImageKit folder
@@ -20,10 +26,10 @@ export async function GET() {
       throw new Error(`ImageKit API error: ${res.status}`)
     }
 
-    const files = await res.json()
+    const files: ImageKitFile[] = await res.json()
 
     // Transform data for frontend
-    const images = files.map((file: any) => ({
+    const images = files.map((file) => ({
       id: file.fileId,
       title: file.name.replace(/\.[^/.]+$/, ''), // remove file extension
       src: file.url,
