@@ -9,7 +9,6 @@ import { useRouter } from 'next/navigation'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-
   const router = useRouter()
 
   return (
@@ -30,7 +29,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <Link
               href="/"
               className="text-neutral-900 hover:text-neutral-800 transition-colors duration-200"
@@ -63,8 +62,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Tablet/Tablet+ CTA */}
+          <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-neutral-950">
               <Phone className="w-4 h-4" />
               <span>
@@ -83,15 +82,15 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-200"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile and Tablet Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
