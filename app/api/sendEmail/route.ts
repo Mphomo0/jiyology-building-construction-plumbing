@@ -5,11 +5,10 @@ export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, message } = await req.json()
 
-    // Create transporter for generic webmail
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST, // e.g., 'mail.yourdomain.com'
-      port: Number(process.env.SMTP_PORT) || 465, // 465 (SSL) or 587 (TLS)
-      secure: process.env.SMTP_SECURE === 'true', // true for 465, false for 587
+      host: process.env.SMTP_HOST, // e.g., 'smtp.gmail.com'
+      port: Number(process.env.SMTP_PORT) || 465, // 465 for SSL, 587 for TLS
+      secure: process.env.SMTP_SECURE === 'true', // true for 465 (SSL)
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -27,9 +26,9 @@ export async function POST(req: NextRequest) {
 
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: process.env.SMTP_USER, // sending to yourself
+      to: process.env.SMTP_USER, // Sending to yourself or an admin email
       replyTo: email,
-      subject: 'General Form Enquiry', // hard-coded subject
+      subject: 'General Form Enquiry',
       text: `
         New contact form submission:
         
@@ -41,6 +40,7 @@ export async function POST(req: NextRequest) {
       html: htmlContent,
     }
 
+    // Send the email
     await transporter.sendMail(mailOptions)
 
     return new Response(
@@ -49,6 +49,12 @@ export async function POST(req: NextRequest) {
     )
   } catch (error) {
     console.error('Error sending email:', error)
+
+    // Log the error response from the SMTP server
+    if (error) {
+      console.error('SMTP response:', error)
+    }
+
     return new Response(JSON.stringify({ error: 'Error sending email' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },

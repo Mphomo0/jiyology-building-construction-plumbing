@@ -16,6 +16,7 @@ export default function Footer() {
                 height={80}
                 className="w-auto h-auto"
                 unoptimized
+                priority
               />
             </div>
 
