@@ -45,7 +45,7 @@ export default function AboutSection() {
             <div className="relative w-full max-w-md mx-auto animate-slide-in-left">
               <div className="p-4 border-4 border-construction rounded-xl">
                 <Image
-                  src="/images/about-image.jpg" // Change to your actual image path
+                  src="https://ik.imagekit.io/i6f6omrki/about-image.jpg?updatedAt=1762085902354?tr=w-500,h-500,q-80,f-auto" // Change to your actual image path
                   alt="About Jiyology"
                   width={500}
                   height={500}

@@ -19,11 +19,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logo.png"
+              src="https://ik.imagekit.io/i6f6omrki/logo.png?updatedAt=1762085106557?tr=w-100%,h-60,q-80,f-auto"
               alt="Jiyology Construction Logo"
               width={150}
               height={90}
               className="object-contain w-full h-auto"
+              unoptimized
             />
           </Link>
 

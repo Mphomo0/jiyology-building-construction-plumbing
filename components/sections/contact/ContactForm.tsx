@@ -41,9 +41,27 @@ export default function ContactForm() {
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   })
-  const onSubmit = (data: ContactFormData) => {
-    console.log('Form Data:', data)
-    reset()
+
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+      if (!response.ok) {
+        alert(`Error: ${result.error || 'Unknown error'}`)
+      } else {
+        alert('Your message has been sent successfully!')
+      }
+    } catch (error) {
+      alert('There was an error sending your message. Please try again.')
+      console.error('Error sending email:', error)
+    }
   }
   return (
     <div>

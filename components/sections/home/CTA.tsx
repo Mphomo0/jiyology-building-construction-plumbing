@@ -32,7 +32,7 @@ export default function CTA() {
                 className="bg-white text-black hover:bg-black hover:text-white text-lg px-10 py-6 w-full sm:w-auto"
                 asChild
               >
-                <a href="tel:5551234567">
+                <a href="tel:0119310157">
                   <Phone className="mr-2 w-5 h-5" />
                   Call Us
                 </a>

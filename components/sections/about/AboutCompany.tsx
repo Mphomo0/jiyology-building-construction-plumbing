@@ -80,10 +80,11 @@ export default function AboutCompany() {
             <div className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
               <Image
                 className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                src="/images/demo.png"
+                src="https://ik.imagekit.io/i6f6omrki/Gallery/IMG-20201018-WA0024.jpg?updatedAt=1762082551293?tr=w-800,h-900,q-80,f-auto"
                 width={800}
                 height={900}
                 alt="about Us image"
+                unoptimized
               />
             </div>
           </div>

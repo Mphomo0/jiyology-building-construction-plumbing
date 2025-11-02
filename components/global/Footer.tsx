@@ -10,11 +10,12 @@ export default function Footer() {
           <div>
             <div className="flex justify-start sm:justify-start">
               <Image
-                src="/images/logo-2.png"
+                src="https://ik.imagekit.io/i6f6omrki/logo-2.png?updatedAt=1762085094516?tr=w-100%,h-60,q-80,f-auto"
                 alt="Jiyology Building Construction & Plumbing Logo"
                 width={150}
                 height={80}
                 className="w-auto h-auto"
+                unoptimized
               />
             </div>
 

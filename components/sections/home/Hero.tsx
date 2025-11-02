@@ -7,7 +7,10 @@ export default function Hero() {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero-image.jpg')" }}
+        style={{
+          backgroundImage:
+            "url('https://ik.imagekit.io/i6f6omrki/hero-image.jpg?updatedAt=1762086874764')",
+        }}
       >
         <div className="absolute inset-0 bg-primary/80"></div>
       </div>
@@ -19,9 +22,9 @@ export default function Hero() {
             Jiyology
           </h1>
           <div className="w-24 h-1 bg-construction mx-auto mb-6 rounded-full"></div>
-          <p className="text-xl md:text-3xl mb-6 font-medium">
+          <h2 className="text-xl md:text-3xl mb-6 font-medium">
             Building Construction & Plumbing
-          </p>
+          </h2>
           <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
             Client-Focused Building and Plumbing Solutions – At Jiyology, we
             treat every client with respect, professionalism, and care. Our

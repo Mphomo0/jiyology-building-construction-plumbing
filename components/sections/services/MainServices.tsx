@@ -7,12 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import roofing from '@/public/images/roofing.jpg'
-import plumbingImage from '@/public/images/plumbing.jpg'
-import paving from '@/public/images/paving.jpg'
-import painting from '@/public/images/painting.jpg'
-import ceiling from '@/public/images/ceiling.jpg'
-import renovations from '@/public/images/renovations.jpg'
 import Image from 'next/image'
 
 const services = [
@@ -20,7 +14,7 @@ const services = [
     title: 'Roofing',
     description:
       'We do all kinds of roofing such as roof tiles, roof sheet and roof erection with professional quality and attention to detail.',
-    image: roofing,
+    image: 'https://ik.imagekit.io/i6f6omrki/roofing.jpg',
     features: [
       'Roof Tiles',
       'Roof Sheets',
@@ -32,7 +26,7 @@ const services = [
     title: 'Plumbing Services',
     description:
       'We offer a wide range of plumbing services including plumbing maintenance and repairs with reliable and efficient service.',
-    image: plumbingImage,
+    image: 'https://ik.imagekit.io/i6f6omrki/plumbing.jpg',
     features: [
       'Maintenance & Repairs',
       'Installation Services',
@@ -44,7 +38,7 @@ const services = [
     title: 'Paving',
     description:
       'We will help you complete a home with a paved driveway, or you need to redo your existing paving with quality materials.',
-    image: paving,
+    image: 'https://ik.imagekit.io/i6f6omrki/paving.jpg',
     features: [
       'Driveway Paving',
       'Existing Paving Repair',
@@ -56,7 +50,7 @@ const services = [
     title: 'Tiling and Painting',
     description:
       'We offer tiling and painting services to private, commercial and industrial clients with excellent craftsmanship.',
-    image: painting,
+    image: 'https://ik.imagekit.io/i6f6omrki/painting.jpg',
     features: [
       'Private Clients',
       'Commercial Projects',
@@ -68,7 +62,7 @@ const services = [
     title: 'Ceiling Installation',
     description:
       'We offer ceiling installation services, and we offer professional service to make any repairs to existing ceiling.',
-    image: ceiling,
+    image: 'https://ik.imagekit.io/i6f6omrki/ceiling.jpg',
     features: [
       'New Installations',
       'Ceiling Repairs',
@@ -80,7 +74,7 @@ const services = [
     title: 'Home Renovation',
     description:
       'We can help you renovate your home interior or exterior with comprehensive renovation solutions.',
-    image: renovations,
+    image: 'https://ik.imagekit.io/i6f6omrki/renovations.jpg',
     features: [
       'Interior Renovation',
       'Exterior Renovation',
@@ -94,20 +88,6 @@ export default function MainServices() {
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        {/* <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-block p-2 bg-primary/10 rounded-full mb-4">
-            <div className="w-12 h-12 bg-primary rounded-full"></div>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
-            Our Services
-          </h2>
-          <div className="w-24 h-1 bg-construction mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Professional construction and plumbing services delivered with
-            expertise and dedication
-          </p>
-        </div> */}
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <Card
@@ -117,9 +97,12 @@ export default function MainServices() {
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src={service.image}
+                  src={`${service.image}?tr=w-600,h-400,q-80,f-auto`}
+                  width={600}
+                  height={400}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-primary/30 group-hover:bg-primary/50 transition-all duration-500"></div>
                 <div className="absolute top-4 right-4 w-12 h-12 bg-construction rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -16,7 +16,7 @@ export default function PageHeader({
       {image && (
         <div className="absolute bg-black inset-0 opacity-10">
           <Image
-            src={image}
+            src={`${image}?tr=w-100,q-80,f-auto`}
             alt={title}
             fill
             className="object-cover"
