@@ -30,8 +30,10 @@ export async function GET() {
     }))
 
     return NextResponse.json(images)
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error fetching gallery:', error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    const message =
+      error instanceof Error ? error.message : String(error ?? 'Unknown error')
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }
