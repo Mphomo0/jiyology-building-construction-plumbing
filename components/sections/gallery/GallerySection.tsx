@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
 
@@ -13,67 +14,125 @@ type GalleryItem = {
 export default function GallerySection() {
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/api/gallery')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to load gallery')
+        return res.json()
+      })
       .then((data) => {
         setGalleryItems(data)
         setLoading(false)
       })
       .catch((err) => {
         console.error('Failed to load gallery:', err)
+        setError('Unable to load gallery images. Please try again later.')
         setLoading(false)
       })
   }, [])
 
-  return (
-    <div className="min-h-screen pt-16">
-      <section className="py-24 bg-background">
+  if (loading) {
+    return (
+      <section className="py-24 bg-background" aria-label="Project Gallery">
         <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
-                Our Gallery
-              </h1>
-              <div className="w-24 h-1 bg-construction mx-auto mb-6"></div>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                Explore our portfolio of completed projects showcasing quality
-                craftsmanship.
-              </p>
-            </div>
-
-            {loading ? (
-              <p className="text-center text-muted-foreground">
-                Loading gallery...
-              </p>
-            ) : (
-              <div className="columns-1 sm:columns-2 lg:columns-5 gap-6 space-y-6">
-                {galleryItems.map((item, index) => (
-                  <Card
-                    key={item.id}
-                    className="break-inside-avoid overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in"
-                    style={{ animationDelay: `${index * 0.05}s` }}
-                  >
-                    <CardContent className="p-0">
-                      <div className=" w-full overflow-hidden">
-                        <Image
-                          src={`${item.src}?tr=q-80,f-auto`}
-                          alt={item.title}
-                          width={600}
-                          height={400}
-                          className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-                          unoptimized
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            )}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+              Our Gallery
+            </h2>
+            <div className="w-16 h-1 bg-[#33b6db] mx-auto mb-6 rounded-full" />
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Loading our portfolio of completed projects...
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div
+                key={i}
+                className="aspect-square bg-muted rounded-xl animate-pulse"
+              />
+            ))}
           </div>
         </div>
       </section>
-    </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="py-24 bg-background" aria-label="Project Gallery">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground">{error}</p>
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section className="py-24 bg-background" aria-label="Project Gallery">
+      <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#33b6db] mb-3 block">
+              Our Work
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+              Project Gallery
+            </h2>
+            <div className="w-16 h-1 bg-[#33b6db] mx-auto mb-6 rounded-full" />
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Explore our portfolio of completed construction and plumbing
+              projects showcasing quality craftsmanship across Soweto and
+              Johannesburg.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
+          >
+            {galleryItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="break-inside-avoid"
+              >
+                <Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 group">
+                  <CardContent className="p-0">
+                    <div className="relative overflow-hidden">
+                      <Image
+                        src={`${item.src}?tr=w-600,q-80,f-auto`}
+                        alt={`Jiyology ${item.title} project`}
+                        width={600}
+                        height={400}
+                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm font-medium text-foreground capitalize">
+                        {item.title.replace(/[-_]/g, ' ')}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
   )
 }

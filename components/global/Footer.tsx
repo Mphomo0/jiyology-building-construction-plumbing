@@ -2,189 +2,117 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12z" />
+    </svg>
+  )
+}
+
 export default function Footer() {
   return (
-    <footer className="bg-neutral-950">
-      <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div>
-            <div className="flex justify-start sm:justify-start">
-              <Image
-                src="https://ik.imagekit.io/i6f6omrki/logo-2.png?updatedAt=1762085094516?tr=w-100%,h-60,q-80,f-auto"
-                alt="Jiyology Building Construction & Plumbing Logo"
-                width={150}
-                height={80}
-                className="w-auto h-auto"
-                unoptimized
-                priority
-              />
-            </div>
-
-            <p className="mt-6 max-w-md text-center leading-relaxed text-neutral-300 sm:max-w-xs sm:text-left">
-              Jiyology is a trusted construction and plumbing company committed
-              to delivering reliable, high-quality services across residential
-              and commercial projects.
+    <footer className="bg-slate-950 text-neutral-300" role="contentinfo">
+      <div className="container mx-auto px-4 pt-16 pb-8 lg:pt-24">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
+          <div className="lg:col-span-1">
+            <Image
+              src="https://ik.imagekit.io/i6f6omrki/logo-2.png?updatedAt=1762085094516"
+              alt="Jiyology Building Construction and Plumbing logo"
+              width={140}
+              height={70}
+              className="brightness-0 invert"
+              style={{ width: 'auto', height: 'auto' }}
+              priority
+            />
+            <p className="mt-6 text-sm leading-relaxed text-neutral-400 max-w-xs">
+              Trusted construction and plumbing company delivering reliable,
+              high-quality services across residential and commercial projects
+              in Soweto and Johannesburg.
             </p>
-
-            <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
-              <Link
-                href="https://web.facebook.com/profile.php?id=100046841814394"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <li className="transition hover:opacity-75">
-                  <span className="sr-only">Facebook</span>
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white">
-                    <Image
-                      src="/images/facebook.svg"
-                      alt="Facebook Icon"
-                      width={20}
-                      height={20}
-                      className="w-6 h-6"
-                    />
-                  </div>
-                </li>
-              </Link>
+            <ul className="mt-6 flex gap-4">
+              <li>
+                <Link
+                  href="https://web.facebook.com/profile.php?id=100046841814394"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-[#33b6db] hover:text-slate-950 transition-colors duration-200"
+                  aria-label="Follow Jiyology on Facebook"
+                >
+                  <FacebookIcon className="w-5 h-5" />
+                </Link>
+              </li>
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-neutral-300">
-                Quick Links
-              </p>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Home</Link></li>
+              <li><Link href="/about" className="text-neutral-400 hover:text-[#33b6db] transition-colors">About Us</Link></li>
+              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Our Services</Link></li>
+              <li><Link href="/gallery" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Gallery</Link></li>
+              <li><Link href="/contact" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Contact Us</Link></li>
+            </ul>
+          </div>
 
-              <ul className="mt-8 text-sm space-y-4">
-                <li>
-                  <Link
-                    href="/"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    Home
-                  </Link>
-                </li>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Services
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Roofing</Link></li>
+              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Plumbing</Link></li>
+              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Tiling & Painting</Link></li>
+              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Home Renovation</Link></li>
+              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Paving</Link></li>
+              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Ceiling Installation</Link></li>
+            </ul>
+          </div>
 
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    About Us
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    Our Services
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-neutral-300">
-                Our Services
-              </p>
-
-              <ul className="mt-8 text-sm space-y-4">
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    Roofing
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    Plumbing Service
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    Tiling and Painting
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-neutral-50 hover:text-teal-600"
-                  >
-                    Home Renovation
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-neutral-300">Contact Us</p>
-
-              <ul className="mt-8 space-y-4 text-sm">
-                <li className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
-                  <Mail className="text-white" size={16} />
-                  <span className="flex-1 text-neutral-50 hover:text-teal-600">
-                    {' '}
-                    vusi@jiyology.co.za
-                  </span>
-                </li>
-
-                <li className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
-                  <Mail className="text-white" size={16} />
-                  <span className="flex-1 text-neutral-50 hover:text-teal-600">
-                    {' '}
-                    vusijiya26@gmail.com
-                  </span>
-                </li>
-
-                <li className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
-                  <Phone className="text-white" size={16} />
-                  <span className="flex-1 text-neutral-50 hover:text-teal-600">
-                    011 931 0157
-                  </span>
-                </li>
-
-                <li className="flex items-start justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
-                  <MapPin className="text-white" size={16} />
-                  <address className="-mt-0.5 flex-1 text-neutral-50 hover:text-teal-600">
-                    Ext 2, 65 Tsemeli St, Emdeni South, Soweto, 1861
-                  </address>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Contact
+            </h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-[#33b6db] mt-0.5 flex-shrink-0" />
+                <a href="mailto:vusi@jiyology.co.za" className="text-neutral-400 hover:text-[#33b6db] transition-colors">
+                  vusi@jiyology.co.za
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-[#33b6db] mt-0.5 flex-shrink-0" />
+                <a href="tel:+27119310157" className="text-neutral-400 hover:text-[#33b6db] transition-colors">
+                  (011) 931 0157
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#33b6db] mt-0.5 flex-shrink-0" />
+                <address className="text-neutral-400 not-italic">
+                  65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861
+                </address>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-100 pt-6 dark:border-gray-800">
-          <div className="text-center sm:flex sm:justify-between sm:text-left">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              <span className="block sm:inline">All rights reserved.</span>
-            </p>
-
-            <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0 dark:text-gray-400">
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-neutral-500">
+            <p>All rights reserved.</p>
+            <p>
               &copy; {new Date().getFullYear()} Jiyology Building Construction &
-              Plumbing. Made by
-              <a href="https://www.nostalgic-studio.c.za"> Nostalgic Studio</a>
+              Plumbing. Made by{' '}
+              <a
+                href="https://www.nostalgic-studio.c.za"
+                className="text-neutral-400 hover:text-[#33b6db] transition-colors"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Nostalgic Studio
+              </a>
             </p>
           </div>
         </div>

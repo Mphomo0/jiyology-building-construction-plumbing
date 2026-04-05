@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import {
   Card,
   CardContent,
@@ -8,12 +9,13 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import Image from 'next/image'
+import { Check } from 'lucide-react'
 
 const services = [
   {
     title: 'Roofing',
     description:
-      'We do all kinds of roofing such as roof tiles, roof sheet and roof erection with professional quality and attention to detail.',
+      'Complete roofing solutions including roof tiles, roof sheets, and professional roof erection with quality materials and expert installation.',
     image: 'https://ik.imagekit.io/i6f6omrki/roofing.jpg',
     features: [
       'Roof Tiles',
@@ -25,7 +27,7 @@ const services = [
   {
     title: 'Plumbing Services',
     description:
-      'We offer a wide range of plumbing services including plumbing maintenance and repairs with reliable and efficient service.',
+      'Comprehensive plumbing services including maintenance, repairs, installations, and emergency callouts with reliable and efficient service.',
     image: 'https://ik.imagekit.io/i6f6omrki/plumbing.jpg',
     features: [
       'Maintenance & Repairs',
@@ -37,11 +39,11 @@ const services = [
   {
     title: 'Paving',
     description:
-      'We will help you complete a home with a paved driveway, or you need to redo your existing paving with quality materials.',
+      'Professional paving for driveways, patios, and walkways. We also repair and restore existing paving with quality materials.',
     image: 'https://ik.imagekit.io/i6f6omrki/paving.jpg',
     features: [
       'Driveway Paving',
-      'Existing Paving Repair',
+      'Patio & Walkway Paving',
       'Quality Materials',
       'Professional Finish',
     ],
@@ -49,10 +51,10 @@ const services = [
   {
     title: 'Tiling and Painting',
     description:
-      'We offer tiling and painting services to private, commercial and industrial clients with excellent craftsmanship.',
+      'Expert tiling and painting services for residential, commercial, and industrial clients with excellent craftsmanship and attention to detail.',
     image: 'https://ik.imagekit.io/i6f6omrki/painting.jpg',
     features: [
-      'Private Clients',
+      'Residential Projects',
       'Commercial Projects',
       'Industrial Services',
       'Professional Quality',
@@ -61,7 +63,7 @@ const services = [
   {
     title: 'Ceiling Installation',
     description:
-      'We offer ceiling installation services, and we offer professional service to make any repairs to existing ceiling.',
+      'Professional ceiling installation for new builds and repairs to existing ceilings. Quality workmanship guaranteed on every project.',
     image: 'https://ik.imagekit.io/i6f6omrki/ceiling.jpg',
     features: [
       'New Installations',
@@ -73,7 +75,7 @@ const services = [
   {
     title: 'Home Renovation',
     description:
-      'We can help you renovate your home interior or exterior with comprehensive renovation solutions.',
+      'Comprehensive interior and exterior home renovation solutions. From single room updates to full home transformations.',
     image: 'https://ik.imagekit.io/i6f6omrki/renovations.jpg',
     features: [
       'Interior Renovation',
@@ -86,53 +88,77 @@ const services = [
 
 export default function MainServices() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-muted/30" aria-labelledby="all-services-heading">
       <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#33b6db] mb-3 block">
+            Complete Solutions
+          </span>
+          <h2
+            id="all-services-heading"
+            className="text-4xl md:text-5xl font-bold text-foreground tracking-tight"
+          >
+            All Our Services
+          </h2>
+          <div className="w-16 h-1 bg-[#33b6db] mx-auto mt-4 mb-6 rounded-full" />
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            From roof to foundation, we handle every aspect of your construction
+            and plumbing needs with SABS-approved materials and professional
+            expertise.
+          </p>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 border-0 shadow-md animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={`${service.image}?tr=w-600,h-400,q-80,f-auto`}
-                  width={600}
-                  height={400}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  unoptimized
-                />
-                <div className="absolute inset-0 bg-primary/30 group-hover:bg-primary/50 transition-all duration-500"></div>
-                <div className="absolute top-4 right-4 w-12 h-12 bg-construction rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-6 h-6 bg-construction-foreground rounded-full"></div>
+              <Card className="group h-full overflow-hidden border-border/60 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={`${service.image}?tr=w-600,h-400,q-80,f-auto`}
+                    width={600}
+                    height={400}
+                    alt={`${service.title} service by Jiyology Construction`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
                 </div>
-              </div>
 
-              <CardHeader className="pb-4">
-                <CardTitle className="text-2xl font-bold text-primary mb-3 group-hover:text-construction transition-colors duration-300">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="text-base leading-relaxed text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-[#33b6db] transition-colors duration-300">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
 
-              <CardContent className="pt-0">
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center text-sm font-medium text-foreground"
-                    >
-                      <div className="w-3 h-3 bg-construction rounded-full mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+                <CardContent className="pt-0">
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center text-sm font-medium text-foreground"
+                      >
+                        <Check className="w-4 h-4 text-[#33b6db] mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

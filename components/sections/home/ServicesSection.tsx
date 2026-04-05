@@ -1,80 +1,104 @@
-import { ArrowRight } from 'lucide-react'
+'use client'
+
+import { motion } from 'framer-motion'
+import { ArrowRight, Home, Wrench, Hammer, Paintbrush, Layers, Building2 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { HomeIcon, Wrench, Shield } from 'lucide-react'
 
 const featuredServices = [
   {
-    icon: HomeIcon,
+    icon: Home,
     title: 'Roofing',
     description:
-      'We do all kinds of roofing such as roof tiles, roof sheet and roof erection.',
+      'Complete roofing solutions including roof tiles, roof sheets, and professional roof erection.',
   },
   {
     icon: Wrench,
     title: 'Plumbing',
     description:
-      'We offer a wide range of plumbing services including plumbing maintanance and repairs.',
+      'Full plumbing services including maintenance, repairs, and emergency callouts.',
   },
   {
-    icon: Shield,
+    icon: Building2,
     title: 'Home Renovation',
-    description: 'We can help you renovation your home interior or exterior.',
+    description:
+      'Transform your space with comprehensive interior and exterior renovation services.',
   },
 ]
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-muted/30" aria-labelledby="services-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-              Our Services
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[#33b6db] mb-4">
+              What We Do
+            </span>
+            <h2
+              id="services-heading"
+              className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight"
+            >
+              Our Core Services
             </h2>
-            <div className="w-24 h-1 bg-construction mx-auto mb-6"></div>
+            <div className="w-16 h-1 bg-[#33b6db] mx-auto mb-6 rounded-full" />
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Professional construction and plumbing services delivered with
-              expertise
+              expertise, quality materials, and a commitment to your satisfaction.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {featuredServices.map((service, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="text-center hover:shadow-lg transition-all duration-500 hover:scale-105  shadow-md animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <CardHeader>
-                  <div className="w-20 h-20 bg-[#33b6db] rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                    <service.icon className="w-10 h-10 text-black" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="h-full border-border/60 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                  <CardHeader>
+                    <div className="w-14 h-14 bg-[#33b6db]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#33b6db]/20 transition-colors duration-300">
+                      <service.icon className="w-7 h-7 text-[#33b6db]" />
+                    </div>
+                    <CardTitle className="text-xl font-bold">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
 
-          <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-center"
+          >
             <Link href="/services">
               <Button
                 size="lg"
-                className="bg-neutral-950 hover:bg-[#33b6db] p-6 w-full sm:w-auto"
+                className="bg-neutral-950 hover:bg-[#33b6db] text-white hover:text-white"
               >
                 View All Services
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

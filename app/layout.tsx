@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/global/Navbar'
 import Footer from '@/components/global/Footer'
+import { organizationLdJson, websiteLdJson, localBusinessLdJson } from '@/lib/structured-data'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -15,10 +17,86 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title:
-    'Jiyology | Professional Building Construction & Plumbing Services in Soweto',
+  metadataBase: new URL('https://www.jiyology.co.za'),
+  title: {
+    default: 'Jiyology | Professional Construction & Plumbing Services in Soweto',
+    template: '%s | Jiyology Construction & Plumbing',
+  },
   description:
-    'Leading construction and plumbing company in Soweto. Jiyology delivers expert renovations, roofing, tiling, and plumbing with SABS-approved materials. Get your free quote today!',
+    'Leading construction and plumbing company in Soweto, Johannesburg. Expert renovations, roofing, tiling, paving, ceiling installation, and plumbing with SABS-approved materials. BEE Level 1 compliant. Get your free quote today!',
+  keywords: [
+    'construction company Soweto',
+    'plumbing services Johannesburg',
+    'roofing contractors Gauteng',
+    'home renovation Soweto',
+    'tiling and painting services',
+    'ceiling installation Johannesburg',
+    'paving services Gauteng',
+    'BEE compliant construction',
+    'SABS approved building materials',
+    'Jiyology construction',
+  ],
+  authors: [{ name: 'Jiyology Building Construction & Plumbing' }],
+  creator: 'Jiyology Building Construction & Plumbing',
+  publisher: 'Jiyology Building Construction & Plumbing',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_ZA',
+    url: 'https://www.jiyology.co.za',
+    siteName: 'Jiyology Construction & Plumbing',
+    title: 'Jiyology | Professional Construction & Plumbing Services in Soweto',
+    description:
+      'Trusted construction and plumbing services in Soweto and Johannesburg. Roofing, plumbing, renovations, tiling, paving, and ceiling installation. SABS approved, BEE Level 1.',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jiyology | Professional Construction & Plumbing Services in Soweto',
+    description:
+      'Trusted construction and plumbing services in Soweto and Johannesburg.',
+    images: ['/images/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://www.jiyology.co.za',
+    languages: {
+      'en-ZA': 'https://www.jiyology.co.za',
+      en: 'https://www.jiyology.co.za',
+    },
+  },
+  category: 'Construction & Plumbing',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+  ],
 }
 
 export default function RootLayout({
@@ -26,13 +104,63 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const orgLd = organizationLdJson()
+  const webLd = websiteLdJson()
+  const localLd = localBusinessLdJson()
+
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
+      <head>
+        <link rel="preconnect" href="https://ik.imagekit.io" />
+        <link rel="dns-prefetch" href="https://ik.imagekit.io" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-W10RHGL7NL"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-W10RHGL7NL');
+            `,
+          }}
+        />
+        <Script
+          id="ahrefs-analytics"
+          strategy="afterInteractive"
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="8oI1faHk7lKpuesgVY2lww"
+        />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        {children}
+        <main id="main-content" role="main">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

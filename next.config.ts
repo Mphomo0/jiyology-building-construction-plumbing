@@ -2,22 +2,22 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   images: {
-    // Remote images (ImageKit)
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'ik.imagekit.io',
-        pathname: '**', // allow all subpaths
+        pathname: '/**',
       },
     ],
-    // Local images with optional query strings
     localPatterns: [
       {
-        // matches all files under /public/images
-        pathname: '/images/**', // matches all files under /public/images
+        pathname: '/images/**',
       },
     ],
+    formats: ['image/webp', 'image/avif'],
   },
+  compress: true,
+  poweredByHeader: false,
 }
 
 export default nextConfig
