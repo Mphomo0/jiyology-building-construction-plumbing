@@ -87,6 +87,9 @@ export const metadata: Metadata = {
     },
   },
   category: 'Construction & Plumbing',
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
 }
 
 export const viewport = {
