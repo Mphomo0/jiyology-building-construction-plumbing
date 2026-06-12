@@ -4,7 +4,11 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/global/Navbar'
 import Footer from '@/components/global/Footer'
-import { organizationLdJson, websiteLdJson, localBusinessLdJson } from '@/lib/structured-data'
+import {
+  organizationLdJson,
+  websiteLdJson,
+  localBusinessLdJson,
+} from '@/lib/structured-data'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -19,11 +23,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.jiyology.co.za'),
   title: {
-    default: 'Jiyology | Professional Construction & Plumbing Services in Soweto',
+    default: 'Jiyology | Construction & Plumbing Services in Soweto',
     template: '%s | Jiyology Construction & Plumbing',
   },
   description:
-    'Leading construction and plumbing company in Soweto, Johannesburg. Expert renovations, roofing, tiling, paving, ceiling installation, and plumbing with SABS-approved materials. BEE Level 1 compliant. Get your free quote today!',
+    'Construction and plumbing experts in Soweto and Johannesburg. Roofing, renovations, tiling, paving, ceiling installation. SABS approved, BEE Level 1.',
   keywords: [
     'construction company Soweto',
     'plumbing services Johannesburg',
@@ -49,24 +53,22 @@ export const metadata: Metadata = {
     locale: 'en_ZA',
     url: 'https://www.jiyology.co.za',
     siteName: 'Jiyology Construction & Plumbing',
-    title: 'Jiyology | Professional Construction & Plumbing Services in Soweto',
+    title: 'Jiyology | Construction & Plumbing Services in Soweto',
     description:
-      'Trusted construction and plumbing services in Soweto and Johannesburg. Roofing, plumbing, renovations, tiling, paving, and ceiling installation. SABS approved, BEE Level 1.',
+      'Construction and plumbing experts in Soweto and Johannesburg. Roofing, renovations, tiling, paving, ceiling installation. SABS approved, BEE Level 1.',
     images: [
       {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        url: '/images/hero-image.jpg',
+        alt: 'Jiyology Building Construction & Plumbing — Soweto',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jiyology | Professional Construction & Plumbing Services in Soweto',
+    title: 'Jiyology | Construction & Plumbing Services in Soweto',
     description:
-      'Trusted construction and plumbing services in Soweto and Johannesburg.',
-    images: ['/images/og-image.jpg'],
+      'Construction and plumbing experts in Soweto and Johannesburg. Roofing, renovations, tiling, paving, ceiling installation. SABS approved, BEE Level 1.',
+    images: ['/images/hero-image.jpg'],
   },
   robots: {
     index: true,
@@ -81,10 +83,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.jiyology.co.za',
-    languages: {
-      'en-ZA': 'https://www.jiyology.co.za',
-      en: 'https://www.jiyology.co.za',
-    },
   },
   category: 'Construction & Plumbing',
   verification: {
@@ -121,15 +119,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [orgLd, webLd, localLd],
+            }),
+          }}
         />
         <script
           async
@@ -156,7 +151,7 @@ export default function RootLayout({
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
         >
           Skip to main content
         </a>

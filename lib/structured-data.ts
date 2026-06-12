@@ -1,9 +1,9 @@
 export const SITE_URL = 'https://www.jiyology.co.za'
 export const SITE_NAME = 'Jiyology Building Construction & Plumbing'
 export const SITE_DESCRIPTION =
-  'Professional construction and plumbing services in Soweto, Johannesburg. Roofing, plumbing, tiling, paving, ceiling installation, and home renovations. SABS approved, BEE Level 1 compliant.'
+  'Construction and plumbing experts in Soweto and Johannesburg. Roofing, renovations, tiling, paving, ceiling installation. SABS approved, BEE Level 1.'
 export const SITE_LOGO = '/images/logo.png'
-export const SITE_OG_IMAGE = '/images/og-image.jpg'
+export const SITE_OG_IMAGE = '/images/hero-image.jpg'
 
 export const ORGANIZATION = {
   name: 'Jiyology Building Construction and Plumbing Pty Ltd',
@@ -30,52 +30,14 @@ export const ORGANIZATION = {
 export function organizationLdJson() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}#organization`,
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#org`,
     name: ORGANIZATION.name,
     url: SITE_URL,
     logo: ORGANIZATION.logo,
-    image: ORGANIZATION.logo,
-    telephone: ORGANIZATION.telephone,
-    email: ORGANIZATION.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: ORGANIZATION.address.streetAddress,
-      addressLocality: ORGANIZATION.address.addressLocality,
-      addressRegion: ORGANIZATION.address.addressRegion,
-      postalCode: ORGANIZATION.address.postalCode,
-      addressCountry: ORGANIZATION.address.addressCountry,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: ORGANIZATION.geo.latitude,
-      longitude: ORGANIZATION.geo.longitude,
-    },
+    description:
+      'Professional construction and plumbing services in Soweto, Johannesburg. Roofing, plumbing, tiling, paving, ceiling installation, and home renovations.',
     sameAs: ORGANIZATION.sameAs,
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '17:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '08:00',
-        closes: '13:00',
-      },
-    ],
-    priceRange: ORGANIZATION.priceRange,
-    areaServed: {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: ORGANIZATION.geo.latitude,
-        longitude: ORGANIZATION.geo.longitude,
-      },
-      geoRadius: '50000',
-    },
   }
 }
 
@@ -83,12 +45,12 @@ export function websiteLdJson() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${SITE_URL}#website`,
+    '@id': `${SITE_URL}/#website`,
     url: SITE_URL,
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
     publisher: {
-      '@id': `${SITE_URL}#organization`,
+      '@id': `${SITE_URL}/#org`,
     },
   }
 }
@@ -97,7 +59,7 @@ export function localBusinessLdJson() {
   return {
     '@context': 'https://schema.org',
     '@type': 'GeneralContractor',
-    '@id': `${SITE_URL}#local-business`,
+    '@id': `${SITE_URL}/#local-business`,
     name: ORGANIZATION.name,
     url: SITE_URL,
     telephone: ORGANIZATION.telephone,
@@ -225,10 +187,23 @@ export function serviceLdJson(service: {
     serviceType: service.name,
     description: service.description,
     provider: {
-      '@id': `${SITE_URL}#organization`,
+      '@id': `${SITE_URL}/#org`,
     },
     areaServed: service.areaServed
       ? { '@type': 'Place', name: service.areaServed }
       : undefined,
+  }
+}
+
+export function breadcrumbLdJson(items: { name: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
   }
 }

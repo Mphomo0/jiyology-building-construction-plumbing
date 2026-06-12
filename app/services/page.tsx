@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import PageHeader from '@/components/global/PageHeader'
 import CTA from '@/components/sections/home/CTA'
 import MainServices from '@/components/sections/services/MainServices'
-import { faqLdJson } from '@/lib/structured-data'
+import { faqLdJson, breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'Our Services',
   description:
-    'Explore our complete range of construction and plumbing services: roofing, plumbing, paving, tiling & painting, ceiling installation, and home renovations. SABS approved materials, professional installation, serving Soweto and Johannesburg.',
+    'Roofing, plumbing, paving, tiling, ceiling installation and home renovations in Soweto and Johannesburg. SABS-approved materials, professional service.',
   openGraph: {
     title: 'Our Services | Jiyology Construction & Plumbing',
     description:
-      'Professional roofing, plumbing, paving, tiling, ceiling installation, and home renovation services in Soweto and Johannesburg. Get a free quote today.',
+      'Roofing, plumbing, paving, tiling, ceiling installation and home renovations in Soweto and Johannesburg. SABS-approved materials, professional service.',
     url: 'https://www.jiyology.co.za/services',
   },
   alternates: {
@@ -40,12 +40,20 @@ const serviceFaqs = [
 
 export default function Services() {
   const ldJson = faqLdJson(serviceFaqs)
+  const breadcrumb = breadcrumbLdJson([
+    { name: 'Home', url: 'https://www.jiyology.co.za/' },
+    { name: 'Services', url: 'https://www.jiyology.co.za/services' },
+  ])
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <PageHeader
         title="Our Services"

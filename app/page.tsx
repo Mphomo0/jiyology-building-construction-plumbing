@@ -6,13 +6,15 @@ import ServicesSection from '@/components/sections/home/ServicesSection'
 import FAQSection from '@/components/sections/home/FAQSection'
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: {
+    absolute: 'Construction & Plumbing Services Soweto | Jiyology',
+  },
   description:
-    "Jiyology Building Construction & Plumbing - Soweto's trusted contractor for roofing, plumbing, renovations, tiling, paving, and ceiling installation. SABS approved, BEE Level 1 compliant. Get your free quote today.",
+    "Soweto's trusted construction & plumbing contractor. Roofing, renovations, tiling, paving & ceiling installation. SABS approved, BEE Level 1. Free quote.",
   openGraph: {
-    title: 'Jiyology | Professional Construction & Plumbing Services in Soweto',
+    title: 'Construction & Plumbing Services Soweto | Jiyology',
     description:
-      'Trusted construction and plumbing services in Soweto and Johannesburg. Quality workmanship, SABS-approved materials, and BEE Level 1 compliant.',
+      "Soweto's trusted construction & plumbing contractor. Roofing, renovations, tiling, paving & ceiling installation. SABS approved, BEE Level 1. Free quote.",
     type: 'website',
     url: 'https://www.jiyology.co.za',
   },

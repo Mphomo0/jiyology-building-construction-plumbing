@@ -3,16 +3,16 @@ import PageHeader from '@/components/global/PageHeader'
 import AboutCompany from '@/components/sections/about/AboutCompany'
 import Vision from '@/components/sections/about/Vision'
 import CTA from '@/components/sections/home/CTA'
-import { faqLdJson } from '@/lib/structured-data'
+import { faqLdJson, breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Jiyology Building Construction & Plumbing - founded by Vusi and Lerato Jiya. SABS approved, BEE Level 1 compliant (50% black woman owned). Serving Soweto and Johannesburg with quality construction and plumbing services.',
+    'Founded by Vusi and Lerato Jiya in Soweto. SABS approved, BEE Level 1, 50% black woman owned. Quality construction and plumbing you can trust.',
   openGraph: {
-    title: 'About Jiyology | Our Story & Values',
+    title: 'About Us | Jiyology Construction & Plumbing',
     description:
-      'Discover the story behind Jiyology Construction & Plumbing. A BEE Level 1, SABS approved company committed to quality and client satisfaction in Soweto.',
+      'Founded by Vusi and Lerato Jiya in Soweto. SABS approved, BEE Level 1, 50% black woman owned. Quality construction and plumbing you can trust.',
     url: 'https://www.jiyology.co.za/about',
   },
   alternates: {
@@ -37,12 +37,20 @@ const aboutFaqs = [
 
 export default function About() {
   const ldJson = faqLdJson(aboutFaqs)
+  const breadcrumb = breadcrumbLdJson([
+    { name: 'Home', url: 'https://www.jiyology.co.za/' },
+    { name: 'About Us', url: 'https://www.jiyology.co.za/about' },
+  ])
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <PageHeader
         title="About Us"
