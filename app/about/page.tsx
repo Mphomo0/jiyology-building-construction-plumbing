@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       'Founded by Vusi and Lerato Jiya in Soweto. SABS approved, BEE Level 1, 50% black woman owned. Quality construction and plumbing you can trust.',
     url: 'https://www.jiyology.co.za/about',
+    images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
   },
   alternates: {
     canonical: 'https://www.jiyology.co.za/about',

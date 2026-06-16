@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       'Get a free construction or plumbing quote. Call (011) 931 0157 or email vusi@jiyology.co.za. Based in Emdeni South, Soweto. Open Mon-Fri 8AM-5PM.',
     url: 'https://www.jiyology.co.za/contact',
     type: 'website',
+    images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
   },
   alternates: {
     canonical: 'https://www.jiyology.co.za/contact',

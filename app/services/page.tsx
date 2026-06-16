@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       'Roofing, plumbing, paving, tiling, ceiling installation and home renovations in Soweto and Johannesburg. SABS-approved materials, professional service.',
     url: 'https://www.jiyology.co.za/services',
+    images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
   },
   alternates: {
     canonical: 'https://www.jiyology.co.za/services',

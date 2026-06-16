@@ -5,9 +5,28 @@ import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'How Often Should You Service Your Geyser? | South Africa Guide',
-  description: 'Essential geyser maintenance guide: service every 2 years, replace anode every 3-5 years. Prevent bursts and save electricity in Soweto and Johannesburg.',
-  alternates: { canonical: 'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa' },
+  title: { absolute: 'How Often to Service Your Geyser | Jiyology' },
+  description:
+    'Essential geyser maintenance guide: service every 2 years, replace anode every 3-5 years. Prevent bursts and save electricity in Soweto and Johannesburg.',
+  openGraph: {
+    title: 'How Often to Service Your Geyser | Jiyology',
+    description:
+      'Essential geyser maintenance guide: service every 2 years, replace anode every 3-5 years. Prevent bursts and save electricity in Soweto and Johannesburg.',
+    url: 'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa',
+    type: 'article',
+    images: [
+      {
+        url: '/images/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
+  alternates: {
+    canonical:
+      'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa',
+  },
 }
 
 export default function GeyserServicePage() {
@@ -41,31 +60,48 @@ Jiyology offers professional geyser servicing, repair, and installation across a
   return (
     <>
       <Script id="geyser-blog-schema" type="application/ld+json">
-        {JSON.stringify(blogLdJson({
-          title: 'How Often Should You Service Your Geyser in South Africa?',
-          description: 'Essential geyser maintenance guide for South African homeowners. Prevent bursts, save electricity, and extend your geyser lifespan.',
-          body,
-          datePublished: '2025-05-19',
-          dateModified: '2025-05-19',
-          author: 'Vusi Jiya',
-        }))}
+        {JSON.stringify(
+          blogLdJson({
+            title: 'How Often Should You Service Your Geyser in South Africa?',
+            description:
+              'Essential geyser maintenance guide for South African homeowners. Prevent bursts, save electricity, and extend your geyser lifespan.',
+            body,
+            datePublished: '2025-05-19',
+            dateModified: '2025-05-19',
+            author: 'Vusi Jiya',
+          }),
+        )}
       </Script>
       <Script id="geyser-blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumbLdJson([
-          { name: 'Home', url: 'https://www.jiyology.co.za' },
-          { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-          { name: 'Geyser Service Frequency', url: 'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa' },
-        ]))}
+        {JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
+            {
+              name: 'Geyser Service Frequency',
+              url: 'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa',
+            },
+          ]),
+        )}
       </Script>
 
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <nav className="text-sm text-neutral-500 mb-6">
-            <Link href="/" className="hover:text-[#33b6db]">Home</Link> / <Link href="/blog" className="hover:text-[#33b6db]">Blog</Link> / <span className="text-neutral-400">Geyser Service Guide</span>
+            <Link href="/" className="hover:text-[#33b6db]">
+              Home
+            </Link>{' '}
+            /{' '}
+            <Link href="/blog" className="hover:text-[#33b6db]">
+              Blog
+            </Link>{' '}
+            / <span className="text-neutral-400">Geyser Service Guide</span>
           </nav>
           <div className="flex items-center gap-3 text-sm text-neutral-500 mb-4">
-            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">Plumbing</span>
+            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">
+              Plumbing
+            </span>
             <span>19 May 2025</span>
             <span>6 min read</span>
           </div>
@@ -73,7 +109,8 @@ Jiyology offers professional geyser servicing, repair, and installation across a
             How Often Should You Service Your Geyser in South Africa?
           </h1>
           <p className="text-lg text-neutral-400 leading-relaxed">
-            By Vusi Jiya &mdash; Expert advice to prevent geyser bursts and extend your water heater's lifespan.
+            By Vusi Jiya &mdash; Expert advice to prevent geyser bursts and
+            extend your water heater's lifespan.
           </p>
         </div>
       </article>
@@ -82,21 +119,69 @@ Jiyology offers professional geyser servicing, repair, and installation across a
         <div className="container mx-auto px-4 max-w-3xl prose prose-neutral dark:prose-invert prose-lg">
           {body.split('\n\n').map((p, i) => {
             if (p.startsWith('How Often Should You Service Your Geyser?')) {
-              return <div key={i}><h2 className="text-2xl font-bold mt-8 mb-4">How Often Should You Service Your Geyser?</h2><p>{p.split('\n')[1]}</p></div>
+              return (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    How Often Should You Service Your Geyser?
+                  </h2>
+                  <p>{p.split('\n')[1]}</p>
+                </div>
+              )
             }
             if (p.startsWith('What Happens During a Geyser Service:')) {
               const [title, ...items] = p.split('\n')
-              return <div key={i}><h2 className="text-2xl font-bold mt-8 mb-4">{title.replace(':', '')}</h2><ul className="list-disc pl-6 space-y-2">{items.map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}</ul></div>
+              return (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    {title.replace(':', '')}
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^- /, '')}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
             }
             if (p.startsWith('Common Geyser Myths:')) {
               const [title, ...items] = p.split('\n')
-              return <div key={i}><h2 className="text-2xl font-bold mt-8 mb-4">{title.replace(':', '')}</h2><ul className="list-disc pl-6 space-y-2">{items.map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}</ul></div>
+              return (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    {title.replace(':', '')}
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^- /, '')}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
             }
             if (p.startsWith('Signs Your Geyser Needs Immediate Servicing:')) {
               const [title, ...items] = p.split('\n')
-              return <div key={i}><h2 className="text-2xl font-bold mt-8 mb-4">{title.replace(':', '')}</h2><ul className="list-disc pl-6 space-y-2">{items.map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}</ul></div>
+              return (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    {title.replace(':', '')}
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^- /, '')}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
             }
-            if (p.startsWith('The Sacrificial Anode:')) return <div key={i}><h2 className="text-2xl font-bold mt-8 mb-4">The Sacrificial Anode: Your Geyser&rsquo;s Secret Lifesaver</h2><p>{p.split('\n')[1]}</p></div>
+            if (p.startsWith('The Sacrificial Anode:'))
+              return (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    The Sacrificial Anode: Your Geyser&rsquo;s Secret Lifesaver
+                  </h2>
+                  <p>{p.split('\n')[1]}</p>
+                </div>
+              )
             return <p key={i}>{p}</p>
           })}
         </div>
@@ -104,13 +189,22 @@ Jiyology offers professional geyser servicing, repair, and installation across a
 
       <section className="py-12 bg-muted/20">
         <div className="container mx-auto px-4 max-w-3xl flex flex-wrap gap-4 justify-center">
-          <Link href="/services/geyser-installation" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm">
+          <Link
+            href="/services/geyser-installation"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm"
+          >
             Geyser Services
           </Link>
-          <Link href="/services/plumbing" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm">
+          <Link
+            href="/services/plumbing"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm"
+          >
             Plumbing Services
           </Link>
-          <Link href="/blog" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm">
+          <Link
+            href="/blog"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm"
+          >
             More Articles
           </Link>
         </div>

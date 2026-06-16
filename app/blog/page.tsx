@@ -5,8 +5,23 @@ import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Building & Plumbing Blog | Jiyology Construction Soweto',
-  description: 'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg. Practical advice from experienced contractors.',
+  title: { absolute: 'Building & Plumbing Blog | Jiyology' },
+  description:
+    'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg. Practical advice from experienced contractors.',
+  openGraph: {
+    title: 'Building & Plumbing Blog | Jiyology',
+    description:
+      'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg. Practical advice from experienced contractors.',
+    url: 'https://www.jiyology.co.za/blog',
+    images: [
+      {
+        url: '/images/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
   alternates: { canonical: 'https://www.jiyology.co.za/blog' },
 }
 
@@ -36,7 +51,8 @@ const articles = [
     category: 'Advice',
   },
   {
-    title: 'Concrete Roof Tiles vs IBR Sheeting: Which Is Best for Your Soweto Home?',
+    title:
+      'Concrete Roof Tiles vs IBR Sheeting: Which Is Best for Your Soweto Home?',
     desc: 'Compare costs, durability, insulation, and lifespan of concrete roof tiles versus IBR/Chromadek sheeting for Soweto homes.',
     href: '/blog/concrete-roof-tiles-vs-ibr-sheeting',
     date: '26 May 2025',
@@ -57,20 +73,26 @@ export default function BlogHubPage() {
   return (
     <>
       <Script id="blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumbLdJson([
-          { name: 'Home', url: 'https://www.jiyology.co.za' },
-          { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-        ]))}
+        {JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
+          ]),
+        )}
       </Script>
 
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden" aria-label="Blog">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
+      <section
+        className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
+        aria-label="Blog"
+      >
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
             Construction &amp; Plumbing Blog
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 leading-relaxed max-w-3xl mx-auto">
-            Practical advice, cost guides, and expert tips for homeowners in Soweto and Johannesburg.
+            Practical advice, cost guides, and expert tips for homeowners in
+            Soweto and Johannesburg.
           </p>
         </div>
       </section>
@@ -79,13 +101,21 @@ export default function BlogHubPage() {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-6">
             {articles.map((a) => (
-              <Link key={a.href} href={a.href} className="group bg-muted/20 rounded-2xl p-6 border border-border/60 hover:border-[#33b6db]/30 hover:shadow-md transition-all">
+              <Link
+                key={a.href}
+                href={a.href}
+                className="group bg-muted/20 rounded-2xl p-6 border border-border/60 hover:border-[#33b6db]/30 hover:shadow-md transition-all"
+              >
                 <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
-                  <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">{a.category}</span>
+                  <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">
+                    {a.category}
+                  </span>
                   <span>{a.date}</span>
                   <span>{a.readTime}</span>
                 </div>
-                <h2 className="text-xl font-bold text-foreground group-hover:text-[#33b6db] transition-colors mb-2">{a.title}</h2>
+                <h2 className="text-xl font-bold text-foreground group-hover:text-[#33b6db] transition-colors mb-2">
+                  {a.title}
+                </h2>
                 <p className="text-muted-foreground">{a.desc}</p>
               </Link>
             ))}

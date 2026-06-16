@@ -5,8 +5,23 @@ import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'FAQ | Construction & Plumbing Questions Answered | Jiyology',
-  description: 'Find answers to common questions about construction, plumbing, roofing, and renovations in Soweto and Johannesburg. Get expert advice from Jiyology.',
+  title: { absolute: 'Construction & Plumbing FAQ | Jiyology' },
+  description:
+    'Find answers to common questions about construction, plumbing, roofing, and renovations in Soweto and Johannesburg. Get expert advice from Jiyology.',
+  openGraph: {
+    title: 'Construction & Plumbing FAQ | Jiyology',
+    description:
+      'Find answers to common questions about construction, plumbing, roofing, and renovations in Soweto and Johannesburg. Get expert advice from Jiyology.',
+    url: 'https://www.jiyology.co.za/faq',
+    images: [
+      {
+        url: '/images/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
   alternates: { canonical: 'https://www.jiyology.co.za/faq' },
 }
 
@@ -32,20 +47,26 @@ export default function FAQHubPage() {
   return (
     <>
       <Script id="faq-hub-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumbLdJson([
-          { name: 'Home', url: 'https://www.jiyology.co.za' },
-          { name: 'FAQ', url: 'https://www.jiyology.co.za/faq' },
-        ]))}
+        {JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'FAQ', url: 'https://www.jiyology.co.za/faq' },
+          ]),
+        )}
       </Script>
 
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden" aria-label="FAQ">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
+      <section
+        className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
+        aria-label="FAQ"
+      >
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
             Frequently Asked Questions
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 leading-relaxed max-w-3xl mx-auto">
-            Expert answers to common questions about construction, plumbing, roofing, and renovations in Soweto and Johannesburg.
+            Expert answers to common questions about construction, plumbing,
+            roofing, and renovations in Soweto and Johannesburg.
           </p>
         </div>
       </section>
@@ -54,8 +75,14 @@ export default function FAQHubPage() {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="grid md:grid-cols-3 gap-8">
             {faqCategories.map((cat) => (
-              <Link key={cat.title} href={cat.href} className="bg-muted/30 rounded-2xl p-8 border border-border/60 hover:border-[#33b6db]/30 hover:shadow-lg transition-all group">
-                <h2 className="text-2xl font-bold text-foreground group-hover:text-[#33b6db] transition-colors mb-3">{cat.title}</h2>
+              <Link
+                key={cat.title}
+                href={cat.href}
+                className="bg-muted/30 rounded-2xl p-8 border border-border/60 hover:border-[#33b6db]/30 hover:shadow-lg transition-all group"
+              >
+                <h2 className="text-2xl font-bold text-foreground group-hover:text-[#33b6db] transition-colors mb-3">
+                  {cat.title}
+                </h2>
                 <p className="text-muted-foreground">{cat.desc}</p>
               </Link>
             ))}

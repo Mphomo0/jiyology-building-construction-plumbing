@@ -5,8 +5,23 @@ import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Roofing FAQ | Roof Repair & Installation Questions | Jiyology Soweto',
-  description: 'Expert answers to roofing questions in Soweto: costs, materials (tiles, sheets, thatch), repairs, leaks, maintenance, NHBRC warranty, and more. Local roofing contractor.',
+  title: { absolute: 'Roofing FAQ Soweto | Jiyology' },
+  description:
+    'Expert answers to roofing questions in Soweto: costs, materials (tiles, sheets, thatch), repairs, leaks, maintenance, NHBRC warranty, and more.',
+  openGraph: {
+    title: 'Roofing FAQ Soweto | Jiyology',
+    description:
+      'Expert answers to roofing questions in Soweto: costs, materials (tiles, sheets, thatch), repairs, leaks, maintenance, NHBRC warranty, and more.',
+    url: 'https://www.jiyology.co.za/faq/roofing',
+    images: [
+      {
+        url: '/images/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
   alternates: { canonical: 'https://www.jiyology.co.za/faq/roofing' },
 }
 
@@ -79,24 +94,40 @@ export default function RoofingFAQPage() {
         })}
       </Script>
       <Script id="roofing-faq-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumbLdJson([
-          { name: 'Home', url: 'https://www.jiyology.co.za' },
-          { name: 'FAQ', url: 'https://www.jiyology.co.za/faq' },
-          { name: 'Roofing FAQ', url: 'https://www.jiyology.co.za/faq/roofing' },
-        ]))}
+        {JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'FAQ', url: 'https://www.jiyology.co.za/faq' },
+            {
+              name: 'Roofing FAQ',
+              url: 'https://www.jiyology.co.za/faq/roofing',
+            },
+          ]),
+        )}
       </Script>
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
-          <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 mb-6">
-            <Link href="/" className="hover:text-[#33b6db]">Home</Link> / <Link href="/faq" className="hover:text-[#33b6db]">FAQ</Link> / <span className="text-neutral-400">Roofing</span>
+          <nav
+            aria-label="Breadcrumb"
+            className="text-sm text-neutral-500 mb-6"
+          >
+            <Link href="/" className="hover:text-[#33b6db]">
+              Home
+            </Link>{' '}
+            /{' '}
+            <Link href="/faq" className="hover:text-[#33b6db]">
+              FAQ
+            </Link>{' '}
+            / <span className="text-neutral-400">Roofing</span>
           </nav>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
             Roofing FAQ
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 leading-relaxed max-w-3xl mx-auto">
-            Expert answers to the most common roofing questions for Soweto homeowners, landlords, and property developers.
+            Expert answers to the most common roofing questions for Soweto
+            homeowners, landlords, and property developers.
           </p>
         </div>
       </section>
@@ -107,12 +138,26 @@ export default function RoofingFAQPage() {
             {faqItems.map((item, i) => (
               <details key={i} className="group py-6">
                 <summary className="flex items-start justify-between cursor-pointer list-none">
-                  <h2 className="text-lg font-semibold text-foreground pr-8 group-open:text-[#33b6db]">{item.q}</h2>
+                  <h2 className="text-lg font-semibold text-foreground pr-8 group-open:text-[#33b6db]">
+                    {item.q}
+                  </h2>
                   <span className="text-[#33b6db] shrink-0 mt-1 transition-transform group-open:rotate-180">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6" /></svg>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
                   </span>
                 </summary>
-                <div className="mt-4 text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: item.a }} />
+                <div
+                  className="mt-4 text-muted-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: item.a }}
+                />
               </details>
             ))}
           </div>
@@ -121,15 +166,24 @@ export default function RoofingFAQPage() {
 
       <section className="py-16 bg-muted/20">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Still Have Roofing Questions?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">
+            Still Have Roofing Questions?
+          </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Not every question fits a FAQ. Contact our team for a personalised answer about your specific roof.
+            Not every question fits a FAQ. Contact our team for a personalised
+            answer about your specific roof.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/services/roofing" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all">
+            <Link
+              href="/services/roofing"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all"
+            >
               Roofing Services
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all"
+            >
               Contact Us
             </Link>
           </div>

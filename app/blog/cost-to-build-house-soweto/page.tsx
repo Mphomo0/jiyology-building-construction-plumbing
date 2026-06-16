@@ -5,9 +5,27 @@ import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Cost to Build a House in Soweto 2025 | Per m² Breakdown | Jiyology',
-  description: 'Complete cost breakdown to build a house in Soweto, Johannesburg: R8,500–R15,000/m². Includes materials, labour, plans, NHBRC fees, and hidden costs.',
-  alternates: { canonical: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto' },
+  title: { absolute: 'Cost to Build in Soweto 2025 | Jiyology' },
+  description:
+    'Complete cost breakdown to build a house in Soweto, Johannesburg: R8,500–R15,000/m². Includes materials, labour, plans, NHBRC fees, and hidden costs.',
+  openGraph: {
+    title: 'Cost to Build in Soweto 2025 | Jiyology',
+    description:
+      'Complete cost breakdown to build a house in Soweto: R8,500–R15,000/m². Includes materials, labour, plans, NHBRC fees, and hidden costs.',
+    url: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto',
+    type: 'article',
+    images: [
+      {
+        url: '/images/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto',
+  },
 }
 
 export default function CostToBuildPage() {
@@ -52,31 +70,51 @@ We offer free building consultations across Soweto, including Pimville, Protea G
   return (
     <>
       <Script id="cost-blog-schema" type="application/ld+json">
-        {JSON.stringify(blogLdJson({
-          title: 'How Much Does It Cost to Build a House in Soweto in 2025?',
-          description: 'Complete breakdown of building costs per square metre in Soweto, including materials, labour, plans, and permits.',
-          body,
-          datePublished: '2025-06-16',
-          dateModified: '2025-06-16',
-          author: 'Vusi Jiya',
-        }))}
+        {JSON.stringify(
+          blogLdJson({
+            title: 'How Much Does It Cost to Build a House in Soweto in 2025?',
+            description:
+              'Complete breakdown of building costs per square metre in Soweto, including materials, labour, plans, and permits.',
+            body,
+            datePublished: '2025-06-16',
+            dateModified: '2025-06-16',
+            author: 'Vusi Jiya',
+          }),
+        )}
       </Script>
       <Script id="cost-blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumbLdJson([
-          { name: 'Home', url: 'https://www.jiyology.co.za' },
-          { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-          { name: 'Cost to Build in Soweto', url: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto' },
-        ]))}
+        {JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
+            {
+              name: 'Cost to Build in Soweto',
+              url: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto',
+            },
+          ]),
+        )}
       </Script>
 
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <nav className="text-sm text-neutral-500 mb-6">
-            <Link href="/" className="hover:text-[#33b6db]">Home</Link> / <Link href="/blog" className="hover:text-[#33b6db]">Blog</Link> / <span className="text-neutral-400">Cost to Build a House in Soweto</span>
+            <Link href="/" className="hover:text-[#33b6db]">
+              Home
+            </Link>{' '}
+            /{' '}
+            <Link href="/blog" className="hover:text-[#33b6db]">
+              Blog
+            </Link>{' '}
+            /{' '}
+            <span className="text-neutral-400">
+              Cost to Build a House in Soweto
+            </span>
           </nav>
           <div className="flex items-center gap-3 text-sm text-neutral-500 mb-4">
-            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">Construction</span>
+            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">
+              Construction
+            </span>
             <span>16 June 2025</span>
             <span>8 min read</span>
           </div>
@@ -84,7 +122,8 @@ We offer free building consultations across Soweto, including Pimville, Protea G
             How Much Does It Cost to Build a House in Soweto in 2025?
           </h1>
           <p className="text-lg text-neutral-400 leading-relaxed">
-            By Vusi Jiya &mdash; Complete cost breakdown per square metre for building in Soweto and Johannesburg.
+            By Vusi Jiya &mdash; Complete cost breakdown per square metre for
+            building in Soweto and Johannesburg.
           </p>
         </div>
       </article>
@@ -96,7 +135,9 @@ We offer free building consultations across Soweto, including Pimville, Protea G
               const [title, ...rest] = p.split('\n')
               return (
                 <div key={i}>
-                  <h2 className="text-2xl font-bold mt-8 mb-4">{title.replace(':', '')}</h2>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    {title.replace(':', '')}
+                  </h2>
                   <p>{rest.join('\n')}</p>
                 </div>
               )
@@ -105,8 +146,14 @@ We offer free building consultations across Soweto, including Pimville, Protea G
               const [title, ...items] = p.split('\n')
               return (
                 <div key={i}>
-                  <h2 className="text-2xl font-bold mt-8 mb-4">{title.replace(':', '')}</h2>
-                  <ul className="list-disc pl-6 space-y-2">{items.map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}</ul>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    {title.replace(':', '')}
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^- /, '')}</li>
+                    ))}
+                  </ul>
                 </div>
               )
             }
@@ -114,12 +161,28 @@ We offer free building consultations across Soweto, including Pimville, Protea G
               const [title, ...items] = p.split('\n')
               return (
                 <div key={i}>
-                  <h2 className="text-2xl font-bold mt-8 mb-4">{title.replace(':', '')}</h2>
-                  <ul className="list-disc pl-6 space-y-2">{items.map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}</ul>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    {title.replace(':', '')}
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^- /, '')}</li>
+                    ))}
+                  </ul>
                 </div>
               )
             }
-            if (p.startsWith('Foundation and Structure:') || p.startsWith('Roofing:') || p.startsWith('Ceilings:') || p.startsWith('Plumbing and Electrical:') || p.startsWith('Plastering and Painting:') || p.startsWith('Flooring and Tiling:') || p.startsWith('Windows and Doors:') || p.startsWith('Building Plans and Approval:') || p.startsWith('NHBRC Registration and Enrolment:')) {
+            if (
+              p.startsWith('Foundation and Structure:') ||
+              p.startsWith('Roofing:') ||
+              p.startsWith('Ceilings:') ||
+              p.startsWith('Plumbing and Electrical:') ||
+              p.startsWith('Plastering and Painting:') ||
+              p.startsWith('Flooring and Tiling:') ||
+              p.startsWith('Windows and Doors:') ||
+              p.startsWith('Building Plans and Approval:') ||
+              p.startsWith('NHBRC Registration and Enrolment:')
+            ) {
               return <p key={i}>{p}</p>
             }
             return <p key={i}>{p}</p>
@@ -130,13 +193,22 @@ We offer free building consultations across Soweto, including Pimville, Protea G
       <section className="py-12 bg-muted/20">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/services/construction" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm">
+            <Link
+              href="/services/construction"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm"
+            >
               Construction Services
             </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm"
+            >
               Get a Free Quote
             </Link>
-            <Link href="/blog" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm">
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm"
+            >
               More Articles
             </Link>
           </div>

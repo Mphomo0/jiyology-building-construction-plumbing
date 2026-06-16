@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'Browse our portfolio of completed roofing, plumbing, paving, tiling, and renovation projects in Soweto and Johannesburg. Quality workmanship on every job.',
     url: 'https://www.jiyology.co.za/gallery',
     type: 'website',
+    images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
   },
   alternates: {
     canonical: 'https://www.jiyology.co.za/gallery',

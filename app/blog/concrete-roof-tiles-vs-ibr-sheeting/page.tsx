@@ -5,9 +5,28 @@ import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Concrete Roof Tiles vs IBR Sheeting | Soweto Roofing Guide',
-  description: 'Compare concrete roof tiles vs IBR/Chromadek sheeting: cost, durability, insulation, noise, lifespan. Which is best for your Soweto home?',
-  alternates: { canonical: 'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting' },
+  title: { absolute: 'Concrete Tiles vs IBR Sheeting | Jiyology' },
+  description:
+    'Compare concrete roof tiles vs IBR/Chromadek sheeting: cost, durability, insulation, noise, lifespan. Which is best for your Soweto home?',
+  openGraph: {
+    title: 'Concrete Tiles vs IBR Sheeting | Jiyology',
+    description:
+      'Compare concrete roof tiles vs IBR/Chromadek sheeting: cost, durability, insulation, noise, lifespan. Which is best for your Soweto home?',
+    url: 'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',
+    type: 'article',
+    images: [
+      {
+        url: '/images/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
+  alternates: {
+    canonical:
+      'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',
+  },
 }
 
 export default function RoofTilesVsIbrPage() {
@@ -58,39 +77,59 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
   return (
     <>
       <Script id="roof-comparison-blog-schema" type="application/ld+json">
-        {JSON.stringify(blogLdJson({
-          title: 'Concrete Roof Tiles vs IBR Sheeting: Which Is Best for Your Soweto Home?',
-          description: 'Compare costs, durability, insulation, noise, and lifespan of concrete roof tiles versus IBR/Chromadek sheeting for Soweto homes.',
-          body,
-          datePublished: '2025-05-26',
-          dateModified: '2025-05-26',
-          author: 'Vusi Jiya',
-        }))}
+        {JSON.stringify(
+          blogLdJson({
+            title:
+              'Concrete Roof Tiles vs IBR Sheeting: Which Is Best for Your Soweto Home?',
+            description:
+              'Compare costs, durability, insulation, noise, and lifespan of concrete roof tiles versus IBR/Chromadek sheeting for Soweto homes.',
+            body,
+            datePublished: '2025-05-26',
+            dateModified: '2025-05-26',
+            author: 'Vusi Jiya',
+          }),
+        )}
       </Script>
       <Script id="roof-comparison-blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumbLdJson([
-          { name: 'Home', url: 'https://www.jiyology.co.za' },
-          { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-          { name: 'Roof Tiles vs IBR Sheeting', url: 'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting' },
-        ]))}
+        {JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
+            {
+              name: 'Roof Tiles vs IBR Sheeting',
+              url: 'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',
+            },
+          ]),
+        )}
       </Script>
 
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <nav className="text-sm text-neutral-500 mb-6">
-            <Link href="/" className="hover:text-[#33b6db]">Home</Link> / <Link href="/blog" className="hover:text-[#33b6db]">Blog</Link> / <span className="text-neutral-400">Roof Tiles vs IBR</span>
+            <Link href="/" className="hover:text-[#33b6db]">
+              Home
+            </Link>{' '}
+            /{' '}
+            <Link href="/blog" className="hover:text-[#33b6db]">
+              Blog
+            </Link>{' '}
+            / <span className="text-neutral-400">Roof Tiles vs IBR</span>
           </nav>
           <div className="flex items-center gap-3 text-sm text-neutral-500 mb-4">
-            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">Roofing</span>
+            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">
+              Roofing
+            </span>
             <span>26 May 2025</span>
             <span>9 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-            Concrete Roof Tiles vs IBR Sheeting: Which Is Best for Your Soweto Home?
+            Concrete Roof Tiles vs IBR Sheeting: Which Is Best for Your Soweto
+            Home?
           </h1>
           <p className="text-lg text-neutral-400 leading-relaxed">
-            By Vusi Jiya &mdash; A complete comparison to help Soweto homeowners choose the right roofing material.
+            By Vusi Jiya &mdash; A complete comparison to help Soweto homeowners
+            choose the right roofing material.
           </p>
         </div>
       </article>
@@ -100,12 +139,36 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
           {body.split('\n\n').map((p, i) => {
             if (p.startsWith('Cost Comparison')) {
               const [title, ...rest] = p.split('\n')
-              return <div key={i}><h2 className="text-2xl font-bold mt-8 mb-4">{title}</h2>{rest.map((r, j) => <p key={j}>{r}</p>)}</div>
+              return (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">{title}</h2>
+                  {rest.map((r, j) => (
+                    <p key={j}>{r}</p>
+                  ))}
+                </div>
+              )
             }
-            if (p.startsWith('Winner for')) return <p key={i} className="font-semibold text-[#33b6db]">{p}</p>
-            if (p.startsWith('Choose concrete roof tiles for:') || p.startsWith('Choose IBR sheeting for:')) {
+            if (p.startsWith('Winner for'))
+              return (
+                <p key={i} className="font-semibold text-[#33b6db]">
+                  {p}
+                </p>
+              )
+            if (
+              p.startsWith('Choose concrete roof tiles for:') ||
+              p.startsWith('Choose IBR sheeting for:')
+            ) {
               const [title, ...items] = p.split('\n')
-              return <div key={i}><p className="font-semibold">{title}</p><ul className="list-disc pl-6 space-y-1">{items.map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}</ul></div>
+              return (
+                <div key={i}>
+                  <p className="font-semibold">{title}</p>
+                  <ul className="list-disc pl-6 space-y-1">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^- /, '')}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
             }
             return <p key={i}>{p}</p>
           })}
@@ -114,13 +177,22 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
 
       <section className="py-12 bg-muted/20">
         <div className="container mx-auto px-4 max-w-3xl flex flex-wrap gap-4 justify-center">
-          <Link href="/services/roofing" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm">
+          <Link
+            href="/services/roofing"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm"
+          >
             Roofing Services
           </Link>
-          <Link href="/services/roof-repairs" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm">
+          <Link
+            href="/services/roof-repairs"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm"
+          >
             Roof Repairs
           </Link>
-          <Link href="/blog" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm">
+          <Link
+            href="/blog"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm"
+          >
             More Articles
           </Link>
         </div>

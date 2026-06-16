@@ -5,9 +5,28 @@ import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
-  title: 'How to Find a Reliable Contractor in Soweto | 10 Checks | Jiyology',
-  description: '10 essential checks before hiring a contractor in Soweto: NHBRC registration, references, contracts, quotes, and red flags to avoid shoddy work.',
-  alternates: { canonical: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto' },
+  title: { absolute: 'Find a Reliable Contractor Soweto | Jiyology' },
+  description:
+    '10 essential checks before hiring a contractor in Soweto: NHBRC registration, references, contracts, quotes, and red flags to avoid shoddy work.',
+  openGraph: {
+    title: 'Find a Reliable Contractor Soweto | Jiyology',
+    description:
+      '10 essential checks before hiring a contractor in Soweto: NHBRC registration, references, contracts, quotes, and red flags to avoid shoddy work.',
+    url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
+    type: 'article',
+    images: [
+      {
+        url: '/images/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jiyology Building Construction & Plumbing',
+      },
+    ],
+  },
+  alternates: {
+    canonical:
+      'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
+  },
 }
 
 export default function FindContractorPage() {
@@ -56,31 +75,53 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
   return (
     <>
       <Script id="reliable-contractor-blog-schema" type="application/ld+json">
-        {JSON.stringify(blogLdJson({
-          title: 'How to Find a Reliable Contractor in Soweto: 10 Checks to Make',
-          description: 'Avoid contractor scams and shoddy workmanship by making these 10 essential checks before hiring any builder or plumber in Soweto.',
-          body,
-          datePublished: '2025-06-02',
-          dateModified: '2025-06-02',
-          author: 'Lerato Jiya',
-        }))}
+        {JSON.stringify(
+          blogLdJson({
+            title:
+              'How to Find a Reliable Contractor in Soweto: 10 Checks to Make',
+            description:
+              'Avoid contractor scams and shoddy workmanship by making these 10 essential checks before hiring any builder or plumber in Soweto.',
+            body,
+            datePublished: '2025-06-02',
+            dateModified: '2025-06-02',
+            author: 'Lerato Jiya',
+          }),
+        )}
       </Script>
-      <Script id="reliable-contractor-blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumbLdJson([
-          { name: 'Home', url: 'https://www.jiyology.co.za' },
-          { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-          { name: 'Find a Reliable Contractor in Soweto', url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto' },
-        ]))}
+      <Script
+        id="reliable-contractor-blog-breadcrumb"
+        type="application/ld+json"
+      >
+        {JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
+            {
+              name: 'Find a Reliable Contractor in Soweto',
+              url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
+            },
+          ]),
+        )}
       </Script>
 
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <nav className="text-sm text-neutral-500 mb-6">
-            <Link href="/" className="hover:text-[#33b6db]">Home</Link> / <Link href="/blog" className="hover:text-[#33b6db]">Blog</Link> / <span className="text-neutral-400">Reliable Contractor Guide</span>
+            <Link href="/" className="hover:text-[#33b6db]">
+              Home
+            </Link>{' '}
+            /{' '}
+            <Link href="/blog" className="hover:text-[#33b6db]">
+              Blog
+            </Link>{' '}
+            /{' '}
+            <span className="text-neutral-400">Reliable Contractor Guide</span>
           </nav>
           <div className="flex items-center gap-3 text-sm text-neutral-500 mb-4">
-            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">Advice</span>
+            <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">
+              Advice
+            </span>
             <span>2 June 2025</span>
             <span>10 min read</span>
           </div>
@@ -88,7 +129,8 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
             How to Find a Reliable Contractor in Soweto: 10 Checks to Make
           </h1>
           <p className="text-lg text-neutral-400 leading-relaxed">
-            By Lerato Jiya &mdash; Essential checks to avoid bad builders and find trusted contractors in Soweto.
+            By Lerato Jiya &mdash; Essential checks to avoid bad builders and
+            find trusted contractors in Soweto.
           </p>
         </div>
       </article>
@@ -98,11 +140,27 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
           {body.split('\n\n').map((p, i) => {
             if (/^\d+\. /.test(p)) {
               const [title, ...rest] = p.split('\n')
-              return <div key={i}><h2 className="text-xl font-bold mt-6 mb-3">{title}</h2>{rest.length > 0 && <p>{rest.join('\n')}</p>}</div>
+              return (
+                <div key={i}>
+                  <h2 className="text-xl font-bold mt-6 mb-3">{title}</h2>
+                  {rest.length > 0 && <p>{rest.join('\n')}</p>}
+                </div>
+              )
             }
             if (p.startsWith('Red Flags to Watch For:')) {
               const [title, ...items] = p.split('\n')
-              return <div key={i}><h2 className="text-2xl font-bold mt-8 mb-4">{title.replace(':', '')}</h2><ul className="list-disc pl-6 space-y-2">{items.map((item, j) => <li key={j}>{item.replace(/^- /, '')}</li>)}</ul></div>
+              return (
+                <div key={i}>
+                  <h2 className="text-2xl font-bold mt-8 mb-4">
+                    {title.replace(':', '')}
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2">
+                    {items.map((item, j) => (
+                      <li key={j}>{item.replace(/^- /, '')}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
             }
             return <p key={i}>{p}</p>
           })}
@@ -111,13 +169,22 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
 
       <section className="py-12 bg-muted/20">
         <div className="container mx-auto px-4 max-w-3xl flex flex-wrap gap-4 justify-center">
-          <Link href="/about" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm">
+          <Link
+            href="/about"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all text-sm"
+          >
             About Jiyology
           </Link>
-          <Link href="/testimonials" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm">
+          <Link
+            href="/testimonials"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all text-sm"
+          >
             Read Reviews
           </Link>
-          <Link href="/blog" className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm">
+          <Link
+            href="/blog"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm"
+          >
             More Articles
           </Link>
         </div>
