@@ -9,11 +9,13 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Check } from 'lucide-react'
 
 const services = [
   {
     title: 'Roofing',
+    href: '/services/roofing',
     description:
       'Complete roofing solutions including roof tiles, roof sheets, and professional roof erection with quality materials and expert installation.',
     image: 'https://ik.imagekit.io/i6f6omrki/roofing.jpg',
@@ -26,6 +28,7 @@ const services = [
   },
   {
     title: 'Plumbing Services',
+    href: '/services/plumbing',
     description:
       'Comprehensive plumbing services including maintenance, repairs, installations, and emergency callouts with reliable and efficient service.',
     image: 'https://ik.imagekit.io/i6f6omrki/plumbing.jpg',
@@ -38,6 +41,7 @@ const services = [
   },
   {
     title: 'Paving',
+    href: '/services/paving',
     description:
       'Professional paving for driveways, patios, and walkways. We also repair and restore existing paving with quality materials.',
     image: 'https://ik.imagekit.io/i6f6omrki/paving.jpg',
@@ -50,6 +54,7 @@ const services = [
   },
   {
     title: 'Tiling and Painting',
+    href: '/services/tiling-painting',
     description:
       'Expert tiling and painting services for residential, commercial, and industrial clients with excellent craftsmanship and attention to detail.',
     image: 'https://ik.imagekit.io/i6f6omrki/painting.jpg',
@@ -62,6 +67,7 @@ const services = [
   },
   {
     title: 'Ceiling Installation',
+    href: '/services/ceiling-installation',
     description:
       'Professional ceiling installation for new builds and repairs to existing ceilings. Quality workmanship guaranteed on every project.',
     image: 'https://ik.imagekit.io/i6f6omrki/ceiling.jpg',
@@ -74,6 +80,7 @@ const services = [
   },
   {
     title: 'Home Renovation',
+    href: '/services/renovations',
     description:
       'Comprehensive interior and exterior home renovation solutions. From single room updates to full home transformations.',
     image: 'https://ik.imagekit.io/i6f6omrki/renovations.jpg',
@@ -122,7 +129,8 @@ export default function MainServices() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Card className="group h-full overflow-hidden border-border/60 shadow-sm hover:shadow-xl transition-all duration-300">
+              <Link href={service.href} className="block h-full">
+                <Card className="group h-full overflow-hidden border-border/60 shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="relative h-52 overflow-hidden">
                   <Image
                     src={`${service.image}?tr=w-600,h-400,q-80,f-auto`}
@@ -157,7 +165,8 @@ export default function MainServices() {
                     ))}
                   </ul>
                 </CardContent>
-              </Card>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>

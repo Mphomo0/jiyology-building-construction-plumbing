@@ -93,6 +93,13 @@ export function localBusinessLdJson() {
     ],
     areaServed: [
       { '@type': 'City', name: 'Soweto' },
+      { '@type': 'City', name: 'Protea Glen' },
+      { '@type': 'City', name: 'Dobsonville' },
+      { '@type': 'City', name: 'Diepkloof' },
+      { '@type': 'City', name: 'Pimville' },
+      { '@type': 'City', name: 'Meadowlands' },
+      { '@type': 'City', name: 'Orlando' },
+      { '@type': 'City', name: 'Emdeni' },
       { '@type': 'City', name: 'Johannesburg' },
       { '@type': 'State', name: 'Gauteng' },
     ],
@@ -192,6 +199,83 @@ export function serviceLdJson(service: {
     areaServed: service.areaServed
       ? { '@type': 'Place', name: service.areaServed }
       : undefined,
+  }
+}
+
+export function personLdJson(name: string, jobTitle: string, description: string, image?: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name,
+    jobTitle,
+    description,
+    image,
+    worksFor: { '@id': `${SITE_URL}/#org` },
+  }
+}
+
+export function reviewLdJson(reviews: { author: string; body: string; rating: number; date: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: reviews.map((r, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: r.author },
+        reviewBody: r.body,
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: r.rating,
+          bestRating: '5',
+        },
+        datePublished: r.date,
+        itemReviewed: { '@id': `${SITE_URL}/#local-business` },
+      },
+    })),
+  }
+}
+
+export function imageGalleryLdJson(images: { url: string; caption: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    image: images.map((img) => ({
+      '@type': 'ImageObject',
+      contentUrl: img.url,
+      caption: img.caption,
+    })),
+  }
+}
+
+export function blogLdJson(article: {
+  title: string
+  description: string
+  body: string
+  datePublished: string
+  dateModified: string
+  author: string
+  image?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.description,
+    articleBody: article.body,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: {
+      '@type': 'Person',
+      name: article.author,
+    },
+    image: article.image,
+    publisher: { '@id': `${SITE_URL}/#org` },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/blog`,
+    },
   }
 }
 

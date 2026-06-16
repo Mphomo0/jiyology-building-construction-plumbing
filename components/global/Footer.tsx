@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-neutral-300" role="contentinfo">
       <div className="container mx-auto px-4 pt-16 pb-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           <div className="lg:col-span-1">
             <Image
               src="https://ik.imagekit.io/i6f6omrki/logo-2.png?updatedAt=1762085094516"
@@ -52,8 +52,10 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Home</Link></li>
               <li><Link href="/about" className="text-neutral-400 hover:text-[#33b6db] transition-colors">About Us</Link></li>
+              <li><Link href="/team" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Our Team</Link></li>
               <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Our Services</Link></li>
               <li><Link href="/gallery" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Gallery</Link></li>
+              <li><Link href="/testimonials" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Testimonials</Link></li>
               <li><Link href="/contact" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -63,12 +65,31 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Roofing</Link></li>
-              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Plumbing</Link></li>
-              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Tiling & Painting</Link></li>
-              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Home Renovation</Link></li>
-              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Paving</Link></li>
-              <li><Link href="/services" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Ceiling Installation</Link></li>
+              <li><Link href="/services/roofing" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Roofing</Link></li>
+              <li><Link href="/services/plumbing" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Plumbing</Link></li>
+              <li><Link href="/services/renovations" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Home Renovation</Link></li>
+              <li><Link href="/services/construction" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Construction</Link></li>
+              <li><Link href="/services/paving" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Paving</Link></li>
+              <li><Link href="/services/tiling-painting" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Tiling & Painting</Link></li>
+              <li><Link href="/services/ceiling-installation" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Ceiling Installation</Link></li>
+              <li><Link href="/services/emergency-plumbing" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Emergency Plumbing</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+              Service Areas
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/locations/soweto" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Soweto</Link></li>
+              <li><Link href="/locations/protea-glen" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Protea Glen</Link></li>
+              <li><Link href="/locations/dobsonville" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Dobsonville</Link></li>
+              <li><Link href="/locations/diepkloof" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Diepkloof</Link></li>
+              <li><Link href="/locations/pimville" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Pimville</Link></li>
+              <li><Link href="/locations/meadowlands" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Meadowlands</Link></li>
+              <li><Link href="/locations/orlando" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Orlando</Link></li>
+              <li><Link href="/locations/emdeni" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Emdeni</Link></li>
+              <li><Link href="/locations/johannesburg" className="text-neutral-400 hover:text-[#33b6db] transition-colors">Johannesburg</Link></li>
             </ul>
           </div>
 
