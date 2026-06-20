@@ -127,7 +127,7 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Jiyology Building Construction &
               Plumbing. Made by{' '}
               <a
-                href="https://www.nostalgic-studio.c.za"
+                href="https://www.nostalgic-studio.co.za"
                 className="text-neutral-400 hover:text-[#33b6db] transition-colors"
                 rel="noopener noreferrer"
                 target="_blank"
