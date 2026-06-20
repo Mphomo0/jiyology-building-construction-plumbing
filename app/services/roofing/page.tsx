@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Roofing Services Soweto & Joburg | Jiyology' },
   description:
     'Expert roofing contractors in Soweto and Johannesburg. Roof tiles, roof sheets, roof erection & repairs. SABS-approved materials, BEE Level 1. Free quote.',
-  openGraph: {
+  openGraph: og({
     title: 'Roofing Services Soweto & Joburg | Jiyology',
     description:
       'Professional roofing installation, repairs, and maintenance. SABS-approved materials. Serving Soweto, Protea Glen, Dobsonville, Diepkloof, and Johannesburg.',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/roofing' },
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import PageHeader from '@/components/global/PageHeader'
 import GallerySection from '@/components/sections/gallery/GallerySection'
 import { breadcrumbLdJson } from '@/lib/structured-data'
@@ -7,14 +8,13 @@ export const metadata: Metadata = {
   title: 'Project Gallery',
   description:
     'Browse our portfolio of completed roofing, plumbing, paving, tiling, and renovation projects in Soweto and Johannesburg. Quality workmanship on every job.',
-  openGraph: {
+  openGraph: og({
     title: 'Project Gallery | Jiyology Construction & Plumbing',
     description:
       'Browse our portfolio of completed roofing, plumbing, paving, tiling, and renovation projects in Soweto and Johannesburg. Quality workmanship on every job.',
     url: 'https://www.jiyology.co.za/gallery',
-    type: 'website',
     images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/gallery',
   },

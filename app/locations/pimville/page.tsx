@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Plumber & Builder in Pimville Soweto | Jiyology' },
   description:
     'Trusted plumber and builder in Pimville, Soweto. Plumbing, construction, roofing, renovations & emergency services. SABS approved, BEE Level 1. Free quotes.',
-  openGraph: {
+  openGraph: og({
     title: 'Plumber & Builder in Pimville Soweto | Jiyology',
     description:
       'Professional plumbing, construction, and renovation services in Pimville, Soweto. SABS approved materials, BEE Level 1. Free quotes for all projects.',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/pimville' },
 }
 

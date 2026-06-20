@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import { Star } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Client Testimonials | Jiyology Construction & Plumbing' },
   description:
     'Read what our clients say about Jiyology Building Construction & Plumbing. Trusted construction and plumbing services in Soweto and Johannesburg.',
-  openGraph: {
+  openGraph: og({
     title: 'Client Testimonials | Jiyology Construction & Plumbing',
     description:
       'Hear from our satisfied clients across Soweto and Johannesburg. Quality construction, plumbing, and renovation services you can trust.',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/testimonials' },
 }
 

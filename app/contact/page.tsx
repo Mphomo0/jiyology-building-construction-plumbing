@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Address from '@/components/sections/contact/Address'
 import MapSection from '@/components/sections/contact/MapSection'
 import PageHeader from '@/components/global/PageHeader'
@@ -8,14 +9,13 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description:
     'Get a free construction or plumbing quote. Call (011) 931 0157 or email vusi@jiyology.co.za. Based in Emdeni South, Soweto. Open Mon-Fri 8AM-5PM.',
-  openGraph: {
+  openGraph: og({
     title: 'Contact Us | Jiyology Construction & Plumbing',
     description:
       'Get a free construction or plumbing quote. Call (011) 931 0157 or email vusi@jiyology.co.za. Based in Emdeni South, Soweto. Open Mon-Fri 8AM-5PM.',
     url: 'https://www.jiyology.co.za/contact',
-    type: 'website',
     images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/contact',
   },

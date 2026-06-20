@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Star, Shield, Award } from 'lucide-react'
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Builders & Construction Soweto | Jiyology' },
   description:
     'Trusted builders and construction company in Soweto. Plumbing, roofing, renovations & building services. SABS approved, BEE Level 1. Free quotes.',
-  openGraph: {
+  openGraph: og({
     title: 'Builders & Construction Soweto | Jiyology',
     description:
       'Professional construction, plumbing, and renovation services in Soweto. SABS approved materials, BEE Level 1. Free quotes for all projects.',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/soweto' },
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Concrete Tiles vs IBR Sheeting | Jiyology' },
   description:
     'Compare concrete roof tiles vs IBR/Chromadek sheeting: cost, durability, insulation, noise, lifespan. Which is best for your Soweto home?',
-  openGraph: {
+  openGraph: og({
     title: 'Concrete Tiles vs IBR Sheeting | Jiyology',
     description:
       'Compare concrete roof tiles vs IBR/Chromadek sheeting: cost, durability, insulation, noise, lifespan. Which is best for your Soweto home?',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical:
       'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',

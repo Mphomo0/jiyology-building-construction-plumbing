@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
+
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import dynamic from 'next/dynamic'
@@ -123,6 +123,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://analytics.ahrefs.com" />
+        <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

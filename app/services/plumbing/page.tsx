@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Plumbing Services Soweto | Jiyology' },
   description:
     'Professional plumbing services in Soweto and Johannesburg. Maintenance, repairs, installations, emergency callouts. SABS approved, BEE Level 1. Free quote.',
-  openGraph: {
+  openGraph: og({
     title: 'Plumbing Services Soweto | Jiyology',
     description:
       'Reliable plumbing services including maintenance, repairs, emergency callouts, and installations. Serving Soweto, Protea Glen, Dobsonville, and Johannesburg.',
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/plumbing' },
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,8 +11,10 @@ import {
   Phone,
   Home,
   PaintBucket,
+  Bath,
   Building2,
   Hammer,
+  Wrench,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 import {
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Home Renovations Soweto | Jiyology' },
   description:
     'Expert home renovation services in Soweto and Johannesburg. Kitchen, bathroom, interior & exterior renovations. SABS approved, BEE Level 1. Free quote.',
-  openGraph: {
+  openGraph: og({
     title: 'Home Renovations Soweto | Jiyology',
     description:
       'Transform your home with professional renovation services. Kitchen remodeling, bathroom upgrades, interior & exterior renovations. Free quotes.',
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/renovations' },
 }
 

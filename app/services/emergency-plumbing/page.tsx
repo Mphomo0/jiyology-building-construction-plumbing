@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,10 +9,11 @@ import {
   Clock,
   Award,
   Phone,
-  Droplet,
-  Ban,
-  Thermometer,
   AlertTriangle,
+  Droplet,
+  Droplets,
+  Thermometer,
+  Ban,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 import {
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Emergency Plumbing Soweto | Jiyology' },
   description:
     '24/7 emergency plumbing in Soweto and Johannesburg. Burst pipe repair, blocked drains, geyser emergencies, sewer backups. Fast response. Call now.',
-  openGraph: {
+  openGraph: og({
     title: 'Emergency Plumbing Soweto | Jiyology',
     description:
       '24/7 emergency plumbing services. Burst pipes, blocked drains, geyser failures, sewer backups. Rapid response across Soweto and Johannesburg. Call (011) 931 0157.',
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/emergency-plumbing',
   },

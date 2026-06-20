@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'How Often to Service Your Geyser | Jiyology' },
   description:
     'Essential geyser maintenance guide: service every 2 years, replace anode every 3-5 years. Prevent bursts and save electricity in Soweto and Johannesburg.',
-  openGraph: {
+  openGraph: og({
     title: 'How Often to Service Your Geyser | Jiyology',
     description:
       'Essential geyser maintenance guide: service every 2 years, replace anode every 3-5 years. Prevent bursts and save electricity in Soweto and Johannesburg.',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical:
       'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa',

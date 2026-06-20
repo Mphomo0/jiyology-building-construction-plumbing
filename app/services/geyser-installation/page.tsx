@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,8 +10,10 @@ import {
   Award,
   Phone,
   Thermometer,
+  Droplets,
   RefreshCw,
   Wrench,
+  Zap,
   Sun,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Geyser Installation Soweto | Jiyology' },
   description:
     'Professional geyser installation and repair in Soweto and Johannesburg. New geyser install, replacement, repairs, solar geyser. SABS approved, BEE Level 1.',
-  openGraph: {
+  openGraph: og({
     title: 'Geyser Installation Soweto | Jiyology',
     description:
       'Expert geyser installation, replacement, and repair services. Kwikot, Heat Tech, Franke installations. Solar geyser systems. Serving Soweto and Johannesburg.',
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/geyser-installation',
   },

@@ -46,6 +46,7 @@ const navLinks: NavLink[] = [
     dropdown: locationLinks,
   },
   { href: '/gallery', label: 'Gallery' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ]

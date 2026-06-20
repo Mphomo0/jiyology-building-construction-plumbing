@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,10 +9,14 @@ import {
   Clock,
   Award,
   Phone,
-  Layout,
+  ChevronUp,
+  Grid3x3,
   Hammer,
-  PanelTop,
+  Layout,
+  Lightbulb,
   Box,
+  PanelTop,
+  Fan,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 import {
@@ -24,7 +29,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Ceiling Installation Soweto | Jiyology' },
   description:
     'Professional ceiling installation and repair in Soweto and Johannesburg. New ceilings, drop ceilings, bulkheads, ceiling repairs. SABS approved, BEE Level 1.',
-  openGraph: {
+  openGraph: og({
     title: 'Ceiling Installation Soweto | Jiyology',
     description:
       'Expert ceiling installation and repair services. New ceilings, suspended ceilings, bulkhead installation, and ceiling repairs for residential and commercial properties.',
@@ -37,7 +42,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/ceiling-installation',
   },

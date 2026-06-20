@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Our Team | Jiyology Construction & Plumbing' },
   description:
     'Meet Vusi Jiya and Lerato Jiya, the founders of Jiyology Building Construction & Plumbing. Over 10 years of experience in Soweto and Johannesburg.',
-  openGraph: {
+  openGraph: og({
     title: 'Meet Our Team | Jiyology Construction & Plumbing',
     description:
       'Founded by Vusi and Lerato Jiya — experienced construction and plumbing professionals serving Soweto and Johannesburg.',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/team' },
 }
 

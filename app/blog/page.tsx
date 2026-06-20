@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Building & Plumbing Blog | Jiyology' },
   description:
     'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg. Practical advice from experienced contractors.',
-  openGraph: {
+  openGraph: og({
     title: 'Building & Plumbing Blog | Jiyology',
     description:
       'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg. Practical advice from experienced contractors.',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/blog' },
 }
 

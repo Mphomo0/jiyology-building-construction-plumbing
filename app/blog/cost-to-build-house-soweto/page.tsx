@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Cost to Build in Soweto 2025 | Jiyology' },
   description:
     'Complete cost breakdown to build a house in Soweto, Johannesburg: R8,500–R15,000/m². Includes materials, labour, plans, NHBRC fees, and hidden costs.',
-  openGraph: {
+  openGraph: og({
     title: 'Cost to Build in Soweto 2025 | Jiyology',
     description:
       'Complete cost breakdown to build a house in Soweto: R8,500–R15,000/m². Includes materials, labour, plans, NHBRC fees, and hidden costs.',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto',
   },

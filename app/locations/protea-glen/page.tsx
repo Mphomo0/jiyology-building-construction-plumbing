@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
@@ -8,12 +9,12 @@ import { faqLdJson, breadcrumbLdJson } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: { absolute: 'Builders in Protea Glen Soweto | Jiyology' },
   description: 'Trusted builders and construction company in Protea Glen, Soweto. Plumbing, roofing, renovations, paving & building services. SABS approved, BEE Level 1.',
-  openGraph: {
+  openGraph: og({
     title: 'Builders in Protea Glen Soweto | Jiyology',
     description: 'Professional construction, plumbing, and renovation services in Protea Glen, Soweto. SABS approved materials, BEE Level 1. Free quotes.',
     url: 'https://www.jiyology.co.za/locations/protea-glen',
     images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/protea-glen' },
 }
 

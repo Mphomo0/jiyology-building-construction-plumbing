@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, Shield, Award, MapPin } from 'lucide-react'
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Builder & Plumber in Emdeni Soweto | Jiyology' },
   description:
     'Trusted construction and plumbing services in Emdeni, Soweto. Based on Tsemeli Street, Ext 2. Roofing, renovations, plumbing & more. SABS approved, BEE Level 1.',
-  openGraph: {
+  openGraph: og({
     title: 'Builder & Plumber in Emdeni Soweto | Jiyology',
     description:
       'Your local builder and plumber in Emdeni South, Soweto. Professional construction, plumbing, and renovation services. Free quotes.',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/emdeni' },
 }
 

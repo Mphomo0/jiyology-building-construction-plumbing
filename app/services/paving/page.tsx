@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,9 +9,12 @@ import {
   Clock,
   Award,
   Phone,
-  Car,
-  TreePine,
   Building2,
+  Car,
+  Grid3x3,
+  Palmtree,
+  SquareStack,
+  TreePine,
   Wrench,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Paving Services Soweto & Joburg | Jiyology' },
   description:
     'Professional paving services in Soweto and Johannesburg. Driveway paving, patio paving, walkways and commercial paving. SABS approved, BEE Level 1. Free quote.',
-  openGraph: {
+  openGraph: og({
     title: 'Paving Services Soweto & Joburg | Jiyology',
     description:
       'Quality paving for driveways, patios, walkways, and commercial spaces. Interlocking blocks, brick paving, and concrete slabs. Serving Soweto and Johannesburg.',
@@ -37,7 +41,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/paving' },
 }
 

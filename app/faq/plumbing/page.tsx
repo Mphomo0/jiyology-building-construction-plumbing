@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Plumbing FAQ Soweto & Joburg | Jiyology' },
   description:
     'Expert plumbing answers for Soweto and Johannesburg: burst pipes, blocked drains, geyser repairs, water pressure, costs, and emergency services.',
-  openGraph: {
+  openGraph: og({
     title: 'Plumbing FAQ Soweto & Joburg | Jiyology',
     description:
       'Expert plumbing answers for Soweto and Johannesburg: burst pipes, blocked drains, geyser repairs, water pressure, costs, and emergency services.',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/faq/plumbing' },
 }
 

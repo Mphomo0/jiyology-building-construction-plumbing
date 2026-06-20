@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Roofing FAQ Soweto | Jiyology' },
   description:
     'Expert answers to roofing questions in Soweto: costs, materials (tiles, sheets, thatch), repairs, leaks, maintenance, NHBRC warranty, and more.',
-  openGraph: {
+  openGraph: og({
     title: 'Roofing FAQ Soweto | Jiyology',
     description:
       'Expert answers to roofing questions in Soweto: costs, materials (tiles, sheets, thatch), repairs, leaks, maintenance, NHBRC warranty, and more.',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: { canonical: 'https://www.jiyology.co.za/faq/roofing' },
 }
 

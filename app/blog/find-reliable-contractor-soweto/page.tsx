@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Find a Reliable Contractor Soweto | Jiyology' },
   description:
     '10 essential checks before hiring a contractor in Soweto: NHBRC registration, references, contracts, quotes, and red flags to avoid shoddy work.',
-  openGraph: {
+  openGraph: og({
     title: 'Find a Reliable Contractor Soweto | Jiyology',
     description:
       '10 essential checks before hiring a contractor in Soweto: NHBRC registration, references, contracts, quotes, and red flags to avoid shoddy work.',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical:
       'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',

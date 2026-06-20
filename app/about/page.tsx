@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import PageHeader from '@/components/global/PageHeader'
 import AboutCompany from '@/components/sections/about/AboutCompany'
 import Vision from '@/components/sections/about/Vision'
@@ -9,13 +10,13 @@ export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Founded by Vusi and Lerato Jiya in Soweto. SABS approved, BEE Level 1, 50% black woman owned. Quality construction and plumbing you can trust.',
-  openGraph: {
+  openGraph: og({
     title: 'About Us | Jiyology Construction & Plumbing',
     description:
       'Founded by Vusi and Lerato Jiya in Soweto. SABS approved, BEE Level 1, 50% black woman owned. Quality construction and plumbing you can trust.',
     url: 'https://www.jiyology.co.za/about',
     images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/about',
   },

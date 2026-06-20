@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,10 +9,12 @@ import {
   Clock,
   Award,
   Phone,
-  Grid3X3,
+  Brush,
+  Building2,
+  Grid3x3,
   Paintbrush,
   PaintRoller,
-  Building2,
+  Palette,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 import {
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Tiling & Painting Services Soweto | Jiyology' },
   description:
     'Professional tiling and painting in Soweto and Johannesburg. Wall tiling, floor tiling, interior and exterior painting. SABS approved, BEE Level 1.',
-  openGraph: {
+  openGraph: og({
     title: 'Tiling & Painting Services Soweto | Jiyology',
     description:
       'Expert tiling and painting for residential and commercial properties. Ceramic, porcelain tiles, interior and exterior painting. Free quotes.',
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/tiling-painting',
   },
@@ -72,7 +75,7 @@ export default function TilingPaintingPage() {
 
   const tpServices = [
     {
-      icon: Grid3X3,
+      icon: Grid3x3,
       title: 'Wall & Floor Tiling',
       desc: 'Professional tile installation for walls and floors using ceramic, porcelain, and natural stone. Precision cutting and expert finishing for every project.',
       items: [

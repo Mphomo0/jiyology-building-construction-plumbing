@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Building Contractors Johannesburg | Jiyology' },
   description:
     'Trusted building contractors in Johannesburg. Construction, plumbing, roofing, renovations & commercial building services. SABS approved, BEE Level 1.',
-  openGraph: {
+  openGraph: og({
     title: 'Building Contractors Johannesburg | Jiyology',
     description:
       'Professional construction, plumbing, and renovation services across Johannesburg. SABS approved materials, BEE Level 1. Free quotes for residential and commercial projects.',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
-  },
+  }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/locations/johannesburg',
   },
