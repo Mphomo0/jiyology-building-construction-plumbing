@@ -10,3 +10,5 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: 'https://www.jiyology.co.za/sitemap.xml',
   }
 }
+
+export const llmsTxt = 'https://www.jiyology.co.za/llms.txt'

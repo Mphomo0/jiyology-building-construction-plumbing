@@ -23,7 +23,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Roof Repairs Soweto & Joburg | Jiyology' },
   description:
-    'Expert roof repair services in Soweto and Johannesburg. Leaking roofs, storm damage, tile replacement, flat roof repair. SABS approved, BEE Level 1. Free quote.',
+    'Expert roof repair services in Soweto and Johannesburg. Leaking roofs, storm damage, tile replacement, flat roof repairs. SABS approved, BEE L1. Free quote.',
   openGraph: {
     title: 'Roof Repairs Soweto & Joburg | Jiyology',
     description:

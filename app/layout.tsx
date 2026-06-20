@@ -2,13 +2,15 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/global/Navbar'
-import Footer from '@/components/global/Footer'
-import {
-  organizationLdJson,
-  websiteLdJson,
-  localBusinessLdJson,
-} from '@/lib/structured-data'
+import dynamic from 'next/dynamic'
+
+const Navbar = dynamic(() => import('@/components/global/Navbar'), {
+  ssr: true,
+})
+const Footer = dynamic(() => import('@/components/global/Footer'), {
+  ssr: true,
+})
+import { siteSpineLdJson } from '@/lib/structured-data'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -90,6 +92,10 @@ export const metadata: Metadata = {
   },
   other: {
     'msvalidate.01': process.env.BING_SITE_VERIFICATION || '',
+    'geo.region': 'ZA-GP',
+    'geo.placename': 'Soweto',
+    'geo.position': '-26.2440811;27.7709155',
+    'ICBM': '-26.2440811, 27.7709155',
   },
 }
 
@@ -108,21 +114,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const orgLd = organizationLdJson()
-  const webLd = websiteLdJson()
-  const localLd = localBusinessLdJson()
+  const spine = siteSpineLdJson()
 
   return (
     <html lang="en" dir="ltr">
       <head>
         <link rel="preconnect" href="https://ik.imagekit.io" />
         <link rel="dns-prefetch" href="https://ik.imagekit.io" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@graph': [orgLd, webLd, localLd],
+              '@graph': spine,
             }),
           }}
         />

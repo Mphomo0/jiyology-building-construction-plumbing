@@ -22,14 +22,15 @@ export const ORGANIZATION = {
     latitude: -26.2440811,
     longitude: 27.7709155,
   },
-  sameAs: ['https://web.facebook.com/profile.php?id=100046841814394'],
+  sameAs: [
+    'https://web.facebook.com/profile.php?id=100046841814394',
+  ],
   openingHours: ['Mo-Fr 08:00-17:00', 'Sa 08:00-13:00'],
   priceRange: '$$',
 }
 
-export function organizationLdJson() {
-  return {
-    '@context': 'https://schema.org',
+export function siteSpineLdJson() {
+  const org = {
     '@type': 'Organization',
     '@id': `${SITE_URL}/#org`,
     name: ORGANIZATION.name,
@@ -39,11 +40,8 @@ export function organizationLdJson() {
       'Professional construction and plumbing services in Soweto, Johannesburg. Roofing, plumbing, tiling, paving, ceiling installation, and home renovations.',
     sameAs: ORGANIZATION.sameAs,
   }
-}
 
-export function websiteLdJson() {
-  return {
-    '@context': 'https://schema.org',
+  const website = {
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
     url: SITE_URL,
@@ -53,17 +51,25 @@ export function websiteLdJson() {
       '@id': `${SITE_URL}/#org`,
     },
   }
+
+  const local = localBusinessLdJson()
+
+  const breadcrumb = breadcrumbLdJson([
+    { name: 'Home', url: SITE_URL },
+  ])
+
+  return [org, website, local, breadcrumb]
 }
 
 export function localBusinessLdJson() {
   return {
-    '@context': 'https://schema.org',
     '@type': 'GeneralContractor',
     '@id': `${SITE_URL}/#local-business`,
     name: ORGANIZATION.name,
     url: SITE_URL,
     telephone: ORGANIZATION.telephone,
     email: ORGANIZATION.email,
+    image: `${SITE_URL}${SITE_OG_IMAGE}`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: ORGANIZATION.address.streetAddress,
@@ -112,8 +118,7 @@ export function localBusinessLdJson() {
           itemOffered: {
             '@type': 'Service',
             name: 'Roofing Services',
-            description:
-              'Professional roofing including roof tiles, roof sheets, and roof erection',
+            description: 'Professional roofing including roof tiles, roof sheets, and roof erection',
           },
         },
         {
@@ -121,8 +126,7 @@ export function localBusinessLdJson() {
           itemOffered: {
             '@type': 'Service',
             name: 'Plumbing Services',
-            description:
-              'Complete plumbing maintenance, repairs, and installation services',
+            description: 'Complete plumbing maintenance, repairs, and installation services',
           },
         },
         {
@@ -130,8 +134,7 @@ export function localBusinessLdJson() {
           itemOffered: {
             '@type': 'Service',
             name: 'Home Renovation',
-            description:
-              'Interior and exterior home renovation and remodeling services',
+            description: 'Interior and exterior home renovation and remodeling services',
           },
         },
         {
@@ -139,8 +142,7 @@ export function localBusinessLdJson() {
           itemOffered: {
             '@type': 'Service',
             name: 'Tiling and Painting',
-            description:
-              'Professional tiling and painting for residential, commercial, and industrial clients',
+            description: 'Professional tiling and painting for residential, commercial, and industrial clients',
           },
         },
         {
@@ -148,8 +150,7 @@ export function localBusinessLdJson() {
           itemOffered: {
             '@type': 'Service',
             name: 'Paving Services',
-            description:
-              'Driveway paving, patio paving, and existing paving repair',
+            description: 'Driveway paving, patio paving, and existing paving repair',
           },
         },
         {
@@ -157,8 +158,7 @@ export function localBusinessLdJson() {
           itemOffered: {
             '@type': 'Service',
             name: 'Ceiling Installation',
-            description:
-              'New ceiling installation and ceiling repair services',
+            description: 'New ceiling installation and ceiling repair services',
           },
         },
       ],
