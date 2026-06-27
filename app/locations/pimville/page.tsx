@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/pimville' },
+  keywords: ['builders Pimville', 'plumbers Pimville', 'construction Pimville Soweto', 'roofing Pimville', 'renovations Pimville'],
+  twitter: twitter({
+    title: 'Builders & Plumbers Pimville | Jiyology',
+    description: 'Construction and plumbing services in Pimville, Soweto. Roofing, renovations, paving, tiling and ceiling installation. Free quotes.',
+  }),
 }
 
 const faqs = [

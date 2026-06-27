@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Star, Shield, Award } from 'lucide-react'
@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/soweto' },
+  keywords: ['builders Soweto', 'construction company Soweto', 'plumbers Soweto', 'roofing Soweto', 'renovations Soweto', 'BEE contractor Soweto'],
+  twitter: twitter({
+    title: 'Builders & Construction Soweto | Jiyology',
+    description: 'Trusted builders and construction company in Soweto. Plumbing, roofing, renovations & building services. SABS approved, BEE Level 1. Free quotes.',
+  }),
 }
 
 const faqs = [

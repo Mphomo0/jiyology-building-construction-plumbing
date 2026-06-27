@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     images: [{ url: '/images/hero-image.jpg', width: 1200, height: 630, alt: 'Jiyology Building Construction & Plumbing' }],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/diepkloof' },
+  keywords: ['builders Diepkloof', 'plumbers Diepkloof', 'construction Diepkloof Soweto', 'roofing Diepkloof', 'renovations Diepkloof'],
+  twitter: twitter({
+    title: 'Builders & Plumbers Diepkloof | Jiyology',
+    description: 'Construction and plumbing services in Diepkloof, Soweto. Roofing, renovations, paving, tiling and ceiling installation. Free quotes.',
+  }),
 }
 
 const faqs = [

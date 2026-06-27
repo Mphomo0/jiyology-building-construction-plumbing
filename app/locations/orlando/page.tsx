@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/orlando' },
+  keywords: ['builders Orlando Soweto', 'plumbers Orlando Soweto', 'construction Orlando', 'roofing Orlando Soweto'],
+  twitter: twitter({
+    title: 'Builders & Plumbers Orlando Soweto | Jiyology',
+    description: 'Construction and plumbing services in Orlando, Soweto. Roofing, renovations, paving, tiling and ceiling installation. Free quotes.',
+  }),
 }
 
 const faqs = [

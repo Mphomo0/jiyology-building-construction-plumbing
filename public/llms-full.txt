@@ -10,13 +10,37 @@
 
 ## Services
 
-- [All Services Overview](https://www.jiyology.co.za/services): Complete catalog of six core service categories with detailed descriptions, feature lists, and imagery for each service area.
-- [Roofing](https://www.jiyology.co.za/services): Roof tile installation, roof sheeting (IBR and corrugated), complete roof erection for new builds, and roof repair services. All materials are SABS approved. Serves residential and commercial clients in Soweto and Johannesburg.
-- [Plumbing](https://www.jiyology.co.za/services): Comprehensive plumbing services including routine maintenance, emergency repairs, new installations, pipe replacements, geyser repairs, blocked drain clearing, and quality fixture supply. Available for residential and commercial properties.
-- [Paving](https://www.jiyology.co.za/services): Driveway paving, patio and walkway paving, pool deck paving, and existing paving repair and restoration. Uses quality materials with professional finishing. Serves homeowners and businesses in Gauteng.
-- [Tiling and Painting](https://www.jiyology.co.za/services): Professional tiling services (floor tiles, wall tiles, ceramic, porcelain) and painting services (interior painting, exterior painting, commercial painting) for private residential, commercial, and industrial clients.
-- [Ceiling Installation](https://www.jiyology.co.za/services): New ceiling installation for residential and commercial buildings, ceiling repairs, ceiling replacements, and suspended ceiling systems. Professional workmanship with quality materials.
-- [Home Renovation](https://www.jiyology.co.za/services): Complete interior renovation (kitchen remodeling, bathroom renovation, room additions, flooring upgrades) and exterior renovation (facade updates, waterproofing, exterior painting, structural repairs). End-to-end project management from consultation to completion.
+- [All Services Overview](https://www.jiyology.co.za/services): Complete catalog of service categories with detailed descriptions, feature lists, and imagery.
+- [Roofing](https://www.jiyology.co.za/services/roofing): Roof tile installation, IBR/Chromadek sheeting, complete roof erection for new builds, and roof repair. All materials SABS approved. Soweto and Johannesburg.
+- [Roof Repairs](https://www.jiyology.co.za/services/roof-repairs): Leak detection, storm damage restoration, tile replacement, and flat roof waterproofing.
+- [Plumbing](https://www.jiyology.co.za/services/plumbing): Routine maintenance, emergency repairs, new installations, pipe replacements, geyser repairs, and blocked drain clearing.
+- [Emergency Plumbing](https://www.jiyology.co.za/services/emergency-plumbing): 24/7 response for burst pipes, blocked drains, geyser failures, and sewer backups across Soweto and Johannesburg.
+- [Geyser Installation](https://www.jiyology.co.za/services/geyser-installation): New geyser installs, replacements, solar geyser systems. Kwikot and Heat Tech brands.
+- [Paving](https://www.jiyology.co.za/services/paving): Driveway paving, patio and walkway paving, interlocking brick, and commercial paving.
+- [Tiling and Painting](https://www.jiyology.co.za/services/tiling-painting): Floor tiling, wall tiling (ceramic, porcelain), interior and exterior painting for residential and commercial clients.
+- [Ceiling Installation](https://www.jiyology.co.za/services/ceiling-installation): New ceiling installation, drop ceilings, bulkheads, and ceiling repairs for residential and commercial buildings.
+- [Home Renovation](https://www.jiyology.co.za/services/renovations): Kitchen remodeling, bathroom upgrades, interior and exterior renovations.
+- [Construction](https://www.jiyology.co.za/services/construction): Residential new builds, extensions, and commercial construction.
+
+## Service Areas
+
+- [Soweto](https://www.jiyology.co.za/locations/soweto): All construction and plumbing services across all Soweto suburbs. Headquarters located in Emdeni South.
+- [Protea Glen](https://www.jiyology.co.za/locations/protea-glen): Full range of services in Protea Glen.
+- [Dobsonville](https://www.jiyology.co.za/locations/dobsonville): Full range of services in Dobsonville.
+- [Diepkloof](https://www.jiyology.co.za/locations/diepkloof): Full range of services in Diepkloof.
+- [Pimville](https://www.jiyology.co.za/locations/pimville): Full range of services in Pimville.
+- [Meadowlands](https://www.jiyology.co.za/locations/meadowlands): Full range of services in Meadowlands.
+- [Orlando](https://www.jiyology.co.za/locations/orlando): Full range of services in Orlando.
+- [Emdeni](https://www.jiyology.co.za/locations/emdeni): Full range of services in Emdeni — company headquarters.
+- [Johannesburg](https://www.jiyology.co.za/locations/johannesburg): Construction and plumbing services across greater Johannesburg.
+
+## Blog & Guides
+
+- [How Much Does It Cost to Build a House in Soweto in 2025?](https://www.jiyology.co.za/blog/cost-to-build-house-soweto): R8,500–R15,000/m². Full breakdown: foundation, roofing, ceilings, plumbing, tiling, plans, NHBRC fees, and hidden costs.
+- [Building Plan Approval in Johannesburg](https://www.jiyology.co.za/blog/building-plan-approval-johannesburg): When you need permits, City of Johannesburg submission process, costs, timeline, and penalties for unapproved work.
+- [Concrete Roof Tiles vs IBR Sheeting](https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting): Cost, durability, insulation, noise, and lifespan comparison for Soweto homes.
+- [How to Find a Reliable Contractor in Soweto](https://www.jiyology.co.za/blog/find-reliable-contractor-soweto): 10 essential checks — NHBRC verification, references, red flags, and contracts.
+- [How Often Should You Service Your Geyser?](https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa): Service every 2 years, replace anode every 3–5 years. Prevents bursts and saves electricity.
 
 ## Portfolio
 
@@ -59,4 +83,4 @@
 - Phone: +27 11 931 0157
 - Address: 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861, Gauteng, South Africa
 - Facebook: https://web.facebook.com/profile.php?id=100046841814394
-- Google Maps: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57256.66515439525!2d27.770915507047622!3d-26.244081100568184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a342f011ce05%3A0x95485c912a4f0211!2sJiyology%20Building%20Construction%20and%20Plumbing%20Pty%20Ltd!5e0!3m2!1sen!2sza!4v1760792221526!5m2!1sen!2sza
+- Google Business Profile: https://www.google.com/maps/place/?q=place_id:ChIJBc4R8EKjlR4REQJPKpFcSJU

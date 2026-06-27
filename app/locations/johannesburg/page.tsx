@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.jiyology.co.za/locations/johannesburg',
   },
+  keywords: ['builders Johannesburg', 'construction company Johannesburg', 'plumbers Johannesburg', 'roofing contractors Johannesburg', 'renovations Johannesburg'],
+  twitter: twitter({
+    title: 'Builders & Plumbers Johannesburg | Jiyology',
+    description: 'Construction and plumbing services across Johannesburg. Roofing, renovations, paving, tiling, ceiling installation. SABS approved, BEE Level 1.',
+  }),
 }
 
 const faqs = [

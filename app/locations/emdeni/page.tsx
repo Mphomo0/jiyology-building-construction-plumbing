@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, Shield, Award, MapPin } from 'lucide-react'
@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/locations/emdeni' },
+  keywords: ['builders Emdeni Soweto', 'plumbers Emdeni', 'construction Emdeni Soweto', 'roofing Emdeni'],
+  twitter: twitter({
+    title: 'Builders & Plumbers Emdeni Soweto | Jiyology',
+    description: 'Construction and plumbing services in Emdeni, Soweto. Jiyology headquarters. Roofing, renovations, paving, tiling and ceiling installation.',
+  }),
 }
 
 const faqs = [
