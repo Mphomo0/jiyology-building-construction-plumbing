@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/faq' },
+  keywords: ['construction FAQ Soweto', 'plumbing questions Johannesburg', 'Jiyology FAQ', 'building contractor questions Soweto'],
+  twitter: twitter({
+    title: 'FAQs | Jiyology Construction & Plumbing',
+    description: 'Answers to common questions about Jiyology construction and plumbing services in Soweto and Johannesburg. Quotes, pricing, BEE compliance, and more.',
+  }),
 }
 
 const faqCategories = [

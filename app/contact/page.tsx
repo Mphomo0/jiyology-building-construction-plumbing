@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Address from '@/components/sections/contact/Address'
 import MapSection from '@/components/sections/contact/MapSection'
 import PageHeader from '@/components/global/PageHeader'
@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.jiyology.co.za/contact',
   },
+  keywords: ['contact Jiyology', 'free building quote Soweto', 'plumber contact Johannesburg', 'construction quote Soweto'],
+  twitter: twitter({
+    title: 'Contact Us | Jiyology Construction & Plumbing',
+    description: 'Get a free quote from Jiyology. Call (011) 931 0157 or email vusi@jiyology.co.za. Construction and plumbing services in Soweto and Johannesburg.',
+  }),
 }
 
 const contactFaqs = [

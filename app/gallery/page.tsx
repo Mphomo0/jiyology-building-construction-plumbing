@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import PageHeader from '@/components/global/PageHeader'
 import GallerySection from '@/components/sections/gallery/GallerySection'
 import { breadcrumbLdJson } from '@/lib/structured-data'
@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.jiyology.co.za/gallery',
   },
+  keywords: ['construction gallery Soweto', 'roofing projects Johannesburg', 'Jiyology projects', 'building portfolio Soweto'],
+  twitter: twitter({
+    title: 'Project Gallery | Jiyology Construction & Plumbing',
+    description: 'View completed construction and plumbing projects by Jiyology. Roofing, paving, tiling, ceiling installation, and home renovations in Soweto.',
+  }),
 }
 
 export default function Gallery() {

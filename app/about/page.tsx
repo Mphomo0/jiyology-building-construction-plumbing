@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import PageHeader from '@/components/global/PageHeader'
 import AboutCompany from '@/components/sections/about/AboutCompany'
 import Vision from '@/components/sections/about/Vision'
@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.jiyology.co.za/about',
   },
+  keywords: ['about Jiyology', 'construction company Soweto founders', 'BEE Level 1 contractor Soweto', 'SABS approved builder Soweto'],
+  twitter: twitter({
+    title: 'About Us | Jiyology Construction & Plumbing',
+    description: 'Founded by Vusi and Lerato Jiya in Soweto. SABS approved, BEE Level 1, 50% black woman owned. Quality construction and plumbing you can trust.',
+  }),
 }
 
 const aboutFaqs = [

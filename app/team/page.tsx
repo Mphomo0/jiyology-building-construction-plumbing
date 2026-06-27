@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import CTA from '@/components/sections/home/CTA'
@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/team' },
+  keywords: ['Jiyology team', 'Vusi Jiya Soweto builder', 'construction team Soweto', 'plumbing team Johannesburg'],
+  twitter: twitter({
+    title: 'Our Team | Jiyology Construction & Plumbing',
+    description: 'Meet the Jiyology team — experienced builders and plumbers serving Soweto and Johannesburg. Led by founders Vusi and Lerato Jiya.',
+  }),
 }
 
 const teamMembers = [
