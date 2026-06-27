@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
@@ -11,64 +10,7 @@ type GalleryItem = {
   src: string
 }
 
-export default function GallerySection() {
-  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    fetch('/api/gallery')
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to load gallery')
-        return res.json()
-      })
-      .then((data) => {
-        setGalleryItems(data)
-        setLoading(false)
-      })
-      .catch((err) => {
-        console.error('Failed to load gallery:', err)
-        setError('Unable to load gallery images. Please try again later.')
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) {
-    return (
-      <section className="py-24 bg-background" aria-label="Project Gallery">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
-              Our Gallery
-            </h2>
-            <div className="w-16 h-1 bg-[#33b6db] mx-auto mb-6 rounded-full" />
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Loading our portfolio of completed projects...
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-square bg-muted rounded-xl animate-pulse"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
-
-  if (error) {
-    return (
-      <section className="py-24 bg-background" aria-label="Project Gallery">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">{error}</p>
-        </div>
-      </section>
-    )
-  }
-
+export default function GallerySection({ items }: { items: GalleryItem[] }) {
   return (
     <section className="py-24 bg-background" aria-label="Project Gallery">
       <div className="container mx-auto px-4">
@@ -100,7 +42,7 @@ export default function GallerySection() {
             transition={{ delay: 0.2 }}
             className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"
           >
-            {galleryItems.map((item, index) => (
+            {items.map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}

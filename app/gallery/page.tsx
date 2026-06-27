@@ -3,6 +3,40 @@ import { og, twitter } from '@/lib/metadata'
 import PageHeader from '@/components/global/PageHeader'
 import GallerySection from '@/components/sections/gallery/GallerySection'
 import { breadcrumbLdJson } from '@/lib/structured-data'
+import { cache } from 'react'
+
+interface ImageKitFile {
+  fileId: string
+  name: string
+  url: string
+}
+
+const getGalleryItems = cache(async () => {
+  try {
+    const res = await fetch(
+      `https://api.imagekit.io/v1/files?path=${encodeURIComponent('/Gallery')}`,
+      {
+        headers: {
+          Authorization:
+            'Basic ' +
+            Buffer.from(
+              (process.env.IMAGEKIT_PRIVATE_KEY ?? '') + ':'
+            ).toString('base64'),
+        },
+        next: { revalidate: 3600 },
+      }
+    )
+    if (!res.ok) return []
+    const files: ImageKitFile[] = await res.json()
+    return files.map((f) => ({
+      id: f.fileId,
+      title: f.name.replace(/\.[^/.]+$/, ''),
+      src: f.url,
+    }))
+  } catch {
+    return []
+  }
+})
 
 export const metadata: Metadata = {
   title: 'Project Gallery',
@@ -25,10 +59,15 @@ export const metadata: Metadata = {
   }),
 }
 
-export default function Gallery() {
-  const breadcrumb = breadcrumbLdJson([
-    { name: 'Home', url: 'https://www.jiyology.co.za/' },
-    { name: 'Gallery', url: 'https://www.jiyology.co.za/gallery' },
+export default async function Gallery() {
+  const [items, breadcrumb] = await Promise.all([
+    getGalleryItems(),
+    Promise.resolve(
+      breadcrumbLdJson([
+        { name: 'Home', url: 'https://www.jiyology.co.za/' },
+        { name: 'Gallery', url: 'https://www.jiyology.co.za/gallery' },
+      ])
+    ),
   ])
 
   return (
@@ -42,7 +81,7 @@ export default function Gallery() {
         subtitle="Explore our portfolio of completed projects showcasing quality craftsmanship."
         image="/images/pageHeaderImage.jpg"
       />
-      <GallerySection />
+      <GallerySection items={items} />
     </>
   )
 }

@@ -36,7 +36,7 @@ export function siteSpineLdJson() {
     '@id': `${SITE_URL}/#org`,
     name: ORGANIZATION.name,
     url: SITE_URL,
-    logo: ORGANIZATION.logo,
+    logo: SITE_LOGO,
     description:
       'Professional construction and plumbing services in Soweto, Johannesburg. Roofing, plumbing, tiling, paving, ceiling installation, and home renovations.',
     sameAs: ORGANIZATION.sameAs,

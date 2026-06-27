@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Star, Shield, Award } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
@@ -62,14 +61,9 @@ const faqs = [
 export default function SowetoPage() {
   return (
     <>
-            <Script id="soweto-service-schema" type="application/ld+json">
-        {JSON.stringify(locationServiceLdJson('Soweto', 'https://www.jiyology.co.za/locations/soweto'))}
-      </Script>
-      <Script id="soweto-faq-schema" type="application/ld+json">
-        {JSON.stringify(faqLdJson(faqs))}
-      </Script>
-      <Script id="soweto-breadcrumb" type="application/ld+json">
-        {JSON.stringify(
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(locationServiceLdJson('Soweto', 'https://www.jiyology.co.za/locations/soweto'))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'Locations', url: 'https://www.jiyology.co.za/locations' },
@@ -78,8 +72,7 @@ export default function SowetoPage() {
               url: 'https://www.jiyology.co.za/locations/soweto',
             },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"

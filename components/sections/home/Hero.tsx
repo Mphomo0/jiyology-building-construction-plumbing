@@ -4,15 +4,12 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Phone } from 'lucide-react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
 export default function Hero() {
-  const router = useRouter()
-
   return (
     <section
-      className="relative min-h-[100dvh] flex items-center overflow-hidden"
+      className="relative min-h-dvh flex items-center overflow-hidden"
       aria-label="Hero"
     >
       <div className="absolute inset-0">
@@ -24,7 +21,7 @@ export default function Hero() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/85 to-slate-950/90" />
+        <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-950/90" />
       </div>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -99,10 +96,12 @@ export default function Hero() {
               size="lg"
               variant="outline"
               className="text-black px-8 py-6 border-white/20 hover:bg-white/10 hover:border-white/30 font-semibold hover:text-white"
-              onClick={() => router.push('/services')}
+              asChild
             >
-              <Phone className="mr-2 w-5 h-5" />
-              Our Services
+              <Link href="/services">
+                <Phone className="mr-2 w-5 h-5" />
+                Our Services
+              </Link>
             </Button>
           </motion.div>
 

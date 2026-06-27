@@ -40,9 +40,10 @@ const faqs = [
   },
 ]
 
+const ldJson = faqLdJson(faqs)
+
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const ldJson = faqLdJson(faqs)
 
   return (
     <section className="py-24 bg-muted/30" aria-labelledby="faq-heading">
@@ -110,7 +111,7 @@ export default function FAQSection() {
                     }}
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-muted-foreground shrink-0" />
                   </motion.div>
                 </button>
                 <AnimatePresence initial={false}>

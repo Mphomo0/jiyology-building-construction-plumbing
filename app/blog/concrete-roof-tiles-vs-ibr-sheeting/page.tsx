@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
@@ -82,8 +81,7 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
 
   return (
     <>
-      <Script id="roof-comparison-blog-schema" type="application/ld+json">
-        {JSON.stringify(
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           blogLdJson({
             title:
               'Concrete Roof Tiles vs IBR Sheeting: Which Is Best for Your Soweto Home?',
@@ -95,10 +93,8 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
             author: 'Vusi Jiya',
             url: 'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',
           }),
-        )}
-      </Script>
-      <Script id="roof-comparison-blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(
+        )}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
@@ -107,8 +103,7 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
               url: 'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',
             },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />

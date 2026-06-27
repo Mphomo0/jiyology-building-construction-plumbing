@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
@@ -80,8 +79,7 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
 
   return (
     <>
-      <Script id="reliable-contractor-blog-schema" type="application/ld+json">
-        {JSON.stringify(
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           blogLdJson({
             title:
               'How to Find a Reliable Contractor in Soweto: 10 Checks to Make',
@@ -93,13 +91,8 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
             author: 'Lerato Jiya',
             url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
           }),
-        )}
-      </Script>
-      <Script
-        id="reliable-contractor-blog-breadcrumb"
-        type="application/ld+json"
-      >
-        {JSON.stringify(
+        )}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
@@ -108,8 +101,7 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
               url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
             },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />

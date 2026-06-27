@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og } from '@/lib/metadata'
-import Script from 'next/script'
 import { Star } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 import { reviewLdJson, breadcrumbLdJson, aggregateRatingLdJson } from '@/lib/structured-data'
@@ -84,15 +83,9 @@ export default function TestimonialsPage() {
 
   return (
     <>
-      <Script id="testimonials-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumb)}
-      </Script>
-      <Script id="testimonials-schema" type="application/ld+json">
-        {JSON.stringify(reviewLdJson(reviewData))}
-      </Script>
-      <Script id="testimonials-aggregate-rating" type="application/ld+json">
-        {JSON.stringify(aggregateRatingLdJson(avgRatingNum, testimonials.length))}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumb)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(reviewLdJson(reviewData))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(aggregateRatingLdJson(avgRatingNum, testimonials.length))}} />
 
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"

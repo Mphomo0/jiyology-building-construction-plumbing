@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -127,14 +126,9 @@ export default function PavingPage() {
 
   return (
     <>
-      <Script id="paving-service-schema" type="application/ld+json">
-        {JSON.stringify(serviceLdJson(service))}
-      </Script>
-      <Script id="paving-faq-schema" type="application/ld+json">
-        {JSON.stringify(faqLdJson(faqs))}
-      </Script>
-      <Script id="paving-breadcrumb" type="application/ld+json">
-        {JSON.stringify(
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceLdJson(service))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'Services', url: 'https://www.jiyology.co.za/services' },
@@ -143,8 +137,7 @@ export default function PavingPage() {
               url: 'https://www.jiyology.co.za/services/paving',
             },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"

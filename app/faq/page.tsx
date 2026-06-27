@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson } from '@/lib/structured-data'
@@ -52,14 +51,12 @@ const faqCategories = [
 export default function FAQHubPage() {
   return (
     <>
-      <Script id="faq-hub-breadcrumb" type="application/ld+json">
-        {JSON.stringify(
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'FAQ', url: 'https://www.jiyology.co.za/faq' },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"

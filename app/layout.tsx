@@ -11,6 +11,7 @@ const Footer = dynamic(() => import('@/components/global/Footer'), {
   ssr: true,
 })
 import { siteSpineLdJson } from '@/lib/structured-data'
+import FloatingPhone from '@/components/global/FloatingPhone'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -156,6 +157,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FloatingPhone />
       </body>
     </html>
   )

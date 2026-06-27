@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Image from 'next/image'
 import CTA from '@/components/sections/home/CTA'
 import { personLdJson, breadcrumbLdJson } from '@/lib/structured-data'
@@ -58,19 +57,17 @@ export default function TeamPage() {
 
   return (
     <>
-      <Script id="team-breadcrumb" type="application/ld+json">
-        {JSON.stringify(breadcrumb)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumb)}} />
       {teamMembers.map((member) => (
-        <Script
+        <script
           key={member.name}
-          id={`person-${member.name}`}
           type="application/ld+json"
-        >
-          {JSON.stringify(
-            personLdJson(member.name, member.role, member.description),
-          )}
-        </Script>
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              personLdJson(member.name, member.role, member.description),
+            ),
+          }}
+        />
       ))}
 
       <section

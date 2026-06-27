@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
@@ -63,8 +62,7 @@ Our renovation services always include a compliance check. Before starting any p
 
   return (
     <>
-      <Script id="plans-blog-schema" type="application/ld+json">
-        {JSON.stringify(
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           blogLdJson({
             title:
               'Do I Need Building Plan Approval for Renovations in Johannesburg?',
@@ -76,10 +74,8 @@ Our renovation services always include a compliance check. Before starting any p
             author: 'Vusi Jiya',
             url: 'https://www.jiyology.co.za/blog/building-plan-approval-johannesburg',
           }),
-        )}
-      </Script>
-      <Script id="plans-blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(
+        )}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
@@ -88,8 +84,7 @@ Our renovation services always include a compliance check. Before starting any p
               url: 'https://www.jiyology.co.za/blog/building-plan-approval-johannesburg',
             },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />

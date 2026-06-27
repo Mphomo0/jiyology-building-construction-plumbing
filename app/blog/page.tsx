@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson, SITE_URL } from '@/lib/structured-data'
@@ -115,20 +114,14 @@ export default function BlogHubPage() {
 
   return (
     <>
-      <Script id="blog-schema" type="application/ld+json">
-        {JSON.stringify(blogSchema)}
-      </Script>
-      <Script id="blog-itemlist-schema" type="application/ld+json">
-        {JSON.stringify(itemListSchema)}
-      </Script>
-      <Script id="blog-breadcrumb" type="application/ld+json">
-        {JSON.stringify(
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(blogSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(itemListSchema)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"

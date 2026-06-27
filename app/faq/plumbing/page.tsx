@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { og } from '@/lib/metadata'
-import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 import { breadcrumbLdJson } from '@/lib/structured-data'
@@ -80,22 +79,24 @@ const faqItems = [
 export default function PlumbingFAQPage() {
   return (
     <>
-      <Script id="plumbing-faq-schema" type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: faqItems.map((item) => ({
-            '@type': 'Question',
-            name: item.q.replace(/<[^>]*>/g, ''),
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: item.a.replace(/<[^>]*>/g, ''),
-            },
-          })),
-        })}
-      </Script>
-      <Script id="plumbing-faq-breadcrumb" type="application/ld+json">
-        {JSON.stringify(
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map((item) => ({
+              '@type': 'Question',
+              name: item.q.replace(/<[^>]*>/g, ''),
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.a.replace(/<[^>]*>/g, ''),
+              },
+            })),
+          }),
+        }}
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
           breadcrumbLdJson([
             { name: 'Home', url: 'https://www.jiyology.co.za' },
             { name: 'FAQ', url: 'https://www.jiyology.co.za/faq' },
@@ -104,8 +105,7 @@ export default function PlumbingFAQPage() {
               url: 'https://www.jiyology.co.za/faq/plumbing',
             },
           ]),
-        )}
-      </Script>
+        )}} />
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
