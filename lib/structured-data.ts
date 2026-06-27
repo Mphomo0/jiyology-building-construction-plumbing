@@ -2,7 +2,7 @@ export const SITE_URL = 'https://www.jiyology.co.za'
 export const SITE_NAME = 'Jiyology Building Construction & Plumbing'
 export const SITE_DESCRIPTION =
   'Construction and plumbing experts in Soweto and Johannesburg. Roofing, renovations, tiling, paving, ceiling installation. SABS approved, BEE Level 1.'
-export const SITE_LOGO = '/images/logo.png'
+export const SITE_LOGO = 'https://ik.imagekit.io/i6f6omrki/logo.png'
 export const SITE_OG_IMAGE = '/images/hero-image.jpg'
 
 export const ORGANIZATION = {
@@ -64,7 +64,7 @@ export function siteSpineLdJson() {
 
 export function localBusinessLdJson() {
   return {
-    '@type': 'GeneralContractor',
+    '@type': 'HomeAndConstructionBusiness',
     '@id': `${SITE_URL}/#local-business`,
     name: ORGANIZATION.name,
     url: SITE_URL,
@@ -257,11 +257,12 @@ export function blogLdJson(article: {
   datePublished: string
   dateModified: string
   author: string
+  url: string
   image?: string
 }) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': 'Article',
     headline: article.title,
     description: article.description,
     articleBody: article.body,
@@ -271,11 +272,18 @@ export function blogLdJson(article: {
       '@type': 'Person',
       name: article.author,
     },
-    image: article.image,
-    publisher: { '@id': `${SITE_URL}/#org` },
+    image: article.image ?? `${SITE_URL}${SITE_OG_IMAGE}`,
+    publisher: {
+      '@type': 'Organization',
+      name: ORGANIZATION.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: SITE_LOGO,
+      },
+    },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/blog`,
+      '@id': article.url,
     },
   }
 }

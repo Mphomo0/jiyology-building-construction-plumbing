@@ -8,7 +8,7 @@ import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: { absolute: 'Concrete Tiles vs IBR Sheeting | Jiyology' },
   description:
-    'Compare concrete roof tiles vs IBR/Chromadek sheeting: cost, durability, insulation, noise, lifespan. Which is best for your Soweto home?',
+    'Concrete tiles or IBR sheeting for your Soweto home? Compare cost, durability, insulation and lifespan to choose the right roof for your budget and climate.',
   openGraph: og({
     title: 'Concrete Tiles vs IBR Sheeting | Jiyology',
     description:
@@ -93,6 +93,7 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
             datePublished: '2025-05-26',
             dateModified: '2025-05-26',
             author: 'Vusi Jiya',
+            url: 'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',
           }),
         )}
       </Script>

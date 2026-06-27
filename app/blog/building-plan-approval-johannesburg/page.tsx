@@ -8,7 +8,7 @@ import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: { absolute: 'Building Plan Approval Joburg | Jiyology' },
   description:
-    'When do you need building plan approval in Johannesburg? Guide to City of Johannesburg plan submission, costs, timeline, and penalties for unapproved work.',
+    'Do you need building plan approval for your Joburg renovation? Learn when permits are required, how to apply to the City of Johannesburg, and the risks of building without approval.',
   openGraph: og({
     title: 'Building Plan Approval Joburg | Jiyology',
     description:
@@ -74,6 +74,7 @@ Our renovation services always include a compliance check. Before starting any p
             datePublished: '2025-06-09',
             dateModified: '2025-06-09',
             author: 'Vusi Jiya',
+            url: 'https://www.jiyology.co.za/blog/building-plan-approval-johannesburg',
           }),
         )}
       </Script>

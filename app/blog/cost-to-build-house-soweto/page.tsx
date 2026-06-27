@@ -8,7 +8,7 @@ import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: { absolute: 'Cost to Build in Soweto 2025 | Jiyology' },
   description:
-    'Complete cost breakdown to build a house in Soweto, Johannesburg: R8,500–R15,000/m². Includes materials, labour, plans, NHBRC fees, and hidden costs.',
+    'Building a house in Soweto costs R8,500–R15,000/m² in 2025. Complete breakdown of construction costs including foundation, roofing, plumbing, tiling, permits and hidden fees.',
   openGraph: og({
     title: 'Cost to Build in Soweto 2025 | Jiyology',
     description:
@@ -85,6 +85,7 @@ We offer free building consultations across Soweto, including Pimville, Protea G
             datePublished: '2025-06-16',
             dateModified: '2025-06-16',
             author: 'Vusi Jiya',
+            url: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto',
           }),
         )}
       </Script>

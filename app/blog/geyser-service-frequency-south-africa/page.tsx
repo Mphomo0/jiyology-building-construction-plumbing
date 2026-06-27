@@ -8,7 +8,7 @@ import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: { absolute: 'How Often to Service Your Geyser | Jiyology' },
   description:
-    'Essential geyser maintenance guide: service every 2 years, replace anode every 3-5 years. Prevent bursts and save electricity in Soweto and Johannesburg.',
+    'South African homeowners should service their geyser every 2–3 years. Learn what\'s checked, how to extend geyser life, and when to replace it.',
   openGraph: og({
     title: 'How Often to Service Your Geyser | Jiyology',
     description:
@@ -75,6 +75,7 @@ Jiyology offers professional geyser servicing, repair, and installation across a
             datePublished: '2025-05-19',
             dateModified: '2025-05-19',
             author: 'Vusi Jiya',
+            url: 'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa',
           }),
         )}
       </Script>

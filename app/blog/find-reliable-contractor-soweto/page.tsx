@@ -8,7 +8,7 @@ import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: { absolute: 'Find a Reliable Contractor Soweto | Jiyology' },
   description:
-    '10 essential checks before hiring a contractor in Soweto: NHBRC registration, references, contracts, quotes, and red flags to avoid shoddy work.',
+    'Hiring a builder or plumber in Soweto? These 10 checks help you avoid scams and ensure quality workmanship before you sign anything.',
   openGraph: og({
     title: 'Find a Reliable Contractor Soweto | Jiyology',
     description:
@@ -91,6 +91,7 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
             datePublished: '2025-06-02',
             dateModified: '2025-06-02',
             author: 'Lerato Jiya',
+            url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
           }),
         )}
       </Script>
