@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     canonical:
       'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
   },
+  keywords: ['reliable contractor Soweto', 'how to hire contractor Johannesburg', 'NHBRC registered contractor Soweto', 'avoid contractor scams Johannesburg', 'vetted builders Soweto', 'contractor checklist Gauteng'],
+  twitter: twitter({
+    title: 'Find a Reliable Contractor Soweto | Jiyology',
+    description: "10 essential checks before hiring a contractor in Soweto: NHBRC registration, references, contracts, quotes, and red flags to avoid shoddy work.",
+  }),
 }
 
 export default function FindContractorPage() {

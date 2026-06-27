@@ -21,3 +21,12 @@ export function og(opts: {
       ],
   }
 }
+
+export function twitter(opts: { title: string; description: string; image?: string }) {
+  return {
+    card: 'summary_large_image' as const,
+    title: opts.title,
+    description: opts.description,
+    images: [opts.image ?? '/images/hero-image.jpg'],
+  }
+}

@@ -1,14 +1,22 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
-import { breadcrumbLdJson } from '@/lib/structured-data'
+import { breadcrumbLdJson, SITE_URL } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Building & Plumbing Blog | Jiyology' },
   description:
     'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg. Practical advice from experienced contractors.',
+  keywords: [
+    'construction blog Soweto',
+    'plumbing tips Johannesburg',
+    'roofing advice South Africa',
+    'home renovation guide Soweto',
+    'building costs Johannesburg',
+    'contractor tips Gauteng',
+  ],
   openGraph: og({
     title: 'Building & Plumbing Blog | Jiyology',
     description:
@@ -22,6 +30,11 @@ export const metadata: Metadata = {
         alt: 'Jiyology Building Construction & Plumbing',
       },
     ],
+  }),
+  twitter: twitter({
+    title: 'Building & Plumbing Blog | Jiyology',
+    description:
+      'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg. Practical advice from experienced contractors.',
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/blog' },
 }
@@ -71,8 +84,43 @@ const articles = [
 ]
 
 export default function BlogHubPage() {
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Jiyology Construction & Plumbing Blog',
+    description:
+      'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg.',
+    url: `${SITE_URL}/blog`,
+    publisher: { '@id': `${SITE_URL}/#org` },
+    blogPost: articles.map((a) => ({
+      '@type': 'BlogPosting',
+      headline: a.title,
+      description: a.desc,
+      url: `${SITE_URL}${a.href}`,
+    })),
+  }
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Jiyology Blog Posts',
+    url: `${SITE_URL}/blog`,
+    itemListElement: articles.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: a.title,
+      url: `${SITE_URL}${a.href}`,
+    })),
+  }
+
   return (
     <>
+      <Script id="blog-schema" type="application/ld+json">
+        {JSON.stringify(blogSchema)}
+      </Script>
+      <Script id="blog-itemlist-schema" type="application/ld+json">
+        {JSON.stringify(itemListSchema)}
+      </Script>
       <Script id="blog-breadcrumb" type="application/ld+json">
         {JSON.stringify(
           breadcrumbLdJson([

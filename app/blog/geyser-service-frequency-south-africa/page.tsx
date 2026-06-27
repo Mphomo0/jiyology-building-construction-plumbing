@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     canonical:
       'https://www.jiyology.co.za/blog/geyser-service-frequency-south-africa',
   },
+  keywords: ['geyser service frequency South Africa', 'how often service geyser Johannesburg', 'geyser maintenance Soweto', 'geyser anode replacement', 'prevent geyser burst Johannesburg', 'geyser lifespan South Africa'],
+  twitter: twitter({
+    title: 'How Often to Service Your Geyser | Jiyology',
+    description: "Essential geyser maintenance guide: service every 2 years, replace anode every 3-5 years. Prevent bursts and save electricity in Soweto and Johannesburg.",
+  }),
 }
 
 export default function GeyserServicePage() {

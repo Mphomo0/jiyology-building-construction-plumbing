@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     canonical:
       'https://www.jiyology.co.za/blog/concrete-roof-tiles-vs-ibr-sheeting',
   },
+  keywords: ['concrete roof tiles vs IBR Soweto', 'roof tiles vs roof sheets Johannesburg', 'Chromadek vs concrete tiles', 'best roofing material Soweto', 'IBR sheeting Johannesburg', 'roofing comparison South Africa'],
+  twitter: twitter({
+    title: 'Concrete Tiles vs IBR Sheeting | Jiyology',
+    description: "Compare concrete roof tiles vs IBR/Chromadek sheeting: cost, durability, insulation, noise, lifespan. Which is best for your Soweto home?",
+  }),
 }
 
 export default function RoofTilesVsIbrPage() {

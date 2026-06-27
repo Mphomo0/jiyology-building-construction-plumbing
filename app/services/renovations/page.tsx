@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -34,14 +34,20 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/renovations',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/renovations.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology home renovation services in Soweto and Johannesburg',
       },
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/renovations' },
+  keywords: ['home renovations Soweto', 'kitchen renovation Johannesburg', 'bathroom renovation Soweto', 'interior renovations Gauteng', 'house remodeling Soweto', 'renovation contractors Johannesburg'],
+  twitter: twitter({
+    title: 'Home Renovations Soweto | Jiyology',
+    description: 'Expert home renovation services in Soweto and Johannesburg. Kitchen, bathroom, interior & exterior renovations. SABS approved, BEE Level 1. Free quote.',
+    image: '/images/renovations.jpg',
+  }),
 }
 
 const faqs = [

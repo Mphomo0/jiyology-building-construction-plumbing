@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -36,14 +36,20 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/construction',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/renovations.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology construction services in Soweto and Johannesburg',
       },
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/construction' },
+  keywords: ['construction company Soweto', 'building contractors Johannesburg', 'new build Soweto', 'home extensions Johannesburg', 'residential construction Gauteng', 'commercial construction Soweto'],
+  twitter: twitter({
+    title: 'Construction Services Soweto | Jiyology',
+    description: 'Professional construction services in Soweto and Johannesburg. Residential, commercial, extensions and new builds. SABS approved, BEE Level 1.',
+    image: '/images/renovations.jpg',
+  }),
 }
 
 const faqs = [

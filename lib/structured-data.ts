@@ -24,6 +24,7 @@ export const ORGANIZATION = {
   },
   sameAs: [
     'https://web.facebook.com/profile.php?id=100046841814394',
+    'https://www.google.com/maps/place/?q=place_id:ChIJBc4R8EKjlR4REQJPKpFcSJU',
   ],
   openingHours: ['Mo-Fr 08:00-17:00', 'Sa 08:00-13:00'],
   priceRange: '$$',
@@ -275,6 +276,46 @@ export function blogLdJson(article: {
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/blog`,
+    },
+  }
+}
+
+export function locationServiceLdJson(area: string, url: string) {
+  const services = [
+    'Roofing', 'Plumbing', 'Home Renovation', 'Construction',
+    'Paving', 'Tiling and Painting', 'Ceiling Installation', 'Emergency Plumbing',
+  ]
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/#local-business`,
+    name: ORGANIZATION.name,
+    url,
+    telephone: ORGANIZATION.telephone,
+    areaServed: { '@type': 'Place', name: area },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `Construction and Plumbing Services in ${area}`,
+      itemListElement: services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: s },
+      })),
+    },
+  }
+}
+
+export function aggregateRatingLdJson(ratingValue: number, reviewCount: number) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/#local-business`,
+    name: ORGANIZATION.name,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: ratingValue.toFixed(1),
+      reviewCount,
+      bestRating: '5',
+      worstRating: '1',
     },
   }
 }

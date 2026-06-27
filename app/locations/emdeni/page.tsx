@@ -4,7 +4,7 @@ import Script from 'next/script'
 import Link from 'next/link'
 import { Check, Phone, Shield, Award, MapPin } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
-import { faqLdJson, breadcrumbLdJson } from '@/lib/structured-data'
+import { faqLdJson, breadcrumbLdJson, locationServiceLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Builder & Plumber in Emdeni Soweto | Jiyology' },
@@ -49,6 +49,9 @@ const faqs = [
 export default function EmdeniPage() {
   return (
     <>
+            <Script id="emdeni-service-schema" type="application/ld+json">
+        {JSON.stringify(locationServiceLdJson('Emdeni', 'https://www.jiyology.co.za/locations/emdeni'))}
+      </Script>
       <Script id="emdeni-faq-schema" type="application/ld+json">
         {JSON.stringify(faqLdJson(faqs))}
       </Script>

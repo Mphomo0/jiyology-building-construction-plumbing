@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -32,14 +32,20 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/plumbing',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/plumbing.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology plumbing services in Soweto and Johannesburg',
       },
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/plumbing' },
+  keywords: ['plumbing services Soweto', 'plumber Johannesburg', 'plumbing repairs Soweto', 'plumbing installation Johannesburg', 'plumber Protea Glen', 'plumbing company Gauteng'],
+  twitter: twitter({
+    title: 'Plumbing Services Soweto | Jiyology',
+    description: 'Professional plumbing services in Soweto and Johannesburg. Maintenance, repairs, installations, emergency callouts. SABS approved, BEE Level 1. Free quote.',
+    image: '/images/plumbing.jpg',
+  }),
 }
 
 const faqs = [

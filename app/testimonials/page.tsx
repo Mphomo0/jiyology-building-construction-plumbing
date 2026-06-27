@@ -3,7 +3,7 @@ import { og } from '@/lib/metadata'
 import Script from 'next/script'
 import { Star } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
-import { reviewLdJson, breadcrumbLdJson } from '@/lib/structured-data'
+import { reviewLdJson, breadcrumbLdJson, aggregateRatingLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Client Testimonials | Jiyology Construction & Plumbing' },
@@ -78,9 +78,9 @@ export default function TestimonialsPage() {
     date: t.date,
   }))
 
-  const avgRating = (
+  const avgRatingNum =
     testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
-  ).toFixed(1)
+  const avgRating = avgRatingNum.toFixed(1)
 
   return (
     <>
@@ -89,6 +89,9 @@ export default function TestimonialsPage() {
       </Script>
       <Script id="testimonials-schema" type="application/ld+json">
         {JSON.stringify(reviewLdJson(reviewData))}
+      </Script>
+      <Script id="testimonials-aggregate-rating" type="application/ld+json">
+        {JSON.stringify(aggregateRatingLdJson(avgRatingNum, testimonials.length))}
       </Script>
 
       <section
@@ -180,7 +183,7 @@ export default function TestimonialsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://www.google.com/search?q=Jiyology+Building+Construction+Plumbing+Soweto"
+                href="https://www.google.com/maps/place/?q=place_id:ChIJBc4R8EKjlR4REQJPKpFcSJU"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 bg-neutral-950 hover:bg-[#33b6db] text-white font-semibold rounded-lg transition-colors"

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -34,16 +34,22 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/tiling-painting',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/painting.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology tiling and painting services in Soweto and Johannesburg',
       },
     ],
   }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/tiling-painting',
   },
+  keywords: ['tiling services Soweto', 'floor tiling Johannesburg', 'wall tiling Soweto', 'painting contractors Johannesburg', 'interior painting Soweto', 'exterior painting Gauteng'],
+  twitter: twitter({
+    title: 'Tiling & Painting Services Soweto | Jiyology',
+    description: 'Professional tiling and painting in Soweto and Johannesburg. Wall tiling, floor tiling, interior and exterior painting. SABS approved, BEE Level 1.',
+    image: '/images/painting.jpg',
+  }),
 }
 
 const faqs = [

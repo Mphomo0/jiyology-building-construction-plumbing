@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -34,16 +34,22 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/geyser-installation',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/plumbing.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology geyser installation and repair in Soweto',
       },
     ],
   }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/geyser-installation',
   },
+  keywords: ['geyser installation Soweto', 'geyser replacement Johannesburg', 'solar geyser Soweto', 'geyser repair Johannesburg', 'Kwikot geyser installation', 'heat pump geyser Soweto'],
+  twitter: twitter({
+    title: 'Geyser Installation Soweto | Jiyology',
+    description: 'Professional geyser installation and repair in Soweto and Johannesburg. New geyser install, replacement, repairs, solar geyser. SABS approved, BEE Level 1.',
+    image: '/images/plumbing.jpg',
+  }),
 }
 
 const faqs = [

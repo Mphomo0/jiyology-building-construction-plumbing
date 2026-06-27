@@ -30,18 +30,6 @@ export const metadata: Metadata = {
   },
   description:
     'Construction and plumbing experts in Soweto and Johannesburg. Roofing, renovations, tiling, paving, ceiling installation. SABS approved, BEE Level 1.',
-  keywords: [
-    'construction company Soweto',
-    'plumbing services Johannesburg',
-    'roofing contractors Gauteng',
-    'home renovation Soweto',
-    'tiling and painting services',
-    'ceiling installation Johannesburg',
-    'paving services Gauteng',
-    'BEE compliant construction',
-    'SABS approved building materials',
-    'Jiyology construction',
-  ],
   authors: [{ name: 'Jiyology Building Construction & Plumbing' }],
   creator: 'Jiyology Building Construction & Plumbing',
   publisher: 'Jiyology Building Construction & Plumbing',

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -33,16 +33,22 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/emergency-plumbing',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/plumbing.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology 24/7 emergency plumbing in Soweto',
       },
     ],
   }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/emergency-plumbing',
   },
+  keywords: ['emergency plumber Soweto', '24/7 plumbing Johannesburg', 'burst pipe repair Soweto', 'blocked drain emergency', 'emergency geyser repair Soweto', 'plumber near me Soweto'],
+  twitter: twitter({
+    title: 'Emergency Plumbing Soweto | Jiyology',
+    description: '24/7 emergency plumbing in Soweto and Johannesburg. Burst pipe repair, blocked drains, geyser emergencies, sewer backups. Fast response. Call now.',
+    image: '/images/plumbing.jpg',
+  }),
 }
 
 const faqs = [

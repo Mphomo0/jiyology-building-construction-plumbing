@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -36,16 +36,22 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/ceiling-installation',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/ceiling.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology ceiling installation and repair in Soweto',
       },
     ],
   }),
   alternates: {
     canonical: 'https://www.jiyology.co.za/services/ceiling-installation',
   },
+  keywords: ['ceiling installation Soweto', 'drop ceiling Johannesburg', 'ceiling repair Soweto', 'bulkhead ceiling installation', 'suspended ceiling Johannesburg', 'gypsum ceiling Soweto'],
+  twitter: twitter({
+    title: 'Ceiling Installation Soweto | Jiyology',
+    description: 'Professional ceiling installation and repair in Soweto and Johannesburg. New ceilings, drop ceilings, bulkheads, ceiling repairs. SABS approved, BEE Level 1.',
+    image: '/images/ceiling.jpg',
+  }),
 }
 
 const faqs = [

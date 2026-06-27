@@ -10,6 +10,14 @@ function FacebookIcon({ className }: { className?: string }) {
   )
 }
 
+function GoogleIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+    </svg>
+  )
+}
+
 export default function Footer() {
   return (
     <footer className="bg-slate-950 text-neutral-300" role="contentinfo">
@@ -40,6 +48,17 @@ export default function Footer() {
                   aria-label="Follow Jiyology on Facebook"
                 >
                   <FacebookIcon className="w-5 h-5" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.google.com/maps/place/?q=place_id:ChIJBc4R8EKjlR4REQJPKpFcSJU"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-[#33b6db] hover:text-slate-950 transition-colors duration-200"
+                  aria-label="View Jiyology on Google Maps"
+                >
+                  <GoogleIcon className="w-5 h-5" />
                 </Link>
               </li>
             </ul>
@@ -113,9 +132,16 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#33b6db] mt-0.5 flex-shrink-0" />
-                <address className="text-neutral-400 not-italic">
-                  65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861
-                </address>
+                <a
+                  href="https://www.google.com/maps/place/?q=place_id:ChIJBc4R8EKjlR4REQJPKpFcSJU"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-neutral-400 hover:text-[#33b6db] transition-colors"
+                >
+                  <address className="not-italic">
+                    65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861
+                  </address>
+                </a>
               </li>
             </ul>
           </div>

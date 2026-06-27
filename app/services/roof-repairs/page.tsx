@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -32,14 +32,20 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/roof-repairs',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/roofing.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology roof repair services in Soweto and Johannesburg',
       },
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/roof-repairs' },
+  keywords: ['roof repairs Soweto', 'leaking roof Johannesburg', 'roof repair contractor Soweto', 'storm damage roof repair', 'flat roof repair Johannesburg', 'roof tile replacement Soweto'],
+  twitter: twitter({
+    title: 'Roof Repairs Soweto & Joburg | Jiyology',
+    description: 'Expert roof repair services in Soweto and Johannesburg. Leaking roofs, storm damage, tile replacement, flat roof repairs. SABS approved, BEE L1. Free quote.',
+    image: '/images/roofing.jpg',
+  }),
 }
 
 const faqs = [

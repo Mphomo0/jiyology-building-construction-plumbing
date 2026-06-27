@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     canonical:
       'https://www.jiyology.co.za/blog/building-plan-approval-johannesburg',
   },
+  keywords: ['building plan approval Johannesburg', 'building permit Soweto', 'City of Johannesburg building plans', 'building plan submission Joburg', 'unapproved building Johannesburg', 'building regulations Gauteng'],
+  twitter: twitter({
+    title: 'Building Plan Approval Joburg | Jiyology',
+    description: "When do you need building plan approval in Johannesburg? Guide to City of Johannesburg plan submission, costs, timeline, and penalties for unapproved work.",
+  }),
 }
 
 export default function BuildingPlanApprovalPage() {

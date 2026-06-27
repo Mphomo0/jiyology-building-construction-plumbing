@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -35,14 +35,20 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/paving',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/paving.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology paving services — driveways, patios and walkways in Soweto',
       },
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/paving' },
+  keywords: ['paving services Soweto', 'driveway paving Johannesburg', 'brick paving Soweto', 'patio paving Johannesburg', 'interlocking paving Gauteng', 'commercial paving Soweto'],
+  twitter: twitter({
+    title: 'Paving Services Soweto & Joburg | Jiyology',
+    description: 'Professional paving services in Soweto and Johannesburg. Driveway paving, patio paving, walkways and commercial paving. SABS approved, BEE Level 1. Free quote.',
+    image: '/images/paving.jpg',
+  }),
 }
 
 const faqs = [

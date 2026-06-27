@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,14 +22,20 @@ export const metadata: Metadata = {
     url: 'https://www.jiyology.co.za/services/roofing',
     images: [
       {
-        url: '/images/hero-image.jpg',
+        url: '/images/roofing.jpg',
         width: 1200,
         height: 630,
-        alt: 'Jiyology Building Construction & Plumbing',
+        alt: 'Jiyology roofing services — tiles, IBR sheeting and roof erection in Soweto',
       },
     ],
   }),
   alternates: { canonical: 'https://www.jiyology.co.za/services/roofing' },
+  keywords: ['roofing services Soweto', 'roofing contractors Johannesburg', 'roof tiles Soweto', 'IBR roof sheeting Johannesburg', 'roof erection Soweto', 'SABS approved roofing Gauteng'],
+  twitter: twitter({
+    title: 'Roofing Services Soweto & Joburg | Jiyology',
+    description: 'Expert roofing contractors in Soweto and Johannesburg. Roof tiles, roof sheets, roof erection & repairs. SABS-approved materials, BEE Level 1. Free quote.',
+    image: '/images/roofing.jpg',
+  }),
 }
 
 const faqs = [

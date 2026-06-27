@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { og } from '@/lib/metadata'
+import { og, twitter } from '@/lib/metadata'
 import Script from 'next/script'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.jiyology.co.za/blog/cost-to-build-house-soweto',
   },
+  keywords: ['cost to build house Soweto', 'building costs per square metre Johannesburg', 'house building price Soweto 2025', 'construction cost Gauteng', 'NHBRC registration cost', 'building budget Soweto'],
+  twitter: twitter({
+    title: 'Cost to Build in Soweto 2025 | Jiyology',
+    description: "Complete cost breakdown to build a house in Soweto, Johannesburg: R8,500–R15,000/m². Includes materials, labour, plans, NHBRC fees, and hidden costs.",
+  }),
 }
 
 export default function CostToBuildPage() {
@@ -173,15 +178,70 @@ We offer free building consultations across Soweto, including Pimville, Protea G
                 </div>
               )
             }
+            if (p.startsWith('Roofing:')) {
+              const [label, ...rest] = p.split('. See our roofing services for detailed pricing.')
+              return (
+                <p key={i}>
+                  {label}. See our{' '}
+                  <Link href="/services/roofing" className="text-[#33b6db] hover:underline">
+                    roofing services
+                  </Link>{' '}
+                  for detailed pricing.{rest.join('')}
+                </p>
+              )
+            }
+            if (p.startsWith('Ceilings:')) {
+              const parts = p.split('We handle ceiling installation across Soweto.')
+              return (
+                <p key={i}>
+                  {parts[0]}We handle{' '}
+                  <Link href="/services/ceiling-installation" className="text-[#33b6db] hover:underline">
+                    ceiling installation
+                  </Link>{' '}
+                  across Soweto.{parts[1] ?? ''}
+                </p>
+              )
+            }
+            if (p.startsWith('Plumbing and Electrical:')) {
+              const [before, after] = p.split('A full plumbing fit-out')
+              return (
+                <p key={i}>
+                  {before}A full{' '}
+                  <Link href="/services/plumbing" className="text-[#33b6db] hover:underline">
+                    plumbing
+                  </Link>{' '}
+                  fit-out{after}
+                </p>
+              )
+            }
+            if (p.startsWith('Flooring and Tiling:')) {
+              const [before, after] = p.split('Labour is additional')
+              return (
+                <p key={i}>
+                  {before.replace('Flooring and Tiling:', '')}
+                  <Link href="/services/tiling-painting" className="text-[#33b6db] hover:underline">
+                    Flooring and Tiling:
+                  </Link>
+                  {before.slice('Flooring and Tiling:'.length)}Labour is additional{after}
+                </p>
+              )
+            }
+            if (p.startsWith('Building Plans and Approval:')) {
+              const parts = p.split('we handle the approval process for our clients.')
+              return (
+                <p key={i}>
+                  {parts[0]}we handle the approval process for{' '}
+                  <Link href="/contact" className="text-[#33b6db] hover:underline">
+                    our clients
+                  </Link>
+                  .{parts[1] ?? ''}
+                </p>
+              )
+            }
             if (
               p.startsWith('Foundation and Structure:') ||
-              p.startsWith('Roofing:') ||
-              p.startsWith('Ceilings:') ||
-              p.startsWith('Plumbing and Electrical:') ||
               p.startsWith('Plastering and Painting:') ||
-              p.startsWith('Flooring and Tiling:') ||
               p.startsWith('Windows and Doors:') ||
-              p.startsWith('Building Plans and Approval:') ||
               p.startsWith('NHBRC Registration and Enrolment:')
             ) {
               return <p key={i}>{p}</p>
