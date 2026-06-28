@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Home Renovations Soweto | Jiyology' },
   description:
-    'Expert home renovation services in Soweto and Johannesburg. Kitchen, bathroom, interior & exterior renovations. SABS approved, BEE Level 1. Free quote.',
+    'Home renovation specialists in Soweto. Kitchens, bathrooms, interior & exterior upgrades. Quality workmanship, SABS materials, BEE Level 1. Free quote available.',
   openGraph: og({
     title: 'Home Renovations Soweto | Jiyology',
     description:
@@ -51,28 +51,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
+    q: 'How much does a kitchen renovation cost in Soweto?',
+    a: 'Kitchen renovations in Soweto range from R15,000 for a basic refresh to R80,000+ for a full remodel including new cabinets, tiling, and plumbing. Contact us for a free quote.',
+  },
+  {
     q: 'How long does a home renovation take in Soweto?',
-    a: 'Timelines vary by project scope. A bathroom or kitchen renovation typically takes 1-3 weeks. A full home renovation may take 4-8 weeks. We provide a detailed schedule during quoting.',
+    a: 'A single room takes 1–2 weeks. A full home renovation typically takes 4–8 weeks depending on scope and materials.',
   },
   {
-    q: 'How much does a home renovation cost in Soweto?',
-    a: 'Costs depend on the size and complexity of your project. A bathroom renovation may start from R45,000, while a full home renovation ranges from R150,000 upward. Contact us for a free quote.',
+    q: 'Do you handle bathroom renovations in Soweto?',
+    a: 'Yes. We do full bathroom renovations including tiling, plumbing, fixtures, and painting across Soweto and Johannesburg.',
   },
   {
-    q: 'Do I need building plans for renovations in Soweto?',
-    a: 'Some renovations require approved building plans. We advise on what permits and plans are needed for your specific project and can assist with the process.',
-  },
-  {
-    q: 'Can you renovate my kitchen and bathroom?',
-    a: 'Yes. We specialise in kitchen and bathroom renovations including cabinetry, tiling, plumbing, electrical, and finishes. We handle the complete transformation.',
-  },
-  {
-    q: 'Do you handle exterior renovations?',
-    a: 'Yes. We manage exterior renovations including painting, paving, roof repairs, ceiling installation, and structural changes to improve your home exterior.',
-  },
-  {
-    q: 'Are your renovation services BEE compliant?',
-    a: 'Yes. Jiyology is Level One 135% BEE compliant, 50% black woman owned. We meet all procurement requirements for residential and commercial projects.',
+    q: 'What areas do you serve for home renovations?',
+    a: 'We serve all Soweto suburbs including Emdeni, Protea Glen, Dobsonville, Diepkloof, Pimville, Meadowlands, and Orlando, as well as broader Johannesburg.',
   },
 ]
 

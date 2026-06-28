@@ -95,7 +95,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="text-white px-8 py-6 border-white/20 hover:bg-white/10 hover:border-white/30 font-semibold"
+              className="text-black px-8 py-6 border-white/20 hover:bg-white/10 hover:border-white/30 hover:text-white font-semibold"
               asChild
             >
               <Link href="/services">

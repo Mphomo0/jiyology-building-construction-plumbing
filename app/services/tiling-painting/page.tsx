@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Tiling & Painting Services Soweto | Jiyology' },
   description:
-    'Professional tiling and painting in Soweto and Johannesburg. Wall tiling, floor tiling, interior and exterior painting. SABS approved, BEE Level 1.',
+    'Tiling & painting contractors in Soweto. Floor tiles, wall tiles, interior & exterior paint. SABS-approved materials. BEE Level 1. Free quote: (011) 931 0157.',
   openGraph: og({
     title: 'Tiling & Painting Services Soweto | Jiyology',
     description:
@@ -53,20 +53,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'Do you install bathroom tiles in Soweto?',
-    a: 'Yes. We install ceramic, porcelain, and natural stone tiles in bathrooms, kitchens, and living areas. We handle waterproofing, substrate preparation, and grouting for a professional finish.',
+    q: 'How much does floor tiling cost in Soweto?',
+    a: 'Ceramic floor tiles cost R95–R140/m², porcelain R140–R200/m². Labour is an additional R60–R120/m². We supply and install or install tiles you supply.',
   },
   {
-    q: 'What painting services do you offer in Johannesburg?',
-    a: 'We offer complete interior and exterior painting for residential and commercial properties. This includes wall painting, ceiling painting, woodwork, and industrial coating applications.',
+    q: 'Do you do exterior painting in Soweto?',
+    a: 'Yes. We paint interior and exterior walls across Soweto and Johannesburg using quality paint systems suited to South Africa\'s climate.',
   },
   {
-    q: 'How much does tiling cost per square metre?',
-    a: 'Costs vary based on tile type, area size, and surface preparation required. We provide transparent quotes with no hidden fees. Contact us for a free assessment and accurate pricing.',
+    q: 'What tile brands do you use?',
+    a: 'We work with all tile brands and supply SABS-approved materials. Clients can choose tiles from any local supplier or we can source them on your behalf.',
   },
   {
-    q: 'Do you paint exterior walls and roofs?',
-    a: 'Yes. We specialise in exterior painting including wall painting, roof coatings, and weatherproofing. We use quality paints that withstand South African sun and weather conditions.',
+    q: 'How long does tiling a bathroom take?',
+    a: 'A standard bathroom tiling job takes 1–3 days depending on tile size, pattern, and preparation required.',
   },
 ]
 

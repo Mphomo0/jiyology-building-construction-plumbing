@@ -23,7 +23,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Roof Repairs Soweto & Joburg | Jiyology' },
   description:
-    'Expert roof repair services in Soweto and Johannesburg. Leaking roofs, storm damage, tile replacement, flat roof repairs. SABS approved, BEE L1. Free quote.',
+    'Roof leak repairs in Soweto & Johannesburg. Storm damage, tile replacement, waterproofing. Fast response, SABS materials, BEE Level 1. Call (011) 931 0157.',
   openGraph: og({
     title: 'Roof Repairs Soweto & Joburg | Jiyology',
     description:
@@ -49,20 +49,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'How do I know if my roof is leaking in Soweto?',
-    a: 'Common signs include water stains on ceilings, damp walls, mould growth, dripping water during rain, and missing or damaged roof tiles. If you suspect a leak, call us for a professional roof inspection.',
+    q: 'How do I know if my roof is leaking?',
+    a: 'Signs include water stains on ceilings, mould near roof lines, missing or cracked tiles, and dripping sounds during rain. Call Jiyology on (011) 931 0157 for a free inspection.',
   },
   {
-    q: 'Do you repair flat roofs in Johannesburg?',
-    a: 'Yes. We specialise in flat roof repair and waterproofing using membrane systems and liquid-applied coatings. Flat roofs require specific expertise, and our team is trained in the latest repair techniques.',
+    q: 'How much does roof repair cost in Soweto?',
+    a: 'Minor repairs like replacing cracked tiles or sealing flashing cost R800–R3,500. Larger repairs or waterproofing projects are priced by scope. We provide free quotes.',
   },
   {
-    q: 'How much does roof storm damage repair cost?',
-    a: 'Costs vary depending on the extent of damage. We provide free inspections and quotes for storm damage repairs. We also assist with insurance claims documentation for storm-related roof damage.',
+    q: 'Do you repair storm-damaged roofs in Soweto?',
+    a: 'Yes. We handle storm damage repairs across Soweto and Johannesburg including tile replacement, ridge repairs, and structural damage from fallen trees.',
   },
   {
-    q: 'Can you replace individual roof tiles?',
-    a: 'Yes. We replace cracked, broken, or missing roof tiles with matching tiles to maintain the aesthetic and weatherproof integrity of your roof. We carry a range of tile profiles and colours.',
+    q: 'Can you fix a flat roof leak?',
+    a: 'Yes. We waterproof flat roofs using bitumen membrane and acrylic coatings, fixing ponding water issues and failed sealants.',
   },
 ]
 

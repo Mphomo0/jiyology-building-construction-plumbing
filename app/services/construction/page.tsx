@@ -27,7 +27,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Construction Services Soweto | Jiyology' },
   description:
-    'Professional construction services in Soweto and Johannesburg. Residential, commercial, extensions and new builds. SABS approved, BEE Level 1.',
+    'Residential & commercial construction in Soweto & Gauteng. New builds, extensions, site work. NHBRC-registered, BEE Level 1, SABS-approved. Call (011) 931 0157.',
   openGraph: og({
     title: 'Construction Services Soweto | Jiyology',
     description:
@@ -53,20 +53,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'Do you build new homes in Soweto?',
-    a: 'Yes. We specialise in new home construction across Soweto and Johannesburg. From foundation to finishing, we manage the entire building process including plans, permits, and inspections.',
-  },
-  {
     q: 'How much does it cost to build a house in Soweto?',
-    a: 'Costs vary based on size, materials, and design complexity. We provide detailed, transparent quotes after assessing your requirements. Contact us for a free consultation and accurate estimate.',
+    a: 'Building in Soweto costs R8,500–R15,000 per square metre. An 80m² house typically costs R680,000–R1,200,000 total including labour and materials.',
   },
   {
-    q: 'Can you handle commercial construction projects?',
-    a: 'Yes. We have extensive experience in commercial construction including retail spaces, offices, warehouses, and industrial facilities. All projects are managed to SABS standards.',
+    q: 'Are you NHBRC registered for new builds in Soweto?',
+    a: 'Yes. Jiyology is NHBRC-registered. All new residential builds include a mandatory 5-year structural defect warranty.',
   },
   {
-    q: 'Do you do house extensions in Johannesburg?',
-    a: 'Absolutely. We design and build house extensions including additional bedrooms, lounges, granny flats, and second-storey additions. We handle all structural and finishing work.',
+    q: 'How long does it take to build a house in Soweto?',
+    a: 'A standard 3-bedroom house in Soweto takes approximately 6–12 months from approved plans to completion.',
+  },
+  {
+    q: 'Do you do building plan approval in Johannesburg?',
+    a: 'We can guide you through the process. For detailed information, see our guide to building plan approval in Johannesburg.',
   },
 ]
 

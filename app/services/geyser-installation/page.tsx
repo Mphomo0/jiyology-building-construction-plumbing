@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Geyser Installation Soweto | Jiyology' },
   description:
-    'Professional geyser installation and repair in Soweto and Johannesburg. New geyser install, replacement, repairs, solar geyser. SABS approved, BEE Level 1.',
+    'Geyser installation & replacement in Soweto. Solar, electric, Kwikot & Heat Tech. SABS-approved. BEE Level 1. 24/7 emergency. Call Jiyology (011) 931 0157.',
   openGraph: og({
     title: 'Geyser Installation Soweto | Jiyology',
     description:
@@ -53,20 +53,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'How much does a new geyser installation cost in Soweto?',
-    a: 'Costs vary based on geyser size, brand, and installation complexity. A standard 150L geyser installation typically ranges from R6,000 to R12,000 including the unit and labour. Contact us for a free quote.',
+    q: 'How much does geyser installation cost in Soweto?',
+    a: 'A standard electric geyser replacement costs R4,500–R9,000 including the unit and installation. Solar geysers start from R12,000. Call (011) 931 0157 for a quote.',
   },
   {
-    q: 'How long does a geyser installation take?',
-    a: 'A standard geyser replacement typically takes 2-4 hours. A new installation with pipework may take 4-6 hours. Solar geyser installations take 1-2 days depending on the system type.',
+    q: 'What geyser brands do you install in Soweto?',
+    a: 'We install Kwikot, Heat Tech, and other leading South African geyser brands. We recommend SABS-approved units on all installations.',
   },
   {
-    q: 'Do you install solar geysers in Johannesburg?',
-    a: 'Yes. We install solar geyser systems including evacuated tube and flat plate collectors. Solar geysers can reduce your electricity bill by up to 50% and qualify for Eskom rebates.',
+    q: 'How long does geyser installation take?',
+    a: 'A standard geyser replacement takes 2–4 hours. New installations may take longer depending on plumbing access and geyser position.',
   },
   {
-    q: 'Can you help with geyser insurance claims?',
-    a: 'Yes. We assist with geyser insurance claims by providing detailed assessment reports, quotes, and completion certificates. Many insurers require professional installation for warranty validity.',
+    q: 'Do you offer 24/7 geyser repair in Soweto?',
+    a: 'Yes. We respond to geyser emergencies across Soweto and Johannesburg including burst geysers, no hot water, and thermostat failures.',
   },
 ]
 

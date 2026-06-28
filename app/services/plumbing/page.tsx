@@ -23,7 +23,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Plumbing Services Soweto | Jiyology' },
   description:
-    'Professional plumbing services in Soweto and Johannesburg. Maintenance, repairs, installations, emergency callouts. SABS approved, BEE Level 1. Free quote.',
+    'Licensed plumbers in Soweto & Johannesburg. Maintenance, repairs, new installations & 24/7 emergency callouts. SABS materials. BEE Level 1. Call (011) 931 0157.',
   openGraph: og({
     title: 'Plumbing Services Soweto | Jiyology',
     description:
@@ -49,28 +49,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'Do you offer emergency plumbing services in Soweto?',
-    a: 'Yes. We provide 24/7 emergency plumbing services across Soweto and Johannesburg. Call us immediately for burst pipes, blocked drains, geyser failures, or any urgent plumbing issue.',
+    q: 'Do you offer emergency plumbing in Soweto?',
+    a: 'Yes. We respond to plumbing emergencies across Soweto and Johannesburg for burst pipes, blocked drains, and geyser failures. Call (011) 931 0157.',
   },
   {
-    q: 'How much does a plumber cost in Soweto?',
-    a: 'Costs vary based on the job. We provide transparent, upfront pricing with free quotes. Contact us for an accurate estimate for your specific plumbing needs.',
+    q: 'How much does plumbing repair cost in Soweto?',
+    a: 'Minor repairs start from R350–R800. Major installations like geysers or new pipework vary by scope. We provide free, no-obligation quotes.',
   },
   {
-    q: 'Can you install a new geyser in Soweto?',
-    a: 'Yes. We install all major geyser brands including Kwikot, Heat Tech, and Franke. We handle the full installation including safety compliance and can assist with insurance claims.',
+    q: 'Can you replace burst pipes in Soweto?',
+    a: 'Yes. Our plumbers handle burst pipe repairs across Soweto, Johannesburg, and Gauteng using SABS-approved copper and CPVC pipe materials.',
   },
   {
-    q: 'Do you fix blocked drains?',
-    a: 'Yes. We clear blocked drains, toilets, and sewers using professional equipment. We also offer CCTV drain inspections for accurate diagnosis.',
-  },
-  {
-    q: 'Are you registered plumbers?',
-    a: 'Yes, our team consists of qualified, experienced plumbers who comply with all South African plumbing regulations and safety standards.',
-  },
-  {
-    q: 'What areas do you cover for plumbing?',
-    a: 'We cover all of Soweto including Protea Glen, Dobsonville, Diepkloof, Pimville, Meadowlands, Orlando, Emdeni, and the greater Johannesburg area.',
+    q: 'Are your plumbers licensed?',
+    a: 'Our team is fully trained and experienced. We use SABS-approved materials on every job and comply with South African plumbing standards.',
   },
 ]
 

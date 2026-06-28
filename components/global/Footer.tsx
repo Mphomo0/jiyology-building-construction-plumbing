@@ -316,12 +316,20 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#33b6db] mt-0.5 shrink-0" />
-                <a
-                  href="tel:+27119310157"
-                  className="text-neutral-400 hover:text-[#33b6db] transition-colors"
-                >
-                  (011) 931 0157
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+27119310157"
+                    className="text-neutral-400 hover:text-[#33b6db] transition-colors"
+                  >
+                    (011) 931 0157
+                  </a>
+                  <a
+                    href="tel:+27731294401"
+                    className="text-neutral-400 hover:text-[#33b6db] transition-colors"
+                  >
+                    073 129 4401
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#33b6db] mt-0.5 shrink-0" />

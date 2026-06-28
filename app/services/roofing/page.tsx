@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Roofing Services Soweto & Joburg | Jiyology' },
   description:
-    'Expert roofing contractors in Soweto and Johannesburg. Roof tiles, roof sheets, roof erection & repairs. SABS-approved materials, BEE Level 1. Free quote.',
+    'Expert roofing in Soweto & Johannesburg — concrete tiles, IBR sheeting, roof erection & repairs. SABS-approved materials. BEE Level 1. Free quote: (011) 931 0157.',
   openGraph: og({
     title: 'Roofing Services Soweto & Joburg | Jiyology',
     description:
@@ -39,28 +39,24 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'What types of roofing do you install in Soweto?',
-    a: 'We install a wide range of roofing including concrete roof tiles, IBR sheets, Chromodek, corrugated iron, and flat roof waterproofing. All materials are SABS approved and suitable for the Johannesburg climate.',
+    q: 'How much does roofing cost in Soweto?',
+    a: 'Concrete roof tiles cost R85–R120/m² installed, IBR sheeting R95–R150/m². A full roof for a 3-bedroom house ranges from R25,000–R60,000 depending on size and materials. Call Jiyology on (011) 931 0157 for a free quote.',
   },
   {
-    q: 'How much does a new roof cost in Soweto?',
-    a: 'Costs depend on roof size, material choice, and complexity. We provide free, no-obligation quotes tailored to your specific project. Contact us for an accurate estimate.',
+    q: 'What roofing materials do you use in Soweto?',
+    a: 'We use SABS-approved concrete roof tiles, IBR sheeting, and Chromadek roof sheets on all projects in Soweto and Johannesburg.',
   },
   {
-    q: 'Do you repair leaking roofs in Johannesburg?',
-    a: 'Yes. We provide comprehensive roof leak detection and repair services across Soweto, Johannesburg, and all surrounding areas. Our team identifies the source and provides lasting repairs.',
+    q: 'Do you fix roof leaks in Soweto?',
+    a: 'Yes. We diagnose and repair all types of roof leaks including cracked tiles, flashing failures, and flat roof waterproofing across Soweto and Johannesburg.',
   },
   {
-    q: 'Are your roofing materials SABS approved?',
-    a: 'Yes. We exclusively use SABS (South African Bureau of Standards) approved roofing materials. This guarantees quality, durability, and compliance with South African building regulations.',
+    q: 'How long does a new roof take?',
+    a: 'A standard residential roof installation takes 3–7 working days depending on size and weather conditions.',
   },
   {
-    q: 'How long does a roof installation take?',
-    a: 'A standard residential roof installation typically takes 1-2 weeks, depending on size and complexity. Commercial projects may take longer. We provide a detailed timeline during quoting.',
-  },
-  {
-    q: 'Do you offer emergency roof repairs?',
-    a: 'Yes. We respond quickly to emergency roof repairs including storm damage, leaks, and structural issues across Soweto and Johannesburg. Call us for immediate assistance.',
+    q: 'Are you NHBRC registered?',
+    a: 'Yes. Jiyology is NHBRC-registered, which means new builds include a 5-year structural defect warranty.',
   },
 ]
 

@@ -24,7 +24,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Emergency Plumbing Soweto | Jiyology' },
   description:
-    '24/7 emergency plumbing in Soweto and Johannesburg. Burst pipe repair, blocked drains, geyser emergencies, sewer backups. Fast response. Call now.',
+    '24/7 emergency plumbers in Soweto. Burst pipes, blocked drains, geyser failures & sewer backups. Fast response across Soweto & Johannesburg. (011) 931 0157.',
   openGraph: og({
     title: 'Emergency Plumbing Soweto | Jiyology',
     description:
@@ -52,20 +52,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'Do you offer 24/7 emergency plumbing in Soweto?',
-    a: 'Yes. Our emergency plumbing service operates 24 hours a day, 7 days a week across Soweto and Johannesburg. Call us anytime for urgent plumbing issues and we will dispatch a plumber immediately.',
+    q: 'Who do I call for a burst pipe in Soweto?',
+    a: 'Call Jiyology on (011) 931 0157 or 073 129 4401. We respond to burst pipe emergencies across Soweto and Johannesburg 24/7.',
   },
   {
-    q: 'How quickly can you respond to a burst pipe?',
-    a: 'We aim to respond within 60 minutes for emergency calls in Soweto and surrounding areas. Our team is on standby to handle burst pipes, major leaks, and other plumbing emergencies.',
+    q: 'How quickly can you respond to a plumbing emergency in Soweto?',
+    a: 'We aim to respond to emergencies in Soweto within 1–2 hours depending on location and time of day.',
   },
   {
-    q: 'What should I do while waiting for an emergency plumber?',
-    a: 'Turn off your main water supply at the stopcock, switch off your geyser at the circuit breaker if the leak is near electrical fittings, and clear the area around the problem. Call us immediately for professional assistance.',
+    q: 'Do you unblock drains in Soweto?',
+    a: 'Yes. We clear blocked drains, sewer backups, and stormwater blockages using drain snakes and high-pressure jetting across Soweto.',
   },
   {
-    q: 'Do you charge extra for emergency callouts?',
-    a: 'We charge a standard callout fee for emergency services after hours and on weekends. All pricing is transparent and quoted upfront. Contact us for emergency service pricing.',
+    q: 'What plumbing emergencies do you handle?',
+    a: 'Burst pipes, blocked drains, geyser failures, sewer backups, leaking geysers, no water pressure, and overflowing toilets across Soweto and Johannesburg.',
   },
 ]
 

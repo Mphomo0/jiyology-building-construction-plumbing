@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Paving Services Soweto & Joburg | Jiyology' },
   description:
-    'Professional paving services in Soweto and Johannesburg. Driveway paving, patio paving, walkways and commercial paving. SABS approved, BEE Level 1. Free quote.',
+    'Professional paving in Soweto — driveways, patios & commercial paving. Interlocking brick & concrete. BEE Level 1. Free quote from Jiyology: (011) 931 0157.',
   openGraph: og({
     title: 'Paving Services Soweto & Joburg | Jiyology',
     description:
@@ -52,20 +52,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'What types of paving do you install in Soweto?',
-    a: 'We install interlocking brick paving, concrete blocks, clay pavers, and concrete slabs. Each option offers different aesthetic and durability benefits, and we help you choose the best fit for your property.',
+    q: 'How much does driveway paving cost in Soweto?',
+    a: 'Driveway paving in Soweto costs R350–R650 per square metre for interlocking brick or concrete paving. Larger driveways receive better pricing. Call for a free quote.',
   },
   {
-    q: 'How much does driveway paving cost in Johannesburg?',
-    a: 'Costs depend on the area size, paving material chosen, and ground preparation required. We provide free, no-obligation quotes with full transparency. Contact us for an accurate estimate.',
+    q: 'What types of paving do you install?',
+    a: 'We install interlocking brick paving, concrete paving, exposed aggregate, and commercial paving for driveways, patios, and parking areas.',
   },
   {
-    q: 'Do you repair existing paving?',
-    a: 'Yes. We repair sunken, cracked, or uneven paving including block replacement, re-sanding, re-leveling, and full section replacements to restore your paved surfaces.',
+    q: 'Do you repair existing paving in Soweto?',
+    a: 'Yes. We repair cracked, sunken, or uneven paving across Soweto and Johannesburg. Contact us for a free assessment.',
   },
   {
-    q: 'How long does paving take to install?',
-    a: 'A standard driveway typically takes 2-4 days depending on size and site conditions. Larger commercial projects may take longer. We provide a timeline during quoting.',
+    q: 'How long does paving take?',
+    a: 'A standard residential driveway takes 2–4 days. Larger commercial projects are quoted with detailed timelines.',
   },
 ]
 

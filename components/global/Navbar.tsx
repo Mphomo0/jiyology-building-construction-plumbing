@@ -8,7 +8,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation'
 
-type NavLink = { href: string; label: string } | { label: string; dropdown: { href: string; label: string }[] }
+type NavLink =
+  | { href: string; label: string }
+  | { label: string; dropdown: { href: string; label: string }[] }
 
 const serviceLinks: { href: string; label: string }[] = [
   { href: '/services/roofing', label: 'Roofing' },
@@ -37,6 +39,7 @@ const locationLinks = [
 
 const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us' },
   {
     label: 'Services',
     dropdown: serviceLinks,
@@ -47,7 +50,6 @@ const navLinks: NavLink[] = [
   },
   { href: '/gallery', label: 'Gallery' },
   { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -76,7 +78,10 @@ export default function Navbar() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setOpenDropdown(null)
       }
     }
@@ -90,10 +95,18 @@ export default function Navbar() {
   }, [pathname])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-border/50" role="navigation" aria-label="Main navigation">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-border/50"
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-18">
-          <Link href="/" className="flex items-center flex-shrink-0" aria-label="Jiyology Home">
+          <Link
+            href="/"
+            className="flex items-center shrink-0"
+            aria-label="Jiyology Home"
+          >
             <Image
               src="https://ik.imagekit.io/i6f6omrki/logo.png?updatedAt=1762085106557"
               alt="Jiyology Building Construction and Plumbing logo"
@@ -105,7 +118,10 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-1" ref={dropdownRef}>
+          <div
+            className="hidden lg:flex items-center space-x-1"
+            ref={dropdownRef}
+          >
             {navLinks.map((link) => {
               if ('dropdown' in link && link.dropdown) {
                 const isOpen = openDropdown === link.label
@@ -113,7 +129,9 @@ export default function Navbar() {
                 return (
                   <div key={link.label} className="relative">
                     <button
-                      onClick={() => setOpenDropdown(isOpen ? null : link.label)}
+                      onClick={() =>
+                        setOpenDropdown(isOpen ? null : link.label)
+                      }
                       className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                         pathname.startsWith(firstHref.replace(/\/[^/]+$/, ''))
                           ? 'text-[#33b6db] bg-[#33b6db]/5'
@@ -123,7 +141,9 @@ export default function Navbar() {
                       aria-haspopup="true"
                     >
                       {link.label}
-                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                      />
                     </button>
                     <AnimatePresence>
                       {isOpen && (

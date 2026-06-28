@@ -27,7 +27,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Ceiling Installation Soweto | Jiyology' },
   description:
-    'Professional ceiling installation and repair in Soweto and Johannesburg. New ceilings, drop ceilings, bulkheads, ceiling repairs. SABS approved, BEE Level 1.',
+    'Ceiling installation in Soweto — new ceilings, drop ceilings, bulkheads & ceiling repairs. Nutec & gypsum. BEE Level 1. Free quote from Jiyology.',
   openGraph: og({
     title: 'Ceiling Installation Soweto | Jiyology',
     description:
@@ -55,20 +55,20 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'What ceiling materials do you install in Soweto?',
-    a: 'We install a variety of ceiling materials including gypsum boards, PVC panels, ceiling boards, and suspended ceiling tiles. Each option offers different benefits for aesthetics, insulation, and budget.',
+    q: 'How much does ceiling installation cost in Soweto?',
+    a: 'Ceiling installation in Soweto costs R80–R150 per square metre for Nutec or gypsum board, including fitting and cornices. Get a free quote from Jiyology.',
   },
   {
-    q: 'How much does a new ceiling cost in Johannesburg?',
-    a: 'Ceiling costs depend on the room size, material chosen, and whether any structural work is needed. We provide free quotes with full transparency on materials and labour.',
+    q: 'What ceiling types do you install?',
+    a: 'We install suspended Nutec ceilings, gypsum board ceilings, PVC ceilings, drop ceilings, and bulkheads across Soweto and Johannesburg.',
   },
   {
-    q: 'Do you repair damaged ceilings?',
-    a: 'Yes. We repair water-damaged, sagging, cracked, or hole-ridden ceilings. Our team restores your ceiling to look like new, matching existing textures and finishes.',
+    q: 'Do you repair sagging or damaged ceilings?',
+    a: 'Yes. We repair cracked, sagging, or water-damaged ceilings across Soweto. We identify and fix the cause before repairing the ceiling finish.',
   },
   {
-    q: 'What is a bulkhead ceiling?',
-    a: 'A bulkhead is a boxed section of ceiling used to conceal ductwork, pipes, or wiring, or to create architectural interest. We design and install custom bulkheads for any space.',
+    q: 'How long does ceiling installation take?',
+    a: 'A standard room ceiling takes 1–2 days. Larger or more complex installations are quoted individually.',
   },
 ]
 
