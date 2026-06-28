@@ -40,7 +40,7 @@ export default function CTA() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/20 text-black hover:bg-white/10 hover:border-white/30 hover:text-white px-10 py-6 w-full sm:w-auto"
+                className="border-white/20 text-white hover:bg-white/10 hover:border-white/30 hover:text-white px-10 py-6 w-full sm:w-auto"
                 asChild
               >
                 <a href="tel:+27119310157">

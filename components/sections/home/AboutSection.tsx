@@ -18,7 +18,7 @@ export default function AboutSection() {
     <section className="py-24 bg-background" aria-labelledby="about-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -55,7 +55,7 @@ export default function AboutSection() {
               <ul className="space-y-3 mb-8">
                 {highlights.map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#33b6db] flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-[#33b6db] shrink-0" />
                     <span className="text-foreground font-medium">{item}</span>
                   </li>
                 ))}
@@ -76,7 +76,11 @@ export default function AboutSection() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.6,
+                delay: 0.15,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -90,7 +94,9 @@ export default function AboutSection() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-[#33b6db] text-slate-950 rounded-xl px-6 py-4 shadow-lg hidden md:block">
-                <div className="text-2xl font-bold">10+</div>
+                <div className="text-2xl font-bold">
+                  {new Date().getFullYear() - 2014}+
+                </div>
                 <div className="text-sm font-medium">Years Experience</div>
               </div>
             </motion.div>

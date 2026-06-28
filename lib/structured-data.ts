@@ -15,7 +15,7 @@ export const ORGANIZATION = {
     streetAddress: '65 Tsemeli St, Ext 2, Emdeni South',
     addressLocality: 'Soweto',
     addressRegion: 'Gauteng',
-    postalCode: '1861',
+    postalCode: '1868',
     addressCountry: 'ZA',
   },
   geo: {

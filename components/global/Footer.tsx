@@ -34,8 +34,8 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-neutral-300" role="contentinfo">
       <div className="container mx-auto px-4 pt-16 pb-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-2 gap-8 md:gap-10 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Image
               src="https://ik.imagekit.io/i6f6omrki/logo-2.png?updatedAt=1762085094516"
               alt="Jiyology Building Construction and Plumbing logo"
@@ -332,7 +332,7 @@ export default function Footer() {
                   className="text-neutral-400 hover:text-[#33b6db] transition-colors"
                 >
                   <address className="not-italic">
-                    65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861
+                    65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868
                   </address>
                 </a>
               </li>

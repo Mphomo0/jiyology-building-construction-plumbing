@@ -37,7 +37,7 @@ const contactFaqs = [
   },
   {
     q: 'Where is Jiyology located?',
-    a: 'Jiyology is located at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861. We serve the entire Johannesburg metropolitan area and surrounding regions.',
+    a: 'Jiyology is located at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868. We serve the entire Johannesburg metropolitan area and surrounding regions.',
   },
 ]
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
         subtitle="We're here to help you with quality services and expert solutions."
         image="/images/pageHeaderImage.jpg"
       />
-      <div className="h-137.5">
+      <div className="h-64 sm:h-80 md:h-96 lg:h-[550px]">
         <MapSection embedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57256.66515439525!2d27.770915507047622!3d-26.244081100568184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a342f011ce05%3A0x95485c912a4f0211!2sJiyology%20Building%20Construction%20and%20Plumbing%20Pty%20Ltd!5e0!3m2!1sen!2sza!4v1760792221526!5m2!1sen!2sza" />
       </div>
       <Address />

@@ -22,7 +22,7 @@ const contactInfo = [
     icon: MapPin,
     title: 'Address',
     details: '65 Tsemeli St, Emdeni South',
-    description: 'Soweto, 1861, Gauteng',
+    description: 'Soweto, 1868, Gauteng',
     href: 'https://maps.google.com/?q=Jiyology+Building+Construction+and+Plumbing+Pty+Ltd',
   },
 ]
@@ -62,7 +62,7 @@ export default function Address() {
                       href={info.href}
                       className="flex items-start gap-4 group"
                     >
-                      <div className="w-12 h-12 bg-[#33b6db]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#33b6db]/20 transition-colors">
+                      <div className="w-12 h-12 bg-[#33b6db]/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#33b6db]/20 transition-colors">
                         <info.icon className="w-6 h-6 text-[#33b6db]" />
                       </div>
                       <div>

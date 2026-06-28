@@ -113,7 +113,7 @@ We offer free building consultations across Soweto, including Pimville, Protea G
               Cost to Build a House in Soweto
             </span>
           </nav>
-          <div className="flex items-center gap-3 text-sm text-neutral-500 mb-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-500 mb-4">
             <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">
               Construction
             </span>

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'Where is Jiyology based in Emdeni?',
-    a: 'Our office is at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861. We are a local construction and plumbing company serving Emdeni and all surrounding Soweto suburbs.',
+    a: 'Our office is at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868. We are a local construction and plumbing company serving Emdeni and all surrounding Soweto suburbs.',
   },
   {
     q: 'What services do you offer in Emdeni?',
@@ -98,7 +98,7 @@ export default function EmdeniPage() {
               </li>
             </ol>
           </nav>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
             Builder & Plumber in Emdeni, Soweto
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 leading-relaxed max-w-3xl mx-auto">
@@ -283,7 +283,7 @@ export default function EmdeniPage() {
             Visit Our Emdeni Office
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            We are located at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861.
+            We are located at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868.
             Call or visit us for a free consultation.
           </p>
           <div className="grid md:grid-cols-3 gap-6 mb-8">

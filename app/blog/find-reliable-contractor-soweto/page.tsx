@@ -117,7 +117,7 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
             /{' '}
             <span className="text-neutral-400">Reliable Contractor Guide</span>
           </nav>
-          <div className="flex items-center gap-3 text-sm text-neutral-500 mb-4">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-500 mb-4">
             <span className="bg-[#33b6db]/10 text-[#33b6db] px-3 py-1 rounded-full text-xs font-medium">
               Advice
             </span>

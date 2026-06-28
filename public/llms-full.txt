@@ -6,7 +6,7 @@
 
 - [Home](https://www.jiyology.co.za): Main landing page for Jiyology Building Construction & Plumbing. Overview of services, company highlights (SABS approved, BEE Level 1), and calls-to-action for quotes and consultations.
 - [About Us](https://www.jiyology.co.za/about): Company founding story -- founded by Vusi Jiya and Lerato Jiya. Details on SABS approved product usage, BEE Level 1 compliance (135% recognition, 50% black woman owned), professional team qualifications, and client-focused service philosophy. Includes mission, vision, and values statements.
-- [Contact Us](https://www.jiyology.co.za/contact): Full contact information including phone (011) 931 0157, emails (vusi@jiyology.co.za, vusijiya26@gmail.com), physical address (65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861). Business hours: Mon-Fri 8:00-17:00, Sat 8:00-13:00, Sun closed. Includes contact form and Google Maps embed with exact coordinates.
+- [Contact Us](https://www.jiyology.co.za/contact): Full contact information including phone (011) 931 0157, emails (vusi@jiyology.co.za, vusijiya26@gmail.com), physical address (65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868). Business hours: Mon-Fri 8:00-17:00, Sat 8:00-13:00, Sun closed. Includes contact form and Google Maps embed with exact coordinates.
 
 ## Services
 
@@ -50,7 +50,7 @@
 
 - Company name: Jiyology Building Construction and Plumbing Pty Ltd
 - Founded by: Vusi Jiya and Lerato Jiya
-- Headquarters: 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861, Gauteng, South Africa
+- Headquarters: 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868, Gauteng, South Africa
 - GPS coordinates: -26.2440811, 27.7709155
 - Phone: (011) 931 0157 / +27 11 931 0157
 - Primary email: vusi@jiyology.co.za
@@ -81,6 +81,6 @@
 - Email: vusi@jiyology.co.za
 - Secondary email: vusijiya26@gmail.com
 - Phone: +27 11 931 0157
-- Address: 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861, Gauteng, South Africa
+- Address: 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868, Gauteng, South Africa
 - Facebook: https://web.facebook.com/profile.php?id=100046841814394
 - Google Business Profile: https://www.google.com/maps/place/?q=place_id:ChIJBc4R8EKjlR4REQJPKpFcSJU

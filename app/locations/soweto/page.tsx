@@ -106,7 +106,7 @@ export default function SowetoPage() {
               </li>
             </ol>
           </nav>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
             Trusted Builders & Construction Company in Soweto
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 leading-relaxed max-w-3xl mx-auto">
@@ -138,7 +138,7 @@ export default function SowetoPage() {
             <div>
               <MapPin className="w-8 h-8 text-[#33b6db] mx-auto mb-2" />
               <p className="font-bold text-foreground">Based in Emdeni</p>
-              <p className="text-sm text-muted-foreground">Soweto, 1861</p>
+              <p className="text-sm text-muted-foreground">Soweto, 1868</p>
             </div>
             <div>
               <Star className="w-8 h-8 text-[#33b6db] mx-auto mb-2" />
@@ -331,7 +331,7 @@ export default function SowetoPage() {
             Contact Our Soweto Office
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Visit us at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1861. Call
+            Visit us at 65 Tsemeli St, Ext 2, Emdeni South, Soweto, 1868. Call
             or email us for a free consultation and quote.
           </p>
           <div className="grid md:grid-cols-3 gap-6 mb-8">

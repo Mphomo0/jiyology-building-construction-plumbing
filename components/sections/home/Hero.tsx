@@ -95,7 +95,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="text-black px-8 py-6 border-white/20 hover:bg-white/10 hover:border-white/30 font-semibold hover:text-white"
+              className="text-white px-8 py-6 border-white/20 hover:bg-white/10 hover:border-white/30 font-semibold"
               asChild
             >
               <Link href="/services">
@@ -115,7 +115,7 @@ export default function Hero() {
               <div className="text-3xl font-bold text-white">SABS</div>
               <div className="text-sm text-neutral-400">Approved Materials</div>
             </div>
-            <div className="w-px h-12 bg-white/10" />
+            <div className="hidden sm:block w-px h-12 bg-white/10" />
             <div>
               <div className="text-3xl font-bold text-white">BEE L1</div>
               <div className="text-sm text-neutral-400">Level 1 Compliant</div>

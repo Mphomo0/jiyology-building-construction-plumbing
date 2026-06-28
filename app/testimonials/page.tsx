@@ -108,14 +108,14 @@ export default function TestimonialsPage() {
               </li>
             </ol>
           </nav>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
             What Our Clients Say
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 leading-relaxed max-w-2xl mx-auto">
             Trusted by homeowners and businesses across Soweto and Johannesburg
             for quality construction, plumbing, and renovation services.
           </p>
-          <div className="mt-8 inline-flex items-center gap-4 bg-white/5 rounded-full px-6 py-3">
+          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-3 bg-white/5 rounded-full px-5 py-3">
             <div className="flex gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
@@ -165,7 +165,7 @@ export default function TestimonialsPage() {
             ))}
           </div>
 
-          <div className="mt-16 text-center bg-muted/30 rounded-2xl p-12 border border-border/60">
+          <div className="mt-16 text-center bg-muted/30 rounded-2xl p-6 sm:p-8 md:p-12 border border-border/60">
             <h2 className="text-3xl font-bold text-foreground mb-4">
               Leave Us a Review
             </h2>
