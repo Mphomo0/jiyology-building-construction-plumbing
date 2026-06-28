@@ -42,6 +42,21 @@ const faqCategories = [
     href: '/faq/plumbing',
   },
   {
+    title: 'Tiling & Painting FAQs',
+    desc: 'Costs, materials, timelines, and tips for tiling and painting projects in Soweto.',
+    href: '/faq/tiling-painting',
+  },
+  {
+    title: 'Paving FAQs',
+    desc: 'Driveway paving costs, materials, installation timelines, and maintenance in Soweto.',
+    href: '/faq/paving',
+  },
+  {
+    title: 'Ceiling Installation FAQs',
+    desc: 'Nutec, gypsum, PVC, and drop ceiling costs, materials, and repair questions for Soweto homes.',
+    href: '/faq/ceiling-installation',
+  },
+  {
     title: 'Renovation FAQs',
     desc: 'Answers about home renovations, costs, timelines, and planning in South Africa.',
     href: '/faq/renovations',

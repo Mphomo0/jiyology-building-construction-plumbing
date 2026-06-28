@@ -120,7 +120,12 @@ export default function Hero() {
               <div className="text-3xl font-bold text-white">BEE L1</div>
               <div className="text-sm text-neutral-400">Level 1 Compliant</div>
             </div>
-            <div className="w-px h-12 bg-white/10" />
+            <div className="hidden sm:block w-px h-12 bg-white/10" />
+            <div>
+              <div className="text-3xl font-bold text-white">NHBRC</div>
+              <div className="text-sm text-neutral-400">Registered Builder</div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-white/10" />
             <div>
               <div className="text-3xl font-bold text-white">200+</div>
               <div className="text-sm text-neutral-400">Projects Completed</div>

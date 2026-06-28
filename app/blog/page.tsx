@@ -80,6 +80,22 @@ const articles = [
     readTime: '6 min read',
     category: 'Plumbing',
   },
+  {
+    title: 'How Much Does a New Roof Cost in Soweto?',
+    desc: 'Full breakdown of roofing costs in Soweto: concrete tiles, IBR sheeting, labour, scaffolding, gutters, and hidden costs. Know what to budget before calling a contractor.',
+    href: '/blog/how-much-does-roof-cost-soweto',
+    date: '15 July 2025',
+    readTime: '7 min read',
+    category: 'Roofing',
+  },
+  {
+    title: '8 Signs Your Geyser Needs Replacing in South Africa',
+    desc: 'Rusty water, rumbling sounds, water pooling, no hot water — learn the 8 warning signs your geyser is about to fail and what to do before it bursts.',
+    href: '/blog/signs-geyser-needs-replacing',
+    date: '1 August 2025',
+    readTime: '7 min read',
+    category: 'Plumbing',
+  },
 ]
 
 export default function BlogHubPage() {
