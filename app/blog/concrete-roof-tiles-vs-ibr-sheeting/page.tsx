@@ -200,6 +200,26 @@ Jiyology installs both concrete roof tiles and IBR sheeting across all Soweto su
         </div>
       </section>
 
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Roofing Resources</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Learn more about our roofing services and FAQ.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/services/roofing" className="inline-flex items-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all">
+              Roofing Services
+            </Link>
+            <Link href="/services/roof-repairs" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Roof Repairs
+            </Link>
+            <Link href="/faq/roofing" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Roofing FAQ
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <CTA />
     </>
   )

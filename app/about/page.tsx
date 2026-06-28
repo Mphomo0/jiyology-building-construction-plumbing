@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import PageHeader from '@/components/global/PageHeader'
 import AboutCompany from '@/components/sections/about/AboutCompany'
 import Vision from '@/components/sections/about/Vision'
 import CTA from '@/components/sections/home/CTA'
+import { Button } from '@/components/ui/button'
 import { faqLdJson, breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
@@ -66,6 +69,20 @@ export default function About() {
       />
       <AboutCompany />
       <Vision />
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Meet Our Team</h2>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Get to know the experienced professionals behind Jiyology.
+          </p>
+          <Link href="/team">
+            <Button size="lg" className="bg-neutral-950 hover:bg-[#33b6db] text-white">
+              View Our Team
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
       <CTA />
     </>
   )

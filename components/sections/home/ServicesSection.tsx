@@ -10,18 +10,21 @@ const featuredServices = [
   {
     icon: Home,
     title: 'Roofing',
+    href: '/services/roofing',
     description:
       'Complete roofing solutions including roof tiles, roof sheets, and professional roof erection.',
   },
   {
     icon: Wrench,
     title: 'Plumbing',
+    href: '/services/plumbing',
     description:
       'Full plumbing services including maintenance, repairs, and emergency callouts.',
   },
   {
     icon: Building2,
     title: 'Home Renovation',
+    href: '/services/renovations',
     description:
       'Transform your space with comprehensive interior and exterior renovation services.',
   },
@@ -63,21 +66,23 @@ export default function ServicesSection() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Card className="h-full border-border/60 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                  <CardHeader>
-                    <div className="w-14 h-14 bg-[#33b6db]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#33b6db]/20 transition-colors duration-300">
-                      <service.icon className="w-7 h-7 text-[#33b6db]" />
-                    </div>
-                    <CardTitle className="text-xl font-bold">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <Link href={service.href}>
+                  <Card className="h-full border-border/60 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <CardHeader>
+                      <div className="w-14 h-14 bg-[#33b6db]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#33b6db]/20 transition-colors duration-300">
+                        <service.icon className="w-7 h-7 text-[#33b6db]" />
+                      </div>
+                      <CardTitle className="text-xl font-bold">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {service.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>

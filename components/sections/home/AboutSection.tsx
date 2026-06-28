@@ -61,15 +61,27 @@ export default function AboutSection() {
                 ))}
               </ul>
 
-              <Link href="/about">
-                <Button
-                  size="lg"
-                  className="bg-neutral-950 text-white hover:bg-[#33b6db] hover:text-white transition-all duration-300"
-                >
-                  Learn More About Us
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/about">
+                  <Button
+                    size="lg"
+                    className="bg-neutral-950 text-white hover:bg-[#33b6db] hover:text-white transition-all duration-300"
+                  >
+                    Learn More About Us
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link href="/testimonials">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-neutral-950 text-neutral-950 hover:bg-[#33b6db] hover:text-white hover:border-[#33b6db] transition-all duration-300"
+                  >
+                    Read Testimonials
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             <motion.div

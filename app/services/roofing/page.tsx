@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Roofing Services Soweto & Joburg | Jiyology' },
   description:
-    'Expert roofing in Soweto & Johannesburg — concrete tiles, IBR sheeting, roof erection & repairs. SABS-approved materials. BEE Level 1. Free quote: (011) 931 0157.',
+    'Expert roofing in Soweto & Johannesburg: concrete tiles, IBR sheeting, roof repairs. SABS approved, BEE Level 1. Free quote.',
   openGraph: og({
     title: 'Roofing Services Soweto & Joburg | Jiyology',
     description:
@@ -386,6 +386,25 @@ export default function RoofingPage() {
         </div>
       </section>
 
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Roofing Resources</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Explore our roofing FAQ and cost guides for more information.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/faq/roofing" className="inline-flex items-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all">
+              Roofing FAQ
+            </Link>
+            <Link href="/blog/concrete-roof-tiles-vs-ibr-sheeting" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Tiles vs IBR Guide
+            </Link>
+            <Link href="/blog/how-much-does-roof-cost-soweto" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Roof Cost Guide
+            </Link>
+          </div>
+        </div>
+      </section>
       <CTA />
     </>
   )

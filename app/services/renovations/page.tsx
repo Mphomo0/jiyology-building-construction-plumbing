@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'Home Renovations Soweto | Jiyology' },
   description:
-    'Home renovation specialists in Soweto. Kitchens, bathrooms, interior & exterior upgrades. Quality workmanship, SABS materials, BEE Level 1. Free quote available.',
+    'Home renovation specialists in Soweto. Kitchens, bathrooms, interior & exterior upgrades. SABS materials, BEE Level 1. Free quote.',
   openGraph: og({
     title: 'Home Renovations Soweto | Jiyology',
     description:
@@ -338,6 +338,26 @@ export default function RenovationsPage() {
                 </p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Renovation Resources</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Explore our renovation guides and FAQ for more information.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/faq/renovations" className="inline-flex items-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all">
+              Renovation FAQ
+            </Link>
+            <Link href="/services/construction" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Construction Services
+            </Link>
+            <Link href="/contact" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Get a Free Quote
+            </Link>
           </div>
         </div>
       </section>

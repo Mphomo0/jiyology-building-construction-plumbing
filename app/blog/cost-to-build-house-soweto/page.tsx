@@ -7,7 +7,7 @@ import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: { absolute: 'Cost to Build in Soweto 2025 | Jiyology' },
   description:
-    'Building a house in Soweto costs R8,500–R15,000/m² in 2025. Complete breakdown of construction costs including foundation, roofing, plumbing, tiling, permits and hidden fees.',
+    'Building a house in Soweto costs R8,500–R15,000/m² in 2025. Full breakdown: materials, labour, permits, and hidden costs.',
   openGraph: og({
     title: 'Cost to Build in Soweto 2025 | Jiyology',
     description:
@@ -267,6 +267,26 @@ We offer free building consultations across Soweto, including Pimville, Protea G
               className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-muted-foreground font-semibold hover:bg-muted transition-all text-sm"
             >
               More Articles
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Construction Resources</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Explore our construction services and cost guides.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/services/construction" className="inline-flex items-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all">
+              Construction Services
+            </Link>
+            <Link href="/services/renovations" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Renovation Services
+            </Link>
+            <Link href="/faq/renovations" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Renovation FAQ
             </Link>
           </div>
         </div>

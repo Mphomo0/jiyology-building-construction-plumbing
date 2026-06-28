@@ -212,6 +212,26 @@ Jiyology offers professional geyser servicing, repair, and installation across a
         </div>
       </section>
 
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Geyser Resources</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Need geyser service or replacement? We can help.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/services/geyser-installation" className="inline-flex items-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all">
+              Geyser Services
+            </Link>
+            <Link href="/services/plumbing" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Plumbing Services
+            </Link>
+            <Link href="/faq/plumbing" className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all">
+              Plumbing FAQ
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <CTA />
     </>
   )
