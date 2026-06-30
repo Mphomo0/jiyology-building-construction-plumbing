@@ -97,12 +97,12 @@ export default function AboutSection() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://ik.imagekit.io/i6f6omrki/about-image.jpg?updatedAt=1762085902354"
+                  src="https://ik.imagekit.io/i6f6omrki/about-image.jpg?updatedAt=1762085902354&tr=w-600,q-80,f-auto"
                   alt="Jiyology construction team at work on a building project in Soweto"
                   width={600}
                   height={700}
                   className="object-cover w-full h-auto"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  unoptimized
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-[#33b6db] text-slate-950 rounded-xl px-6 py-4 shadow-lg hidden md:block">

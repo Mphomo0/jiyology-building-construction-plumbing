@@ -18,8 +18,9 @@ export default function PageHeader({ title, subtitle, image }: PageHeaderProps) 
             alt=""
             fill
             className="object-cover opacity-15"
-            sizes="100vw"
             priority
+            unoptimized={image.startsWith('https://ik.imagekit.io')}
+            sizes="100vw"
           />
         ) : null}
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />

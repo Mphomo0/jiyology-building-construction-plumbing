@@ -86,12 +86,12 @@ export default function AboutCompany() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="https://ik.imagekit.io/i6f6omrki/Gallery/IMG-20201018-WA0024.jpg?updatedAt=1762082551293"
+                src="https://ik.imagekit.io/i6f6omrki/Gallery/IMG-20201018-WA0024.jpg?updatedAt=1762082551293&tr=w-600,q-80,f-auto"
                 alt="Jiyology construction team working on a building project"
                 width={600}
                 height={700}
                 className="object-cover w-full h-auto"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                unoptimized
               />
             </div>
           </motion.div>
