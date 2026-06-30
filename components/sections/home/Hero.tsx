@@ -14,12 +14,12 @@ export default function Hero() {
     >
       <div className="absolute inset-0">
         <Image
-          src="https://ik.imagekit.io/i6f6omrki/hero-image.jpg?updatedAt=1762086874764"
+          src="https://ik.imagekit.io/i6f6omrki/hero-image.jpg?updatedAt=1762086874764&tr=w-1920,q-75,f-auto"
           alt="Construction site showcasing Jiyology building work"
           fill
           className="object-cover"
           priority
-          sizes="100vw"
+          unoptimized
         />
         <div className="absolute inset-0 bg-linear-to-br from-slate-950/90 via-slate-900/85 to-slate-950/90" />
       </div>

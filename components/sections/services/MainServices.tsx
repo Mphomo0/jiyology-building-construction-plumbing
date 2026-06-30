@@ -95,7 +95,10 @@ const services = [
 
 export default function MainServices() {
   return (
-    <section className="py-24 bg-muted/30" aria-labelledby="all-services-heading">
+    <section
+      className="py-24 bg-muted/30"
+      aria-labelledby="all-services-heading"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,44 +130,48 @@ export default function MainServices() {
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.5,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               <Link href={service.href} className="block h-full">
                 <Card className="group h-full overflow-hidden border-border/60 shadow-sm hover:shadow-xl transition-all duration-300">
-                <div className="relative h-52 overflow-hidden">
-                  <Image
-                    src={`${service.image}?tr=w-600,h-400,q-80,f-auto`}
-                    width={600}
-                    height={400}
-                    alt={`${service.title} service by Jiyology Construction`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
-                </div>
+                  <div className="relative h-52 overflow-hidden">
+                    <Image
+                      src={`${service.image}?tr=w-600,h-400,q-80,f-auto`}
+                      width={600}
+                      height={400}
+                      alt={`${service.title} service by Jiyology Construction`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      unoptimized
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/50 to-transparent" />
+                  </div>
 
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-[#33b6db] transition-colors duration-300">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-xl font-bold text-foreground group-hover:text-[#33b6db] transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-sm leading-relaxed text-muted-foreground">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
 
-                <CardContent className="pt-0">
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center text-sm font-medium text-foreground"
-                      >
-                        <Check className="w-4 h-4 text-[#33b6db] mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
+                  <CardContent className="pt-0">
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center text-sm font-medium text-foreground"
+                        >
+                          <Check className="w-4 h-4 text-[#33b6db] mr-2 shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
                 </Card>
               </Link>
             </motion.div>

@@ -29,6 +29,21 @@ const nextConfig: NextConfig = {
     // and cache-write quotas.
     loader: 'custom',
     loaderFile: './lib/imagekit-loader.ts',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+        pathname: '/**',
+      },
+    ],
+    localPatterns: [
+      {
+        pathname: '/images/**',
+      },
+    ],
+    formats: ['image/webp'],
+    deviceSizes: [640, 828, 1200, 1920],
+    imageSizes: [64, 128, 256],
   },
   compress: true,
   poweredByHeader: false,
