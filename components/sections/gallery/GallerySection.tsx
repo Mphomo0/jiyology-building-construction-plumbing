@@ -55,7 +55,7 @@ export default function GallerySection({ items }: { items: GalleryItem[] }) {
                   <CardContent className="p-0">
                     <div className="relative overflow-hidden">
                       <Image
-                        src={`${item.src}?tr=w-600,q-80,f-auto`}
+                        src={item.src}
                         alt={`Jiyology ${item.title} project`}
                         width={600}
                         height={400}

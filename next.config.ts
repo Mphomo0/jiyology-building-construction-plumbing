@@ -8,22 +8,27 @@ const nextConfig: NextConfig = {
       { source: '/services/roof-repair', destination: '/services/roof-repairs', permanent: true },
     ]
   },
+  async headers() {
+    return [
+      {
+        // Local images rarely change; long-lived caching cuts edge requests
+        // and origin transfer on repeat visits.
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ]
+  },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'ik.imagekit.io',
-        pathname: '/**',
-      },
-    ],
-    localPatterns: [
-      {
-        pathname: '/images/**',
-      },
-    ],
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // All transformations happen on ImageKit's CDN instead of Vercel's
+    // image optimizer, which was exceeding the free-tier transformation
+    // and cache-write quotas.
+    loader: 'custom',
+    loaderFile: './lib/imagekit-loader.ts',
   },
   compress: true,
   poweredByHeader: false,
