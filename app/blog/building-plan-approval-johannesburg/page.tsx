@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
-import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Building Plan Approval Joburg | Jiyology' },
@@ -62,30 +61,6 @@ Our renovation services always include a compliance check. Before starting any p
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          blogLdJson({
-            title:
-              'Do I Need Building Plan Approval for Renovations in Johannesburg?',
-            description:
-              'Understand when you need approved building plans, the permit process with City of Johannesburg, and what happens if you build without approval.',
-            body,
-            datePublished: '2025-06-09',
-            dateModified: '2025-06-09',
-            author: 'Vusi Jiya',
-            url: 'https://www.jiyology.co.za/blog/building-plan-approval-johannesburg',
-          }),
-        )}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          breadcrumbLdJson([
-            { name: 'Home', url: 'https://www.jiyology.co.za' },
-            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-            {
-              name: 'Building Plan Approval Johannesburg',
-              url: 'https://www.jiyology.co.za/blog/building-plan-approval-johannesburg',
-            },
-          ]),
-        )}} />
-
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">

@@ -10,7 +10,6 @@ const Navbar = dynamic(() => import('@/components/global/Navbar'), {
 const Footer = dynamic(() => import('@/components/global/Footer'), {
   ssr: true,
 })
-import { siteSpineLdJson } from '@/lib/structured-data'
 import FloatingPhone from '@/components/global/FloatingPhone'
 import FloatingWhatsApp from '@/components/global/FloatingWhatsApp'
 
@@ -104,8 +103,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const spine = siteSpineLdJson()
-
   return (
     <html lang="en" dir="ltr">
       <head>
@@ -115,15 +112,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@graph': spine,
-            }),
-          }}
-        />
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}

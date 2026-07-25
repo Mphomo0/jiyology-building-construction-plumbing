@@ -15,11 +15,6 @@ import {
   Ban,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
-import {
-  serviceLdJson,
-  faqLdJson,
-  breadcrumbLdJson,
-} from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Emergency Plumbing Soweto | Jiyology' },
@@ -70,12 +65,6 @@ const faqs = [
 ]
 
 export default function EmergencyPlumbingPage() {
-  const service = {
-    name: 'Emergency Plumbing Services',
-    description:
-      '24/7 emergency plumbing services including burst pipe repair, blocked drains, geyser emergencies, and sewer backup solutions in Soweto and Johannesburg.',
-    areaServed: 'Soweto, Johannesburg, Gauteng',
-  }
 
   const emergencyServices = [
     {
@@ -126,19 +115,6 @@ export default function EmergencyPlumbingPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceLdJson(service))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          breadcrumbLdJson([
-            { name: 'Home', url: 'https://www.jiyology.co.za' },
-            { name: 'Services', url: 'https://www.jiyology.co.za/services' },
-            {
-              name: 'Emergency Plumbing',
-              url: 'https://www.jiyology.co.za/services/emergency-plumbing',
-            },
-          ]),
-        )}} />
-
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Emergency Plumbing Services"

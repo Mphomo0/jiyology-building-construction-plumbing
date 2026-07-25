@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { og } from '@/lib/metadata'
 import { Star } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
-import { reviewLdJson, breadcrumbLdJson, aggregateRatingLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Client Testimonials | Jiyology Construction & Plumbing' },
@@ -65,28 +64,12 @@ const testimonials = [
 ]
 
 export default function TestimonialsPage() {
-  const breadcrumb = breadcrumbLdJson([
-    { name: 'Home', url: 'https://www.jiyology.co.za' },
-    { name: 'Testimonials', url: 'https://www.jiyology.co.za/testimonials' },
-  ])
-
-  const reviewData = testimonials.map((t) => ({
-    author: t.author,
-    body: t.body,
-    rating: t.rating,
-    date: t.date,
-  }))
-
   const avgRatingNum =
     testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
   const avgRating = avgRatingNum.toFixed(1)
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumb)}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(reviewLdJson(reviewData))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(aggregateRatingLdJson(avgRatingNum, testimonials.length))}} />
-
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Testimonials"

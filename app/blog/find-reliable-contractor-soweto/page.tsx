@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
-import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Find a Reliable Contractor Soweto | Jiyology' },
@@ -79,30 +78,6 @@ At Jiyology, Vusi and Lerato Jiya personally oversee every project. We serve all
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          blogLdJson({
-            title:
-              'How to Find a Reliable Contractor in Soweto: 10 Checks to Make',
-            description:
-              'Avoid contractor scams and shoddy workmanship by making these 10 essential checks before hiring any builder or plumber in Soweto.',
-            body,
-            datePublished: '2025-06-02',
-            dateModified: '2025-06-02',
-            author: 'Lerato Jiya',
-            url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
-          }),
-        )}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          breadcrumbLdJson([
-            { name: 'Home', url: 'https://www.jiyology.co.za' },
-            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-            {
-              name: 'Find a Reliable Contractor in Soweto',
-              url: 'https://www.jiyology.co.za/blog/find-reliable-contractor-soweto',
-            },
-          ]),
-        )}} />
-
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">

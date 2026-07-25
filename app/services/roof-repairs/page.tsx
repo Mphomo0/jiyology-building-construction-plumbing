@@ -14,11 +14,6 @@ import {
   Building2,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
-import {
-  serviceLdJson,
-  faqLdJson,
-  breadcrumbLdJson,
-} from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Roof Repairs Soweto & Joburg | Jiyology' },
@@ -67,12 +62,6 @@ const faqs = [
 ]
 
 export default function RoofRepairsPage() {
-  const service = {
-    name: 'Roof Repair Services',
-    description:
-      'Comprehensive roof repair services including leaking roof repair, storm damage restoration, tile replacement, and flat roof waterproofing in Soweto and Johannesburg.',
-    areaServed: 'Soweto, Johannesburg, Gauteng',
-  }
 
   const roofRepairServices = [
     {
@@ -123,19 +112,6 @@ export default function RoofRepairsPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceLdJson(service))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          breadcrumbLdJson([
-            { name: 'Home', url: 'https://www.jiyology.co.za' },
-            { name: 'Services', url: 'https://www.jiyology.co.za/services' },
-            {
-              name: 'Roof Repairs',
-              url: 'https://www.jiyology.co.za/services/roof-repairs',
-            },
-          ]),
-        )}} />
-
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Roof Repair Services"

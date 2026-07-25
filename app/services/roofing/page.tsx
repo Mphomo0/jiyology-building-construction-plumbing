@@ -4,11 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Check, Shield, Clock, Award, Phone } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
-import {
-  serviceLdJson,
-  faqLdJson,
-  breadcrumbLdJson,
-} from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Roofing Services Soweto & Joburg | Jiyology' },
@@ -61,28 +56,9 @@ const faqs = [
 ]
 
 export default function RoofingPage() {
-  const service = {
-    name: 'Roofing Services',
-    description:
-      'Complete roofing solutions including roof tiles, roof sheets, and professional roof erection in Soweto and Johannesburg.',
-    areaServed: 'Soweto, Johannesburg, Gauteng',
-  }
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceLdJson(service))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          breadcrumbLdJson([
-            { name: 'Home', url: 'https://www.jiyology.co.za' },
-            { name: 'Services', url: 'https://www.jiyology.co.za/services' },
-            {
-              name: 'Roofing',
-              url: 'https://www.jiyology.co.za/services/roofing',
-            },
-          ]),
-        )}} />
-
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Roofing Services"

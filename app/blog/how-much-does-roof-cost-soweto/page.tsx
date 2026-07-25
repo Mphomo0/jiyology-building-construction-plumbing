@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
-import { breadcrumbLdJson, blogLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'How Much Does a New Roof Cost in Soweto? | Jiyology' },
@@ -78,35 +77,6 @@ Call Jiyology on (011) 931 0157 for a free, no-obligation roof inspection and wr
 export default function RoofCostBlogPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            blogLdJson({
-              title: 'How Much Does a New Roof Cost in Soweto?',
-              description: 'Full cost breakdown for new roof installation in Soweto: concrete tiles, IBR sheeting, labour, scaffolding, gutters, and hidden costs.',
-              body,
-              datePublished: '2025-07-15',
-              dateModified: '2025-07-15',
-              author: 'Vusi Jiya',
-              url: 'https://www.jiyology.co.za/blog/how-much-does-roof-cost-soweto',
-            }),
-          ),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            breadcrumbLdJson([
-              { name: 'Home', url: 'https://www.jiyology.co.za' },
-              { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-              { name: 'How Much Does a New Roof Cost in Soweto?', url: 'https://www.jiyology.co.za/blog/how-much-does-roof-cost-soweto' },
-            ]),
-          ),
-        }}
-      />
-
       <article className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">

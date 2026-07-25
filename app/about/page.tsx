@@ -7,7 +7,6 @@ import AboutCompany from '@/components/sections/about/AboutCompany'
 import Vision from '@/components/sections/about/Vision'
 import CTA from '@/components/sections/home/CTA'
 import { Button } from '@/components/ui/button'
-import { faqLdJson, breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -30,38 +29,9 @@ export const metadata: Metadata = {
   }),
 }
 
-const aboutFaqs = [
-  {
-    q: 'Who founded Jiyology Construction & Plumbing?',
-    a: 'Jiyology was founded by Vusi Jiya and Lerato Jiya, who share a passion for helping customers and delivering quality construction and plumbing services in Soweto and surrounding areas.',
-  },
-  {
-    q: 'Is Jiyology BEE compliant?',
-    a: 'Yes, Jiyology is a Level One 135% BEE compliant company, 50% black woman owned, and an equal opportunity employer.',
-  },
-  {
-    q: 'What quality standards does Jiyology follow?',
-    a: 'We exclusively use SABS (South African Bureau of Standards) approved products and materials, ensuring the highest quality in every project we undertake.',
-  },
-]
-
 export default function About() {
-  const ldJson = faqLdJson(aboutFaqs)
-  const breadcrumb = breadcrumbLdJson([
-    { name: 'Home', url: 'https://www.jiyology.co.za/' },
-    { name: 'About Us', url: 'https://www.jiyology.co.za/about' },
-  ])
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
       <PageHeader
         title="About Us"
         subtitle="Getting to know the team behind Jiyology"

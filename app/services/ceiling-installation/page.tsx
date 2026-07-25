@@ -18,11 +18,6 @@ import {
   Fan,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
-import {
-  serviceLdJson,
-  faqLdJson,
-  breadcrumbLdJson,
-} from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Ceiling Installation Soweto | Jiyology' },
@@ -73,12 +68,6 @@ const faqs = [
 ]
 
 export default function CeilingInstallationPage() {
-  const service = {
-    name: 'Ceiling Installation Services',
-    description:
-      'Professional ceiling installation, repairs, drop ceilings, and bulkhead installation for residential and commercial properties in Soweto and Johannesburg.',
-    areaServed: 'Soweto, Johannesburg, Gauteng',
-  }
 
   const ceilingServices = [
     {
@@ -129,19 +118,6 @@ export default function CeilingInstallationPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceLdJson(service))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          breadcrumbLdJson([
-            { name: 'Home', url: 'https://www.jiyology.co.za' },
-            { name: 'Services', url: 'https://www.jiyology.co.za/services' },
-            {
-              name: 'Ceiling Installation',
-              url: 'https://www.jiyology.co.za/services/ceiling-installation',
-            },
-          ]),
-        )}} />
-
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Ceiling Installation Services"

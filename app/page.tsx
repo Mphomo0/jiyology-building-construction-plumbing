@@ -5,7 +5,6 @@ import CTA from '@/components/sections/home/CTA'
 import Hero from '@/components/sections/home/Hero'
 import ServicesSection from '@/components/sections/home/ServicesSection'
 import FAQSection from '@/components/sections/home/FAQSection'
-import { faqLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: {
@@ -37,37 +36,9 @@ export const metadata: Metadata = {
   },
 }
 
-const homeFaqs = [
-  {
-    q: 'What construction and plumbing services do you offer in Soweto?',
-    a: 'Jiyology offers roofing, plumbing, home renovations, construction, paving, tiling, painting, and ceiling installation across Soweto and Johannesburg.',
-  },
-  {
-    q: 'Are you BEE Level 1 compliant?',
-    a: 'Yes. Jiyology is Level One 135% BEE compliant and 50% black woman-owned, meeting all government and corporate procurement requirements.',
-  },
-  {
-    q: 'Do you use SABS-approved materials?',
-    a: 'Yes, we exclusively use SABS (South African Bureau of Standards) approved products and materials on every project.',
-  },
-  {
-    q: 'How do I get a free quote?',
-    a: 'Call us at (011) 931 0157, email vusi@jiyology.co.za, or fill in the contact form. We respond within one business day.',
-  },
-  {
-    q: 'Do you offer emergency plumbing in Soweto?',
-    a: 'Yes, we provide 24/7 emergency plumbing across Soweto and Johannesburg for burst pipes, blocked drains, and geyser failures.',
-  },
-]
-
 export default function Home() {
-  const faqSchema = faqLdJson(homeFaqs)
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Hero />
       <AboutSection />
       <ServicesSection />

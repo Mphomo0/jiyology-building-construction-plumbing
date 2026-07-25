@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
-import { breadcrumbLdJson, SITE_URL } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Building & Plumbing Blog | Jiyology' },
@@ -99,46 +98,8 @@ const articles = [
 ]
 
 export default function BlogHubPage() {
-  const blogSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: 'Jiyology Construction & Plumbing Blog',
-    description:
-      'Expert articles about construction, plumbing, roofing, and home renovations in Soweto and Johannesburg.',
-    url: `${SITE_URL}/blog`,
-    publisher: { '@id': `${SITE_URL}/#org` },
-    blogPost: articles.map((a) => ({
-      '@type': 'BlogPosting',
-      headline: a.title,
-      description: a.desc,
-      url: `${SITE_URL}${a.href}`,
-    })),
-  }
-
-  const itemListSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Jiyology Blog Posts',
-    url: `${SITE_URL}/blog`,
-    itemListElement: articles.map((a, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: a.title,
-      url: `${SITE_URL}${a.href}`,
-    })),
-  }
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(blogSchema)}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(itemListSchema)}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
-          breadcrumbLdJson([
-            { name: 'Home', url: 'https://www.jiyology.co.za' },
-            { name: 'Blog', url: 'https://www.jiyology.co.za/blog' },
-          ]),
-        )}} />
-
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Blog"
