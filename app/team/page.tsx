@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
-import Image from 'next/image'
+import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 
 export const metadata: Metadata = {
@@ -60,9 +60,9 @@ export default function TeamPage() {
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center justify-center gap-2 text-sm text-neutral-400">
               <li>
-                <a href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <span className="mx-2">/</span>
@@ -153,12 +153,12 @@ export default function TeamPage() {
               your construction or plumbing project.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-3 bg-neutral-950 hover:bg-[#33b6db] text-white font-semibold rounded-lg transition-colors"
               >
                 Get a Free Quote
-              </a>
+              </Link>
               <a
                 href="tel:+27119310157"
                 className="inline-flex items-center justify-center px-8 py-3 border border-border text-foreground font-semibold rounded-lg hover:bg-muted/50 transition-colors"

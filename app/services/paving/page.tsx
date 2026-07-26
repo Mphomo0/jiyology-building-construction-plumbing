@@ -10,9 +10,6 @@ import {
   Phone,
   Building2,
   Car,
-  Grid3x3,
-  Palmtree,
-  SquareStack,
   TreePine,
   Wrench,
 } from 'lucide-react'

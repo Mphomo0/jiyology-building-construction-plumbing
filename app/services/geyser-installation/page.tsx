@@ -9,10 +9,8 @@ import {
   Award,
   Phone,
   Thermometer,
-  Droplets,
   RefreshCw,
   Wrench,
-  Zap,
   Sun,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'

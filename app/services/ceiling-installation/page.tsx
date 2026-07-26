@@ -8,14 +8,10 @@ import {
   Clock,
   Award,
   Phone,
-  ChevronUp,
-  Grid3x3,
   Hammer,
   Layout,
-  Lightbulb,
   Box,
   PanelTop,
-  Fan,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 

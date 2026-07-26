@@ -2,14 +2,9 @@ import type { Metadata } from 'next'
 
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import dynamic from 'next/dynamic'
-
-const Navbar = dynamic(() => import('@/components/global/Navbar'), {
-  ssr: true,
-})
-const Footer = dynamic(() => import('@/components/global/Footer'), {
-  ssr: true,
-})
+import Script from 'next/script'
+import Navbar from '@/components/global/Navbar'
+import Footer from '@/components/global/Footer'
 import FloatingPhone from '@/components/global/FloatingPhone'
 import FloatingWhatsApp from '@/components/global/FloatingWhatsApp'
 
@@ -112,25 +107,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.GA_TRACKING_ID}');
-            `,
-          }}
-        />
-        <script
-          async
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key={process.env.AHREFS_ANALYTICS_KEY}
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -148,6 +124,23 @@ export default function RootLayout({
         <Footer />
         <FloatingWhatsApp />
         <FloatingPhone />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GA_TRACKING_ID}');
+          `}
+        </Script>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key={process.env.AHREFS_ANALYTICS_KEY}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

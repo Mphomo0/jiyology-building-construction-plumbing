@@ -8,12 +8,8 @@ import {
   Clock,
   Award,
   Phone,
-  Building,
   Building2,
-  HardHat,
   Home,
-  Ruler,
-  Compass,
   Plus,
   Warehouse,
 } from 'lucide-react'

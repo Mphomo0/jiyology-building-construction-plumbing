@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { og } from '@/lib/metadata'
 import { Star } from 'lucide-react'
+import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
 
 export const metadata: Metadata = {
@@ -79,9 +80,9 @@ export default function TestimonialsPage() {
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center justify-center gap-2 text-sm text-neutral-400">
               <li>
-                <a href="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <span className="mx-2">/</span>

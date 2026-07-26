@@ -10,7 +10,6 @@ import {
   Phone,
   AlertTriangle,
   Droplet,
-  Droplets,
   Thermometer,
   Ban,
 } from 'lucide-react'

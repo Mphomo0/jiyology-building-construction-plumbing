@@ -10,10 +10,8 @@ import {
   Phone,
   Home,
   PaintBucket,
-  Bath,
   Building2,
   Hammer,
-  Wrench,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 

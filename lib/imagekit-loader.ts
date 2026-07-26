@@ -1,5 +1,3 @@
-'use client'
-
 const IMAGEKIT_HOST = 'https://ik.imagekit.io'
 
 // Serves images straight from ImageKit's CDN with its own transformations,

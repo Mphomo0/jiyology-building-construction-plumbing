@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 type NavLink =
   | { href: string; label: string }
@@ -53,28 +53,18 @@ const navLinks: NavLink[] = [
   { href: '/contact', label: 'Contact' },
 ]
 
-function DropdownNav({ links }: { links: { href: string; label: string }[] }) {
-  return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl shadow-xl border border-border/60 py-2 z-50">
-      {links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className="block px-4 py-2.5 text-sm text-neutral-700 hover:bg-[#33b6db]/5 hover:text-[#33b6db] transition-colors"
-        >
-          {link.label}
-        </Link>
-      ))}
-    </div>
-  )
-}
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const router = useRouter()
   const pathname = usePathname()
+
+  const [prevPathname, setPrevPathname] = useState(pathname)
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname)
+    setOpenDropdown(null)
+    setIsOpen(false)
+  }
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -88,11 +78,6 @@ export default function Navbar() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
-
-  useEffect(() => {
-    setOpenDropdown(null)
-    setIsOpen(false)
-  }, [pathname])
 
   return (
     <nav
@@ -201,9 +186,9 @@ export default function Navbar() {
             <Button
               size="sm"
               className="bg-neutral-950 hover:bg-[#33b6db] text-white shadow-sm"
-              onClick={() => router.push('/contact')}
+              asChild
             >
-              Get Quote
+              <Link href="/contact">Get Quote</Link>
             </Button>
           </div>
 
@@ -279,12 +264,11 @@ export default function Navbar() {
                     <Button
                       size="sm"
                       className="w-full bg-neutral-950 hover:bg-[#33b6db]"
-                      onClick={() => {
-                        setIsOpen(false)
-                        router.push('/contact')
-                      }}
+                      asChild
                     >
-                      Get Quote
+                      <Link href="/contact" onClick={() => setIsOpen(false)}>
+                        Get Quote
+                      </Link>
                     </Button>
                   </div>
                 </div>

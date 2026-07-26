@@ -43,7 +43,7 @@ export default function Footer() {
               height={70}
               className="brightness-0 invert"
               style={{ width: 'auto', height: 'auto' }}
-              priority
+              loading="lazy"
             />
             <p className="mt-6 text-sm leading-relaxed text-neutral-400 max-w-xs">
               Trusted construction and plumbing company delivering reliable,

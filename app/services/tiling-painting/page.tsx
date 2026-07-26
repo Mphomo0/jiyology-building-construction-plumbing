@@ -8,12 +8,10 @@ import {
   Clock,
   Award,
   Phone,
-  Brush,
   Building2,
   Grid3x3,
   Paintbrush,
   PaintRoller,
-  Palette,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 

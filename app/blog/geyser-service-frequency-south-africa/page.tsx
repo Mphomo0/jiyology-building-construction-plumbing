@@ -88,7 +88,7 @@ Jiyology offers professional geyser servicing, repair, and installation across a
           </h1>
           <p className="text-lg text-neutral-400 leading-relaxed">
             By Vusi Jiya &mdash; Expert advice to prevent geyser bursts and
-            extend your water heater's lifespan.
+            extend your water heater&apos;s lifespan.
           </p>
         </div>
       </article>
