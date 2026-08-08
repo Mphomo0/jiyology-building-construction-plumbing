@@ -3,6 +3,7 @@ import { og, twitter } from '@/lib/metadata'
 import Link from 'next/link'
 import { Check, Phone, MapPin, Shield, Star, Award } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
+import { faqLdJson, breadcrumbLdJson, locationServiceLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Plumber & Builder in Orlando Soweto | Jiyology' },
@@ -52,6 +53,19 @@ const faqs = [
 export default function OrlandoPage() {
   return (
     <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(locationServiceLdJson('Orlando', 'https://www.jiyology.co.za/locations/orlando'))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'Locations', url: 'https://www.jiyology.co.za/locations' },
+            {
+              name: 'Orlando',
+              url: 'https://www.jiyology.co.za/locations/orlando',
+            },
+          ]),
+        )}} />
+
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Orlando"

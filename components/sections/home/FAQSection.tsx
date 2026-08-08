@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { faqLdJson } from '@/lib/structured-data'
 
 const faqs = [
   {
@@ -39,11 +40,17 @@ const faqs = [
   },
 ]
 
+const ldJson = faqLdJson(faqs)
+
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
     <section className="py-24 bg-muted/30" aria-labelledby="faq-heading">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+      />
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">

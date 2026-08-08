@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
+import { personLdJson, breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Our Team | Jiyology Construction & Plumbing' },
@@ -49,8 +50,26 @@ const teamMembers = [
 ]
 
 export default function TeamPage() {
+  const breadcrumb = breadcrumbLdJson([
+    { name: 'Home', url: 'https://www.jiyology.co.za' },
+    { name: 'Our Team', url: 'https://www.jiyology.co.za/team' },
+  ])
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumb)}} />
+      {teamMembers.map((member) => (
+        <script
+          key={member.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              personLdJson(member.name, member.role, member.description),
+            ),
+          }}
+        />
+      ))}
+
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Our Team"

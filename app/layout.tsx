@@ -5,6 +5,7 @@ import './globals.css'
 import Script from 'next/script'
 import Navbar from '@/components/global/Navbar'
 import Footer from '@/components/global/Footer'
+import { siteSpineLdJson } from '@/lib/structured-data'
 import FloatingPhone from '@/components/global/FloatingPhone'
 import FloatingWhatsApp from '@/components/global/FloatingWhatsApp'
 
@@ -98,6 +99,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const spine = siteSpineLdJson()
+
   return (
     <html lang="en" dir="ltr">
       <head>
@@ -107,6 +110,15 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': spine,
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

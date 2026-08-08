@@ -14,6 +14,11 @@ import {
   PaintRoller,
 } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
+import {
+  serviceLdJson,
+  faqLdJson,
+  breadcrumbLdJson,
+} from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Tiling & Painting Services Soweto | Jiyology' },
@@ -64,6 +69,12 @@ const faqs = [
 ]
 
 export default function TilingPaintingPage() {
+  const service = {
+    name: 'Tiling and Painting Services',
+    description:
+      'Comprehensive tiling and painting services for residential and commercial properties in Soweto and Johannesburg.',
+    areaServed: 'Soweto, Johannesburg, Gauteng',
+  }
 
   const tpServices = [
     {
@@ -114,6 +125,19 @@ export default function TilingPaintingPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(serviceLdJson(service))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqLdJson(faqs))}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'Services', url: 'https://www.jiyology.co.za/services' },
+            {
+              name: 'Tiling & Painting',
+              url: 'https://www.jiyology.co.za/services/tiling-painting',
+            },
+          ]),
+        )}} />
+
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Tiling and Painting Services"

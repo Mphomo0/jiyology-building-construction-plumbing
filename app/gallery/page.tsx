@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
 import PageHeader from '@/components/global/PageHeader'
 import GallerySection from '@/components/sections/gallery/GallerySection'
+import { breadcrumbLdJson } from '@/lib/structured-data'
 import { cache } from 'react'
 
 interface ImageKitFile {
@@ -59,10 +60,22 @@ export const metadata: Metadata = {
 }
 
 export default async function Gallery() {
-  const items = await getGalleryItems()
+  const [items, breadcrumb] = await Promise.all([
+    getGalleryItems(),
+    Promise.resolve(
+      breadcrumbLdJson([
+        { name: 'Home', url: 'https://www.jiyology.co.za/' },
+        { name: 'Gallery', url: 'https://www.jiyology.co.za/gallery' },
+      ])
+    ),
+  ])
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <PageHeader
         title="Gallery"
         subtitle="Explore our portfolio of completed projects showcasing quality craftsmanship."

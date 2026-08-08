@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { og } from '@/lib/metadata'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
+import { breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Roofing FAQ Soweto | Jiyology' },
@@ -78,6 +79,34 @@ const faqItems = [
 export default function RoofingFAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map((item) => ({
+              '@type': 'Question',
+              name: item.q.replace(/<[^>]*>/g, ''),
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.a.replace(/<[^>]*>/g, ''),
+              },
+            })),
+          }),
+        }}
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            { name: 'FAQ', url: 'https://www.jiyology.co.za/faq' },
+            {
+              name: 'Roofing FAQ',
+              url: 'https://www.jiyology.co.za/faq/roofing',
+            },
+          ]),
+        )}} />
+
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-950/90 to-slate-950" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">

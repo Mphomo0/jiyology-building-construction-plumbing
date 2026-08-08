@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { og } from '@/lib/metadata'
 import Link from 'next/link'
 import CTA from '@/components/sections/home/CTA'
+import { breadcrumbLdJson } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: { absolute: 'Service Areas | Jiyology Construction' },
@@ -75,6 +76,16 @@ const areas = [
 export default function LocationsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(
+          breadcrumbLdJson([
+            { name: 'Home', url: 'https://www.jiyology.co.za' },
+            {
+              name: 'Service Areas',
+              url: 'https://www.jiyology.co.za/locations',
+            },
+          ]),
+        )}} />
+
       <section
         className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-950 overflow-hidden"
         aria-label="Service Areas"
