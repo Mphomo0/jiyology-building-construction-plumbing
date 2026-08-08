@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { og, twitter } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check, Shield, Clock, Award, Phone } from 'lucide-react'
+import { Check, Shield, Clock, Award, Phone, Star } from 'lucide-react'
 import CTA from '@/components/sections/home/CTA'
 import {
   serviceLdJson,
@@ -57,6 +57,46 @@ const faqs = [
   {
     q: 'Are you NHBRC registered?',
     a: 'Yes. Jiyology is NHBRC-registered, which means new builds include a 5-year structural defect warranty.',
+  },
+  {
+    q: 'Do you offer a warranty on roofing work?',
+    a: 'Yes. New roof installations on NHBRC-registered builds include a 5-year structural defect warranty, and materials carry their manufacturer warranty — for example, Chromadek sheeting includes a 20-year colour warranty. Contact us for warranty terms on repair work.',
+  },
+  {
+    q: 'How long does a roof repair take?',
+    a: 'Most roof repairs are completed within 1–2 days depending on the extent of the damage. We provide an on-site assessment and a same-day quote before starting work.',
+  },
+  {
+    q: 'Which areas do you cover for roofing?',
+    a: 'We serve all Soweto suburbs and Johannesburg, with roofing projects completed throughout Gauteng. Contact us to confirm coverage for your specific area.',
+  },
+]
+
+const roofMaterials = [
+  {
+    factor: 'Cost (installed)',
+    tiles: 'R120–R180/m²',
+    ibr: 'R95–R150/m²',
+  },
+  {
+    factor: 'Lifespan',
+    tiles: '50+ years',
+    ibr: '20–30 years',
+  },
+  {
+    factor: 'Insulation',
+    tiles: 'Superior — natural thermal mass',
+    ibr: 'Good with added ceiling insulation',
+  },
+  {
+    factor: 'Noise in storms',
+    tiles: 'Dampened',
+    ibr: 'Louder — direct metal contact',
+  },
+  {
+    factor: 'Best for',
+    tiles: 'Long-term homes, hail-prone areas',
+    ibr: 'Budget projects, garages, extensions',
   },
 ]
 
@@ -322,6 +362,103 @@ export default function RoofingPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/30" aria-label="Roofing materials compared">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-bold text-foreground mb-6 text-center">
+            Concrete Tiles vs IBR Sheeting
+          </h2>
+          <p className="text-lg text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+            Not sure which roofing material fits your budget and home? Here&apos;s
+            how the two most popular options compare.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-border/60">
+            <table className="w-full text-left bg-background">
+              <thead>
+                <tr className="border-b border-border/60">
+                  <th className="p-4 font-semibold text-foreground">Factor</th>
+                  <th className="p-4 font-semibold text-foreground">
+                    Concrete Tiles
+                  </th>
+                  <th className="p-4 font-semibold text-foreground">
+                    IBR Sheeting
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {roofMaterials.map((row, i) => (
+                  <tr
+                    key={row.factor}
+                    className={i !== roofMaterials.length - 1 ? 'border-b border-border/60' : ''}
+                  >
+                    <td className="p-4 font-medium text-foreground">
+                      {row.factor}
+                    </td>
+                    <td className="p-4 text-muted-foreground">{row.tiles}</td>
+                    <td className="p-4 text-muted-foreground">{row.ibr}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/blog/concrete-roof-tiles-vs-ibr-sheeting"
+              className="inline-flex items-center px-6 py-3 rounded-full border border-[#33b6db] text-[#33b6db] font-semibold hover:bg-[#33b6db] hover:text-white transition-all"
+            >
+              Read the Full Comparison Guide
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-background" aria-label="Client reviews">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-3xl font-bold text-foreground mb-10 text-center">
+            What Our Clients Say
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                author: 'Simangele Mhlanga',
+                body: 'Vusi is very friendly. Treated me as I was the only client.',
+                rating: 5,
+              },
+              {
+                author: 'Merry Sikobane',
+                body: 'The best ever. Keep it up with the good. Excellent service to the customer.',
+                rating: 5,
+              },
+            ].map((t) => (
+              <div
+                key={t.author}
+                className="bg-muted/30 rounded-2xl p-8 border border-border/60"
+              >
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${i < t.rating ? 'text-yellow-400 fill-yellow-400' : 'text-neutral-300'}`}
+                    />
+                  ))}
+                </div>
+                <p className="text-muted-foreground leading-relaxed mb-6 italic">
+                  &ldquo;{t.body}&rdquo;
+                </p>
+                <p className="font-bold text-foreground">{t.author}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-[#33b6db] text-white font-semibold hover:bg-[#33b6db]/90 transition-all"
+            >
+              Read More Reviews
+            </Link>
           </div>
         </div>
       </section>
