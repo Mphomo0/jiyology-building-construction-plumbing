@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Navbar from '@/components/global/Navbar'
 import Footer from '@/components/global/Footer'
 import { siteSpineLdJson } from '@/lib/structured-data'
@@ -137,23 +138,14 @@ export default function RootLayout({
         <FloatingWhatsApp />
         <FloatingPhone />
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.GA_TRACKING_ID}');
-          `}
-        </Script>
-        <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key={process.env.AHREFS_ANALYTICS_KEY}
           strategy="afterInteractive"
         />
       </body>
+      {process.env.GA_TRACKING_ID && (
+        <GoogleAnalytics gaId={process.env.GA_TRACKING_ID} />
+      )}
     </html>
   )
 }
