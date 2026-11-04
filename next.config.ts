@@ -8,21 +8,6 @@ const nextConfig: NextConfig = {
       { source: '/services/roof-repair', destination: '/services/roof-repairs', permanent: true },
     ]
   },
-  async headers() {
-    return [
-      {
-        // Local images rarely change; long-lived caching cuts edge requests
-        // and origin transfer on repeat visits.
-        source: '/images/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ]
-  },
   images: {
     // All transformations happen on ImageKit's CDN instead of Vercel's
     // image optimizer, which was exceeding the free-tier transformation
